@@ -302,7 +302,7 @@ html:not(.light) .nd :is(.nd-sub, .nd-tenth, .nd-ch-t, .nd-mac-n, .nd-quiet em, 
 html:not(.light) .nd :is(.nd-tenth-l, .nd-why-m, .nd-ch-d, .nd-mac-r, .nd-r2 span, .cf-paste-d, .nd-docs .lx-kick) { color: var(--muted-foreground); }
 html:not(.light) .nd :is(.nd-cap, .nd-quiet, .nd-r4-ps span, .nd-drive-p) { color: var(--text-tertiary); }
 html:not(.light) .nd :is(.nd-r1 li, .nd-r3 .no, .nd-r4-ps li.off code) { color: var(--text-disabled); }
-html:not(.light) .nd .nd-r1 li.on { color: var(--foreground); }
+html:not(.light) .nd .nd-mac .nd-r1 li.on { color: var(--foreground); } /* dark-g3: outranks the :is() dimming above, as light lets .on win */
 html:not(.light) .nd :is(.nd-mac, .nd-ladder button, .nd-r1 i, .nd-r2 li, .nd-r4-ps li) { background: var(--x-fill); }
 html:not(.light) .nd .nd-read { background: var(--x-raised); }
 html:not(.light) .nd .nd-cmd { background: var(--background); }

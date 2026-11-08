@@ -265,7 +265,7 @@ function FocusPull({ children }) {
   const blur = useTransform(p, [0, 1], ['blur(4px)', 'blur(0px)']);
   const scale = useTransform(p, [0, 1], [1.03, 1]);
   const op = useTransform(p, [0, 0.6], [0.55, 1]);
-  return <motion.div ref={ref} className="ze-e-focus" style={still ? undefined : { filter: blur, scale, opacity: op }}>{children}</motion.div>;
+  return <motion.div ref={ref} className="ze-e-focus" style={still ? { filter: 'none', scale: 1, opacity: 1 } : { filter: blur, scale, opacity: op }}>{children}</motion.div>;
 }
 
 // keyboard: focus entering the settled headline's links scrolls the stage to its settled point, so they show
