@@ -191,7 +191,7 @@
 .am2-req-node b { display: block; margin-top: 8px; font-size: 32px; font-weight: 497; letter-spacing: -.03em; }
 .am2-req-node.key b { color: #a3a3a3; }
 .am2-req-wire { display: block; width: 2px; height: 40px; overflow: visible; }
-.am2-req-wire path { fill: none; stroke: light-dark(#fafafa, var(--muted)); stroke-width: 2; }
+.am2-req-wire path { fill: none; stroke: #fafafa; stroke-width: 2; }
 
 /* entrances: the markup's own state is the final one; [data-ent=wait] (set after mount, out of view) holds the start
    state, [data-ent=go] runs each section's own keyframes once */

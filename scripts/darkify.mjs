@@ -3,15 +3,23 @@
 // so bright mode keeps the same computed colour and dark mode reads Hanzo's own tokens, as live hanzo.ai does.
 // Leaves alone: things already dark (dark fills, light text on them: terminals, films, black rooms), colours already in
 // light-dark()/var(), rules written for dark (html:not(.light), [data-room=dark], .dark), and custom properties (listed).
-// Usage: node scripts/darkify.mjs [--dry] file.css ...
+// Usage: [CTX=ctx.json] node scripts/darkify.mjs [--dry] file.css ...
+//   CTX: scripts/darkctx.mjs's output. A rule whose elements sit mostly on a dark fill (dark on purpose) is left as it is.
 import fs from 'node:fs';
 
 const DRY = process.argv.includes('--dry');
 const files = process.argv.slice(2).filter((a) => !a.startsWith('--'));
-const COLOR = /#[0-9a-fA-F]{8}\b|#[0-9a-fA-F]{6}\b|#[0-9a-fA-F]{4}\b|#[0-9a-fA-F]{3}\b|rgba?\([^()]*\)|\bwhite\b|\bblack\b/g;
+const norm = (sel) => sel.replace(/'/g, '"').replace(/\s+/g, ' ').replace(/\s*([,>+~])\s*/g, '$1').trim();
+const CTX = {};
+if (process.env.CTX) for (const [k, [d, l]] of Object.entries(JSON.parse(fs.readFileSync(process.env.CTX, 'utf8')))) CTX[norm(k)] = d > 0 && d >= l;
+const COLOR = /var\(--hz-(?:\d+|black|white)\)|#[0-9a-fA-F]{8}\b|#[0-9a-fA-F]{6}\b|#[0-9a-fA-F]{4}\b|#[0-9a-fA-F]{3}\b|rgba?\([^()]*\)|\bwhite\b|\bblack\b/g;
+// app/system.css's fixed grey deck (it never flips), read as the hex it stands for
+const HZ = { black: '#000', 950: '#0a0a0b', 900: '#141416', 850: '#1c1c1e', 800: '#2c2c2e', 700: '#3a3a3c', 600: '#48484a', 500: '#6e6e73', 400: '#86868b', 300: '#a1a1a6', 200: '#c7c7cc', 150: '#d2d2d7', 100: '#e8e8ed', 50: '#f5f5f7', white: '#fff' };
 
 function rgba(c) {
   c = c.toLowerCase();
+  const hz = c.match(/^var\(--hz-(\w+)\)$/); if (hz) c = HZ[hz[1]] || '';
+  if (!c) return null;
   if (c === 'white') return [255, 255, 255, 1];
   if (c === 'black') return [0, 0, 0, 1];
   if (c[0] === '#') {
@@ -46,7 +54,7 @@ function darkFor(prop, col, ctx) {
   }
   if (/^(background|background-color|background-image)$/.test(prop)) {
     if (sat) return null;
-    if (isWhiteA) return `color-mix(in srgb, var(--background) ${Math.round(a * 100)}%, transparent)`;
+    if (isWhiteA) return a >= .5 ? `color-mix(in srgb, var(--background) ${Math.round(a * 100)}%, transparent)` : null; // frosted white panel; a faint white wash is a highlight on dark
     if (isBlackA) return null; // a shade: stays a shade
     if (a < 1) return null;
     if (v >= 250) return 'var(--background)';
@@ -87,7 +95,7 @@ function convertDecl(prop, value, ctx, log) {
   }
   return value.replace(COLOR, (m, off) => {
     const before = value.slice(0, off);
-    if (/var\([^)]*$/.test(before)) return m; // a fallback inside var()
+    if (/var\([^)]*$/.test(before) && !m.startsWith('var(')) return m; // a fallback inside var()
     if (/url\([^)]*$/.test(before)) return m;
     return sub(prop, m, ctx, log);
   });
@@ -137,7 +145,7 @@ function processCss(src, log) {
       const m = decl.match(/^(\s*)([-\w]+)(\s*:\s*)([\s\S]*?)(\s*)$/);
       const sels = stack.filter((s) => !s.startsWith('@'));
       const inKeyframes = stack.some((s) => /^@(-webkit-)?keyframes/.test(s));
-      const darkRule = sels.some((s) => DARK_SEL.test(s));
+      const darkRule = sels.some((s) => DARK_SEL.test(s)) || (sels.length && CTX[norm(sels[sels.length - 1])]);
       if (m && !darkRule && !m[2].startsWith('--')) {
         const blockText = blockOf(src, i);
         const ctx = { darkBg: hasDarkBg(blockText), sel: sels.join(' '), kf: inKeyframes };
@@ -167,7 +175,7 @@ function hasDarkBg(block) {
   const m = block.match(/(?:^|;|\s)background(?:-color)?\s*:\s*([^;]+)/);
   if (!m) return false;
   const v = m[1];
-  if (/var\(--(ink|foreground|primary|x-ink)\)/.test(v) && !/light-dark/.test(v)) return true;
+  if (/var\(--(ink|foreground|primary|x-ink|room-ink|btn-solid-bg)\)/.test(v) && !/light-dark/.test(v)) return true;
   const cols = v.match(COLOR) || []; COLOR.lastIndex = 0;
   return cols.some((c) => { const r = rgba(c); return r && grey(r) < 90 && r[3] > .5; });
 }

@@ -65,8 +65,8 @@
 .bl2-inv-h > span { display: flex; flex-direction: column; gap: 4px; }
 .bl2-inv-h b { font-size: 21px; font-weight: 497; }
 .bl2-inv-h em { font-size: 13px; font-style: normal; color: var(--faint); }
-.bl2-chip { padding: 8px 12px; border-radius: 9px; font-size: 13px; font-weight: 606; background: light-dark(#f5f5f5, var(--muted)); color: var(--soft); }
-.bl2-chip.preview { background: light-dark(#f5f5f5, var(--muted)); color: light-dark(#525252, var(--muted-foreground)); }
+.bl2-chip { padding: 8px 12px; border-radius: 9px; font-size: 13px; font-weight: 606; background: #f5f5f5; color: var(--soft); }
+.bl2-chip.preview { background: #f5f5f5; color: #525252; }
 .bl2-chip.issued { background: var(--ac); color: #fff; }
 .bl2-lines { list-style: none; margin: 0; padding: 0; }
 .bl2-lines li { position: relative; display: flex; justify-content: space-between; gap: 12px; padding: 16px 0; border-bottom: 1px solid var(--hair); outline: none; transition: background .3s; }
@@ -161,7 +161,7 @@
 @media (hover: hover) { .bl2-log li { cursor: default; } .bl2-log li:hover { background: rgba(115, 115, 115, .2); } }
 .bl2-log li i { width: 10px; height: 10px; border-radius: 50%; }
 .bl2-log li i.c0 { background: #a3a3a3; }
-.bl2-log li i.c1 { background: light-dark(#f5f5f5, var(--muted)); }
+.bl2-log li i.c1 { background: #f5f5f5; }
 .bl2-log li i.c2 { background: #737373; }
 .bl2-log li b { font-size: 16px; font-weight: 606; }
 .bl2-log li span { font-size: 16px; color: #a3a3a3; }

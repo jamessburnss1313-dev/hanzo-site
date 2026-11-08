@@ -119,7 +119,7 @@ html.dark .x-logo { filter: brightness(0) invert(1); } /* James 8 Nov: in dark m
 .x-win, .x-term, .x-phone { position: absolute; transform-style: preserve-3d; }
 .x-win { left: 0; top: 10px; width: 590px; height: 380px; border-radius: 16px; background: var(--x-raised); border: 1px solid var(--x-e10); box-shadow: 0 40px 80px -30px rgba(0, 0, 0, .28), 0 0 0 1px rgba(255, 255, 255, .6) inset; overflow: hidden; display: flex; flex-direction: column; }
 .x-win-bar { height: 38px; display: flex; align-items: center; gap: 7px; padding: 0 12px; border-bottom: 1px solid var(--line); background: var(--x-sunk); }
-.x-win-bar i, .x-term-bar i { width: 10px; height: 10px; border-radius: 50%; background: light-dark(#d9d9de, var(--secondary)); }
+.x-win-bar i, .x-term-bar i { width: 10px; height: 10px; border-radius: 50%; background: #d9d9de; }
 .x-url { margin-left: 14px; height: 22px; padding: 0 10px; border-radius: 7px; background: var(--x-raised); border: 1px solid var(--line); font: 500 11px/22px var(--mono); color: var(--soft); text-decoration: none; }
 .x-openapp { margin-left: auto; height: 22px; padding: 0 9px; border-radius: 7px; background: var(--ink); color: var(--x-on-ink); font: 500 11px/22px var(--sans); text-decoration: none; }
 .x-win-body { flex: 1; display: grid; grid-template-columns: 150px 1fr; min-height: 0; }
@@ -280,7 +280,7 @@ html.dark .x-logo { filter: brightness(0) invert(1); } /* James 8 Nov: in dark m
 .x-modal-links { display: flex; flex-direction: column; align-items: flex-start; gap: 14px; }
 .x-modal .x-btn.solid { background: light-dark(#f5f5f7, var(--muted)); color: light-dark(#000, var(--foreground)); border-color: light-dark(#f5f5f7, var(--border)); }
 .x-modal .x-arrow { color: #f5f5f7; }
-.x-close { position: absolute; top: 16px; right: 16px; width: 36px; height: 36px; border-radius: 50%; border: 0; background: light-dark(rgba(255, 255, 255, .14), color-mix(in srgb, var(--background) 14%, transparent)); color: #fff; display: grid; place-items: center; cursor: pointer; -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); }
+.x-close { position: absolute; top: 16px; right: 16px; width: 36px; height: 36px; border-radius: 50%; border: 0; background: rgba(255, 255, 255, .14); color: #fff; display: grid; place-items: center; cursor: pointer; -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); }
 
 /* ---------- platform: a carousel that turns ---------- */
 .x-platform { overflow: hidden; }
@@ -333,7 +333,7 @@ html.dark .x-logo { filter: brightness(0) invert(1); } /* James 8 Nov: in dark m
 .x-step-t b { font-size: 14.5px; font-weight: 500; }
 .x-step-t span { font-size: 11.5px; color: var(--faint); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .x-script { margin-top: 6px; min-height: 48px; display: flex; align-items: center; padding: 0 16px; border-radius: 14px; background: #0b0b0c; color: #e9e9ec; font-size: 12.5px; overflow: hidden; white-space: nowrap; }
-.x-script .x-dim { color: light-dark(#6e6e73, var(--muted-foreground)); margin-right: 8px; }
+.x-script .x-dim { color: #6e6e73; margin-right: 8px; }
 .x-code-t { align-self: flex-start; display: inline-flex; align-items: center; gap: 8px; height: 36px; padding: 0 14px 0 12px; border-radius: 999px; border: 1px solid var(--line); background: var(--x-raised); color: var(--ink); font: 500 12.5px/1 var(--mono); cursor: pointer; transition: transform .3s var(--ease), box-shadow .3s var(--ease); }
 .x-code-t:hover { transform: translateY(-1px); box-shadow: 0 8px 20px -12px rgba(0, 0, 0, .3); }
 .x-code-t:active { transform: scale(.97); }
@@ -350,7 +350,7 @@ html.dark .x-logo { filter: brightness(0) invert(1); } /* James 8 Nov: in dark m
 .x-code-blk { margin: 0; padding: 16px; max-height: 340px; overflow: auto; overscroll-behavior: contain; color: #e9e9ec; font-size: 12px; line-height: 1.65; white-space: pre; tab-size: 2; }
 .x-code-blk[hidden] { display: none; }
 .x-code-l { display: block; min-height: 1.65em; }
-.x-code-l .c { color: light-dark(#6e6e73, var(--muted-foreground)); } .x-code-l .s { color: #c7c7cc; } .x-code-l .k { color: #fff; font-weight: 500; }
+.x-code-l .c { color: #6e6e73; } .x-code-l .s { color: #c7c7cc; } .x-code-l .k { color: #fff; font-weight: 500; }
 .x-code[data-open='true'] .x-code-blk:not([hidden]) .x-code-l { animation: x-code-in .55s var(--ease) both; animation-delay: calc(min(var(--i), 22) * 32ms + 120ms); }
 @keyframes x-code-in { from { opacity: 0; transform: translateX(-10px); } }
 @media (prefers-reduced-motion: reduce) { .x-code, .x-code-lbl > span { transition: none; } .x-code-l { animation: none !important; } }
@@ -368,16 +368,16 @@ html.dark .x-logo { filter: brightness(0) invert(1); } /* James 8 Nov: in dark m
 .x-race-big { margin: 22px 0 0; font-size: clamp(4rem, 8vw, 7rem); font-weight: 300; letter-spacing: -.055em; line-height: .95; font-feature-settings: 'tnum'; }
 .x-race-cap { margin: 10px 0 0; font-size: 17px; font-weight: 500; }
 .x-race-note { margin: 10px 0 0; font-size: 13.5px; line-height: 1.55; color: var(--faint); max-width: 56ch; }
-.x-race-title { margin: 26px 0 10px; font-size: 11.5px; color: light-dark(#6e6e73, var(--muted-foreground)); }
+.x-race-title { margin: 26px 0 10px; font-size: 11.5px; color: #6e6e73; }
 .x-lanes { display: flex; flex-direction: column; gap: 14px; }
 .x-lane { transition: opacity .3s var(--ease); }
 .x-lane.dim { opacity: .35; }
 .x-lane-h { display: flex; justify-content: space-between; gap: 12px; font-size: 13.5px; margin-bottom: 7px; }
 .x-lane-v { font-size: 12.5px; color: var(--faint); white-space: nowrap; }
 .x-lane.hi .x-lane-v { color: inherit; }
-.x-lane-track { position: relative; display: flex; height: 6px; border-radius: 6px; background: light-dark(rgba(255, 255, 255, .08), color-mix(in srgb, var(--background) 8%, transparent)); }
+.x-lane-track { position: relative; display: flex; height: 6px; border-radius: 6px; background: rgba(255, 255, 255, .08); }
 .x-lane-track b { display: block; height: 100%; width: 100%; border-radius: 6px; background: #5a5a60; transform-origin: 0 50%; }
-.x-lane.hi .x-lane-track b { background: light-dark(#f5f5f7, var(--muted)); }
+.x-lane.hi .x-lane-track b { background: #f5f5f7; }
 .x-lane-track em { position: absolute; right: -2px; top: 50%; translate: 100% -50%; font-style: normal; font-size: 11px; color: #f5f5f7; padding-left: 6px; }
 .x-facts { margin: 22px 0 0; display: flex; flex-direction: column; gap: 10px; border-top: 1px solid rgba(255, 255, 255, .08); padding-top: 16px; }
 .x-facts div { display: flex; justify-content: space-between; gap: 12px; font-size: 13.5px; }
@@ -581,7 +581,7 @@ a.x-mbtn { color: inherit; text-decoration: none; }
 .x-mhero-copy { position: relative; padding-bottom: clamp(40px, 7vh, 88px); }
 .x-mhero-name { margin: 0; font-size: clamp(5rem, 14vw, 13rem); font-weight: 560; letter-spacing: -.06em; line-height: .9; color: #f5f5f7; }
 .x-mhero-desc { margin: 18px 0 16px; max-width: 30ch; font-size: clamp(1.15rem, 1.7vw, 1.6rem); line-height: 1.35; color: #d1d1d6; }
-.x-mclose { position: absolute; top: 20px; right: 24px; z-index: 2; width: 48px; height: 48px; border-radius: 50%; display: grid; place-items: center; color: #fff; background: light-dark(rgba(255, 255, 255, .14), color-mix(in srgb, var(--background) 14%, transparent)); border: 1px solid rgba(255, 255, 255, .22); -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px); }
+.x-mclose { position: absolute; top: 20px; right: 24px; z-index: 2; width: 48px; height: 48px; border-radius: 50%; display: grid; place-items: center; color: #fff; background: rgba(255, 255, 255, .14); border: 1px solid rgba(255, 255, 255, .22); -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px); }
 .x-scrollcue { position: absolute; right: 28px; bottom: 32px; font: 500 11px/1 var(--mono); letter-spacing: .16em; text-transform: uppercase; color: #a1a1a6; }
 .x-model-body { position: relative; background: var(--bg); }
 .x-next { position: relative; display: flex; flex-direction: column; justify-content: flex-end; gap: 8px; height: 70vh; min-height: 420px; padding: clamp(24px, 4vw, 56px); overflow: hidden; background: #000; color: #f5f5f7; text-decoration: none; }
@@ -654,7 +654,7 @@ a.x-mbtn { color: inherit; text-decoration: none; }
 .x-band h2 { margin: 0 auto; max-width: 18ch; font-size: clamp(2.6rem, 6vw, 5.5rem); font-weight: 560; letter-spacing: -.045em; line-height: 1; color: #f5f5f7; }
 .x-band p { margin: 22px auto 0; max-width: 54ch; font-size: clamp(1.05rem, 1.4vw, 1.3rem); line-height: 1.5; color: #a1a1a6; }
 .x-band-act { margin-top: 36px; display: flex; flex-direction: column; align-items: center; gap: 16px; }
-.x-band .x-btn.solid { background: light-dark(#f5f5f7, var(--muted)); color: light-dark(#000, var(--foreground)); border-color: light-dark(#f5f5f7, var(--border)); height: 52px; padding: 0 30px; font-size: 16px; }
+.x-band .x-btn.solid { background: #f5f5f7; color: #000; border-color: #f5f5f7; height: 52px; padding: 0 30px; font-size: 16px; }
 .x-band-note { margin: 0 !important; font-size: 14px !important; }
 .x-band-note a { color: #f5f5f7; }
 
@@ -747,11 +747,11 @@ a.x-mbtn { color: inherit; text-decoration: none; }
 .x-vol { margin: 16px 0 10px; }
 /* Hanzo Dev vs Claude Code: a speed track - fine horizontal lanes streaking out of a light at the top left, the winning bar glowing */
 .x-races > .x-race:first-child { border-color: rgba(255, 255, 255, .1); background: #0b0b0d; }
-.x-races > .x-race:first-child::before { background: radial-gradient(85% 55% at 0% 0%, light-dark(rgba(255, 255, 255, .16), color-mix(in srgb, var(--background) 16%, transparent)), transparent 62%), repeating-linear-gradient(0deg, light-dark(rgba(255, 255, 255, .08), color-mix(in srgb, var(--background) 8%, transparent)) 0 1px, transparent 1px 10px); -webkit-mask-image: linear-gradient(100deg, #000 10%, transparent 72%); mask-image: linear-gradient(100deg, #000 10%, transparent 72%); }
+.x-races > .x-race:first-child::before { background: radial-gradient(85% 55% at 0% 0%, rgba(255, 255, 255, .16), transparent 62%), repeating-linear-gradient(0deg, rgba(255, 255, 255, .08) 0 1px, transparent 1px 10px); -webkit-mask-image: linear-gradient(100deg, #000 10%, transparent 72%); mask-image: linear-gradient(100deg, #000 10%, transparent 72%); }
 .x-races > .x-race:first-child .x-lane.hi .x-lane-track b { box-shadow: 0 0 16px rgba(245, 245, 247, .6); }
 /* Kai vs an LLM call: Hanzo's halftone - a dot field glowing from the top right, bars as thin light lines */
 .x-races > .x-race:nth-child(2) { border-color: rgba(255, 255, 255, .07); background: radial-gradient(70% 60% at 100% 0%, #18181b, #0b0b0d 70%); }
-.x-races > .x-race:nth-child(2)::before { background: radial-gradient(circle, light-dark(rgba(255, 255, 255, .36), color-mix(in srgb, var(--background) 36%, transparent)) 1px, transparent 1.6px) 0 0 / 11px 11px; -webkit-mask-image: radial-gradient(75% 70% at 100% 0%, #000, transparent 72%); mask-image: radial-gradient(75% 70% at 100% 0%, #000, transparent 72%); }
+.x-races > .x-race:nth-child(2)::before { background: radial-gradient(circle, rgba(255, 255, 255, .36) 1px, transparent 1.6px) 0 0 / 11px 11px; -webkit-mask-image: radial-gradient(75% 70% at 100% 0%, #000, transparent 72%); mask-image: radial-gradient(75% 70% at 100% 0%, #000, transparent 72%); }
 .x-races > .x-race:nth-child(2) .x-lane-track { height: 2px; }
 .x-races > .x-race:nth-child(2) .x-lane.hi .x-lane-track b { box-shadow: 0 0 10px rgba(245, 245, 247, .7); }
 /* Enso (cheaper): stacked price bands rising from the bottom, like layers of cost falling away */

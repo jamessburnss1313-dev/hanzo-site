@@ -48,7 +48,7 @@
 .xst-h1 { margin: 0; font-size: 84px; font-weight: 497; letter-spacing: -.035em; line-height: .98; text-wrap: balance; color: #fafafa; transform-origin: 0 100%; }
 .xst-meta { display: flex; align-items: center; gap: 14px; margin-top: 27px; color: rgba(255, 255, 255, .78); }
 /* Hanzo's line as it prints it ("2020 · CES launch and preorders"), led in by a short hairline */
-.xst-meta::before { content: ''; flex: none; width: 32px; height: 1px; background: light-dark(rgba(255, 255, 255, .3), color-mix(in srgb, var(--background) 30%, transparent)); }
+.xst-meta::before { content: ''; flex: none; width: 32px; height: 1px; background: rgba(255, 255, 255, .3); }
 .xst-ask { margin-top: 27px; }
 /* the bare room's object (the picture could not load): Hanzo's lead figure on a graphite plate, lower right */
 .xst-ledger { position: absolute; right: 0; bottom: 44px; width: min(360px, 32%); display: flex; flex-direction: column; padding: 27px; border-radius: 20px; background: #262626; color: #fafafa; }

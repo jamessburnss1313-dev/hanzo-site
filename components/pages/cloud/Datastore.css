@@ -28,7 +28,7 @@
 .ds-blocks i { height: 12px; border-radius: 6px; background: var(--ink); transition: background-color .3s var(--e-move); }
 .ds-file.on .ds-blocks i { background: var(--x-sunk); }
 /* the scan: a band of white light running down the files being read (CSS, so it moves at first paint) */
-.ds-beam { position: absolute; left: 0; right: 0; top: 0; height: 36%; background: linear-gradient(180deg, light-dark(rgba(255, 255, 255, 0), color-mix(in srgb, var(--background) 0%, transparent)), light-dark(rgba(255, 255, 255, .2), color-mix(in srgb, var(--background) 20%, transparent)) 70%, light-dark(rgba(255, 255, 255, .4), color-mix(in srgb, var(--background) 40%, transparent))); pointer-events: none; animation: ds-beam 1.5s var(--e-move) infinite; }
+.ds-beam { position: absolute; left: 0; right: 0; top: 0; height: 36%; background: linear-gradient(180deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, .2) 70%, rgba(255, 255, 255, .4)); pointer-events: none; animation: ds-beam 1.5s var(--e-move) infinite; }
 @keyframes ds-beam { from { transform: translate3d(0, -100%, 0); } to { transform: translate3d(0, 290%, 0); } }
 .ds-q-foot { padding: 4px clamp(24px, 6vw, 88px) clamp(20px, 2.4vw, 32px); }
 .ds-q-foot p { margin: 0; font-size: 14px; color: var(--quiet); }
@@ -193,7 +193,7 @@ html:not(.js) .ds-x-rail { display: none; }
 /* the board: one dark tile per digit, a hairline across its middle; a new digit drops in from behind the tile */
 .ds-board { margin: 0; display: flex; gap: 6px; }
 .ds-tile { position: relative; display: grid; place-items: center; width: 64px; height: 84px; border-radius: 8px; background: #0a0a0a; overflow: hidden; }
-.ds-tile::after { content: ''; position: absolute; left: 0; right: 0; top: 50%; height: 1px; background: light-dark(rgba(255, 255, 255, .14), color-mix(in srgb, var(--background) 14%, transparent)); }
+.ds-tile::after { content: ''; position: absolute; left: 0; right: 0; top: 50%; height: 1px; background: rgba(255, 255, 255, .14); }
 .ds-tile b { display: block; font-size: 64px; font-weight: 220; line-height: 1; letter-spacing: -.02em; color: #fafafa; font-feature-settings: 'tnum'; font-variant-numeric: tabular-nums; }
 .js .ds-tile b { animation: ds-drop .4s var(--e-in) both; animation-delay: calc(var(--i) * 60ms); }
 @keyframes ds-drop { from { transform: translate3d(0, -105%, 0); } to { transform: none; } }

@@ -49,8 +49,8 @@
   html.js .xbt [data-enter='orbit'][data-in] { animation: xbt-orbit .7s cubic-bezier(.2, .8, .2, 1) both; animation-delay: calc(var(--o) * 110ms + 80ms); }
 
   /* 5. page-curl: the white page peels away from the bottom corner to show the dark close */
-  html.js .xbt .xbt-curl { display: block; position: absolute; left: 50%; top: 50%; z-index: 4; width: 300vmax; height: 300vmax; margin: -300vmax 0 0 -150vmax; transform-origin: 50% 100%; transform: rotate(-45deg) translateY(75vmax); background: light-dark(#fff, var(--background)); pointer-events: none; }
-  html.js .xbt .xbt-curl::after { content: ''; position: absolute; left: 0; right: 0; top: 100%; height: 180px; transform-origin: 50% 0; transform: scaleY(0); background: linear-gradient(to bottom, var(--hz-200), light-dark(#fafafa, var(--background)) 60%, light-dark(#fff, var(--background))); box-shadow: 0 30px 60px -12px rgba(0, 0, 0, .7); }
+  html.js .xbt .xbt-curl { display: block; position: absolute; left: 50%; top: 50%; z-index: 4; width: 300vmax; height: 300vmax; margin: -300vmax 0 0 -150vmax; transform-origin: 50% 100%; transform: rotate(-45deg) translateY(75vmax); background: #fff; pointer-events: none; }
+  html.js .xbt .xbt-curl::after { content: ''; position: absolute; left: 0; right: 0; top: 100%; height: 180px; transform-origin: 50% 0; transform: scaleY(0); background: linear-gradient(to bottom, var(--hz-200), #fafafa 60%, #fff); box-shadow: 0 30px 60px -12px rgba(0, 0, 0, .7); }
   html.js .xbt [data-enter='curl'][data-in] .xbt-curl { animation: xbt-curl .95s cubic-bezier(.55, 0, .25, 1) both; }
   html.js .xbt [data-enter='curl'][data-in] .xbt-curl::after { animation: xbt-flap .95s cubic-bezier(.55, 0, .25, 1) both; }
   html.js .xbt [data-enter='curl']:not([data-in]) .xbt-foot-in { opacity: 0; }

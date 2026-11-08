@@ -151,7 +151,7 @@
 .bci-bul { list-style: none; margin: 8px 0 0; padding: 0; border-top: 1px solid rgba(255, 255, 255, .14); }
 .bci-bul li { display: flex; align-items: baseline; gap: 16px; padding: 16px 8px; border-bottom: 1px solid rgba(255, 255, 255, .14); font-size: 17px; color: #a3a3a3; transition: color .15s var(--bz-out), background-color .15s var(--bz-out); }
 .bci-bul li .x-mono { flex: none; font-size: 13px; color: rgba(255, 255, 255, .4); transition: color .15s var(--bz-out); }
-@media (hover: hover), (pointer: none) { .bci-bul li:hover { color: #fafafa; background: light-dark(rgba(255, 255, 255, .06), color-mix(in srgb, var(--background) 6%, transparent)); } .bci-bul li:hover .x-mono { color: #fafafa; } }
+@media (hover: hover), (pointer: none) { .bci-bul li:hover { color: #fafafa; background: rgba(255, 255, 255, .06); } .bci-bul li:hover .x-mono { color: #fafafa; } }
 .bci-code-w { position: relative; grid-column: 7 / span 6; align-self: center; min-width: 0; }
 .bci-code { margin: 0; }
 .bci-code .x-codeblock-l { white-space: pre-wrap; overflow-wrap: anywhere; }
@@ -161,7 +161,7 @@
 .bci-pause.dark { position: absolute; top: 2px; right: 104px; z-index: 2; width: 40px; height: 40px; background: transparent; color: #fafafa; border-color: rgba(255, 255, 255, .22); }
 @media (hover: hover), (pointer: none) { .bci-pause.dark:hover { background: rgba(255, 255, 255, .1); border-color: rgba(255, 255, 255, .4); } }
 .bci-pause.dark:focus-visible { outline-color: #fff; }
-@media (hover: hover), (pointer: none) { .bci-code .x-copy:hover { background: light-dark(rgba(255, 255, 255, .16), color-mix(in srgb, var(--background) 16%, transparent)); border-color: rgba(255, 255, 255, .4); color: #fafafa; } }
+@media (hover: hover), (pointer: none) { .bci-code .x-copy:hover { background: rgba(255, 255, 255, .16); border-color: rgba(255, 255, 255, .4); color: #fafafa; } }
 
 /* Beyond: the coverage matrix */
 .bci-mx-head { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--g); align-items: end; }

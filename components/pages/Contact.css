@@ -114,13 +114,13 @@
 .xct-dial { width: min(100%, 440px); height: auto; }
 .xct-face { fill: rgba(255, 255, 255, .03); stroke: rgba(255, 255, 255, .2); stroke-width: .8; }
 .xct-tk { stroke: rgba(255, 255, 255, .3); stroke-width: .8; }
-.xct-tk.big { stroke: light-dark(#fafafa, var(--muted)); stroke-width: 2.2; }
-.xct-h { stroke: light-dark(#fafafa, var(--muted)); stroke-linecap: round; transform-origin: 100px 100px; opacity: 0; transition: opacity var(--d-slower) var(--e-out); }
+.xct-tk.big { stroke: #fafafa; stroke-width: 2.2; }
+.xct-h { stroke: #fafafa; stroke-linecap: round; transform-origin: 100px 100px; opacity: 0; transition: opacity var(--d-slower) var(--e-out); }
 .xct-dial.live .xct-h { opacity: 1; }
 .xct-h.hr { stroke-width: 6; }
 .xct-h.mn { stroke-width: 3.5; }
 .xct-h.sc { stroke: #a3a3a3; stroke-width: 1.4; }
-.xct-pin { fill: light-dark(#fafafa, var(--muted)); }
+.xct-pin { fill: #fafafa; }
 .xct-clock-t { margin: 0; font-size: clamp(26px, 2.6vw, 32px); font-weight: 497; letter-spacing: -.025em; line-height: 1; color: #fafafa; }
 
 /* 3. the community: names at section-heading size over their mono addresses; only the row you are on grows, then
@@ -136,7 +136,7 @@
 .xct-plate-s.now { background: var(--quiet); }
 .xct-plate-e { position: absolute; top: 0; bottom: 0; width: 1.5px; margin-left: -1px; background: var(--ink); pointer-events: none; }
 .xct-plate-s canvas { position: absolute; inset: 0; width: 100%; height: 100%; }
-.xct-plate::after { content: ''; position: absolute; inset: auto 0 0 0; height: 45%; background: linear-gradient(180deg, light-dark(rgba(245, 245, 245, 0), color-mix(in srgb, var(--background) 0%, transparent)), light-dark(rgba(245, 245, 245, .95), color-mix(in srgb, var(--background) 95%, transparent))); pointer-events: none; }
+.xct-plate::after { content: ''; position: absolute; inset: auto 0 0 0; height: 45%; background: linear-gradient(180deg, rgba(245, 245, 245, 0), light-dark(rgba(245, 245, 245, .95), color-mix(in srgb, var(--background) 95%, transparent))); pointer-events: none; }
 .xct-plate-w { position: absolute; left: 27px; right: 27px; bottom: 22px; z-index: 1; overflow: hidden; padding-bottom: .08em; }
 .xct-plate-n { display: block; font-size: clamp(40px, 4.4vw, 52px); font-weight: 497; letter-spacing: -.035em; line-height: 1; color: var(--ink); }
 .xct-nets { grid-column: 7 / 13; list-style: none; margin: 0; padding: 0; border-bottom: 1px solid var(--line); }

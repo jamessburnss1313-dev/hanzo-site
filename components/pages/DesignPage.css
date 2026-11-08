@@ -85,19 +85,19 @@
 .dz-track .x-mono { font-size: 12px; line-height: 1.4; color: rgba(255, 255, 255, .55); }
 .dz-viz { grid-column: 1; grid-row: 2 / 5; position: relative; border-radius: 12px; background: #171717; box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .08); overflow: hidden; min-height: 140px; }
 .dz-spec { position: absolute; inset: 44px 12px 12px; display: flex; align-items: center; gap: 3px; }
-.dz-spec i { flex: 1; height: 100%; border-radius: 3px; background: linear-gradient(to top, #737373 0%, light-dark(#fafafa, var(--background)) 50%, #737373 100%); transform-origin: 50% 50%; }
+.dz-spec i { flex: 1; height: 100%; border-radius: 3px; background: linear-gradient(to top, #737373 0%, #fafafa 50%, #737373 100%); transform-origin: 50% 50%; }
 .dz-spec.radial { inset: 40px 0 6px; display: block; }
 .dz-spec.radial i { position: absolute; left: calc(50% - 1.5px); bottom: 50%; width: 3px; height: 36%; transform-origin: 50% 100%; }
 .dz-wave { position: absolute; inset: 48px 12px 18px; width: calc(100% - 24px); height: calc(100% - 66px); }
 .dz-wave path { stroke: light-dark(#fafafa, var(--muted)); }
-.dz-modes { position: absolute; top: 8px; right: 8px; display: flex; gap: 2px; padding: 3px; border-radius: 9px; background: light-dark(rgba(255, 255, 255, .06), color-mix(in srgb, var(--background) 6%, transparent)); }
+.dz-modes { position: absolute; top: 8px; right: 8px; display: flex; gap: 2px; padding: 3px; border-radius: 9px; background: rgba(255, 255, 255, .06); }
 .dz-modes button { height: 28px; padding: 0 8px; border: 0; border-radius: 7px; background: none; font: 500 12px/1 var(--mono); letter-spacing: .06em; color: #a3a3a3; cursor: pointer; }
-.dz-modes button[aria-selected='true'] { background: light-dark(#fafafa, var(--background)); color: light-dark(#0a0a0a, var(--foreground)); }
-@media (hover: hover) { .dz-modes button:hover { color: #fafafa; } .dz-modes button[aria-selected='true']:hover { color: light-dark(#0a0a0a, var(--foreground)); } }
+.dz-modes button[aria-selected='true'] { background: #fafafa; color: #0a0a0a; }
+@media (hover: hover) { .dz-modes button:hover { color: #fafafa; } .dz-modes button[aria-selected='true']:hover { color: #0a0a0a; } }
 .dz-pads { grid-column: 2; grid-row: 3; display: grid; grid-template-columns: 1fr 1fr; gap: 6px; align-content: start; }
-.dz-pads button { min-height: 44px; border-radius: 10px; border: 1px solid rgba(255, 255, 255, .1); background: light-dark(rgba(255, 255, 255, .05), color-mix(in srgb, var(--background) 5%, transparent)); color: #fafafa; font: 500 13px/1.2 var(--sans); cursor: pointer; transition: background-color .15s, color .15s; }
+.dz-pads button { min-height: 44px; border-radius: 10px; border: 1px solid rgba(255, 255, 255, .1); background: rgba(255, 255, 255, .05); color: #fafafa; font: 500 13px/1.2 var(--sans); cursor: pointer; transition: background-color .15s, color .15s; }
 .dz-pads button.on { background: light-dark(#fafafa, var(--background)); color: light-dark(#0a0a0a, var(--foreground)); }
-@media (hover: hover) { .dz-pads button:hover { background: light-dark(rgba(255, 255, 255, .1), color-mix(in srgb, var(--background) 10%, transparent)); } }
+@media (hover: hover) { .dz-pads button:hover { background: rgba(255, 255, 255, .1); } }
 .dz-eq { grid-column: 2; grid-row: 4; align-self: end; margin: 0; font-size: 12px; color: rgba(255, 255, 255, .55); }
 
 /* deck */
@@ -139,11 +139,11 @@
 .dz-film-v { position: relative; flex: 1; border-radius: 8px; overflow: hidden; background: #000; }
 .dz-film-v img, .dz-film-v video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
 .dz-tl { position: relative; display: flex; gap: 4px; height: 30px; overflow: hidden; }
-.dz-tl i { border-radius: 6px; background: light-dark(rgba(255, 255, 255, .3), color-mix(in srgb, var(--background) 30%, transparent)); }
-.dz-tl i:nth-child(2n) { background: light-dark(rgba(255, 255, 255, .14), color-mix(in srgb, var(--background) 14%, transparent)); }
+.dz-tl i { border-radius: 6px; background: rgba(255, 255, 255, .3); }
+.dz-tl i:nth-child(2n) { background: rgba(255, 255, 255, .14); }
 .dz-tl b { position: absolute; inset: 0; pointer-events: none; }
 .js .dz-tl b { animation: dz-play 8s linear infinite; }
-.dz-tl b::after { content: ''; position: absolute; left: 0; top: -2px; bottom: -2px; width: 2px; border-radius: 2px; background: light-dark(#fafafa, var(--background)); }
+.dz-tl b::after { content: ''; position: absolute; left: 0; top: -2px; bottom: -2px; width: 2px; border-radius: 2px; background: #fafafa; }
 @keyframes dz-play { from { transform: translateX(0); } to { transform: translateX(100%); } }
 
 /* ---------- what it is ---------- */
@@ -175,14 +175,14 @@
 @keyframes dz-float { to { translate: 0 -12px; } }
 .dz-eqv { gap: 32px; display: flex; flex-direction: column; align-items: center; justify-content: center; background: #0a0a0a; }
 .dz-eq-bars { display: flex; align-items: center; gap: 6px; height: 200px; }
-.dz-eq-bars i { width: 9px; height: 100%; border-radius: 5px; background: linear-gradient(to top, #737373, light-dark(#fafafa, var(--background)) 50%, #737373); transform: scaleY(.3); }
+.dz-eq-bars i { width: 9px; height: 100%; border-radius: 5px; background: linear-gradient(to top, #737373, #fafafa 50%, #737373); transform: scaleY(.3); }
 .dz-eqv.on .dz-eq-bars i { animation: dz-bounce .8s ease-in-out infinite alternate; }
 @keyframes dz-bounce { from { transform: scaleY(.18); } to { transform: scaleY(1); } }
 .dz-eq-pads { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; width: min(100%, 460px); }
-.dz-eq-pads span { display: grid; place-items: center; height: 48px; border-radius: 12px; background: light-dark(rgba(255, 255, 255, .06), color-mix(in srgb, var(--background) 6%, transparent)); box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .1); color: #fafafa; font-size: 13px; text-align: center; }
+.dz-eq-pads span { display: grid; place-items: center; height: 48px; border-radius: 12px; background: rgba(255, 255, 255, .06); box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .1); color: #fafafa; font-size: 13px; text-align: center; }
 .dz-eqv.on .dz-eq-pads span:nth-child(2) { animation: dz-pad 2.4s ease infinite; }
 .dz-eqv.on .dz-eq-pads span:nth-child(4) { animation: dz-pad 2.4s ease 1.2s infinite; }
-@keyframes dz-pad { 0%, 30%, 100% { background: light-dark(rgba(255, 255, 255, .06), color-mix(in srgb, var(--background) 6%, transparent)); color: #fafafa; } 8% { background: light-dark(#fafafa, var(--background)); color: light-dark(#0a0a0a, var(--foreground)); } }
+@keyframes dz-pad { 0%, 30%, 100% { background: rgba(255, 255, 255, .06); color: #fafafa; } 8% { background: light-dark(#fafafa, var(--background)); color: light-dark(#0a0a0a, var(--foreground)); } }
 
 /* ---------- capabilities: six sheets that stack ---------- */
 .dz-caps-top { align-items: end; margin-bottom: clamp(44px, 5vw, 72px); }

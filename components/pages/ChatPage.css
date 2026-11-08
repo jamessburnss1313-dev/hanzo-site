@@ -5,7 +5,7 @@
 @media (max-width: 900px) { .cht { --xs: 14px; } }
 
 /* the one ask is the kit's Cta; its text secondary is a link in ink with a 1px underline (MASTER 3.1) */
-.cht .x-arrow { color: light-dark(#0a0a0a, var(--foreground)); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; text-decoration-color: light-dark(rgba(0, 0, 0, .3), var(--border-control)); min-height: 44px; transition: text-underline-offset .2s var(--emph), text-decoration-color .2s, transform .09s; }
+.cht .x-arrow { color: #0a0a0a; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; text-decoration-color: rgba(0, 0, 0, .3); min-height: 44px; transition: text-underline-offset .2s var(--emph), text-decoration-color .2s, transform .09s; }
 .cht .x-arrow svg { transition: transform .2s var(--emph); }
 .x-band .x-arrow { color: #fafafa; text-decoration-color: rgba(255, 255, 255, .4); }
 @media (min-width: 901px) {
@@ -154,7 +154,7 @@
   .cht-ch .v2a-ch-nav-t { overflow: visible; text-overflow: clip; }
   .cht-ch .v2a-ch-nav button svg { flex: none; transition: transform .2s var(--emph); }
   @media (min-width: 901px) {
-    .cht-ch .v2a-ch-nav button:hover { background-color: light-dark(rgba(255, 255, 255, .06), color-mix(in srgb, var(--background) 6%, transparent)); }
+    .cht-ch .v2a-ch-nav button:hover { background-color: rgba(255, 255, 255, .06); }
     .cht-ch .v2a-ch-nav button:hover svg { transform: translateY(-2px); }
   }
 }
@@ -177,25 +177,25 @@
 .cht-route-hub { display: flex; align-items: center; gap: 14px; margin-top: 22px; padding: 14px; border-radius: 20px; background: #171717; border: 1px solid rgba(255, 255, 255, .12); animation: cht-in .6s var(--emph) .6s 1 both; }
 .cht-route-o { position: relative; width: 56px; height: 56px; flex: none; border-radius: 50%; }
 .cht-route-o img { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; }
-.cht-route-o::after { content: ''; position: absolute; inset: -5px; border-radius: 50%; border: 2px solid transparent; border-top-color: light-dark(#f5f5f5, var(--border)); opacity: 0; animation: cht-route-spin 1.4s linear .9s 1 both; }
+.cht-route-o::after { content: ''; position: absolute; inset: -5px; border-radius: 50%; border: 2px solid transparent; border-top-color: #f5f5f5; opacity: 0; animation: cht-route-spin 1.4s linear .9s 1 both; }
 @keyframes cht-route-spin { from { opacity: 1; transform: none; } 85% { opacity: 1; } to { opacity: 0; transform: rotate(720deg); } }
 .cht-route span { display: flex; flex-direction: column; gap: 5px; }
 .cht-route b { font-size: 17px; font-weight: 600; color: #f5f5f5; }
 .cht-route em { font-style: normal; font-size: 12px; letter-spacing: .06em; color: #a3a3a3; }
-.cht-route-wire { position: relative; align-self: center; width: 2px; height: 44px; overflow: hidden; background: light-dark(rgba(255, 255, 255, .12), color-mix(in srgb, var(--background) 12%, transparent)); }
-.cht-route-wire i { position: absolute; inset: 0; background: light-dark(#f5f5f5, var(--muted)); transform-origin: 50% 0; animation: cht-wire .5s var(--emph) 2.3s 1 both; }
+.cht-route-wire { position: relative; align-self: center; width: 2px; height: 44px; overflow: hidden; background: rgba(255, 255, 255, .12); }
+.cht-route-wire i { position: absolute; inset: 0; background: #f5f5f5; transform-origin: 50% 0; animation: cht-wire .5s var(--emph) 2.3s 1 both; }
 @keyframes cht-wire { from { transform: scaleY(0); } }
-.cht-route-pick { display: flex; align-items: center; gap: 14px; padding: 12px 16px 12px 12px; border-radius: 18px; background: light-dark(#f5f5f5, var(--muted)); color: light-dark(#0a0a0a, var(--foreground)); box-shadow: 0 30px 60px -30px #000; animation: cht-pickin .7s var(--emph) 2.6s 1 both; }
+.cht-route-pick { display: flex; align-items: center; gap: 14px; padding: 12px 16px 12px 12px; border-radius: 18px; background: #f5f5f5; color: #0a0a0a; box-shadow: 0 30px 60px -30px #000; animation: cht-pickin .7s var(--emph) 2.6s 1 both; }
 .cht-route-pick img { width: 40px; height: 40px; border-radius: 50%; object-fit: cover; }
-.cht-route-pick b { color: light-dark(#0a0a0a, var(--foreground)); }
-.cht-route-pick em { color: light-dark(#525252, var(--muted-foreground)); }
+.cht-route-pick b { color: #0a0a0a; }
+.cht-route-pick em { color: #525252; }
 .cht-route-pick .cht-live { margin-left: auto; background: #0a0a0a; animation: cht-blink 2.4s ease-in-out 3.4s infinite; }
 @keyframes cht-pickin { from { opacity: 0; transform: translateY(16px) scale(.96); } }
 
 /* the app, small: a question, Zen's answer as code that runs, the result */
 .cht-art-chat { padding: 0 8%; }
 .cht-mini { width: min(560px, 100%); display: flex; flex-direction: column; gap: 14px; }
-.cht-mini-q { align-self: flex-end; margin: 0; padding: 11px 17px; border-radius: 20px 20px 6px 20px; background: light-dark(#f5f5f5, var(--muted)); color: light-dark(#0a0a0a, var(--foreground)); font-size: 15px; animation: cht-in .5s var(--emph) .2s 1 both; }
+.cht-mini-q { align-self: flex-end; margin: 0; padding: 11px 17px; border-radius: 20px 20px 6px 20px; background: #f5f5f5; color: #0a0a0a; font-size: 15px; animation: cht-in .5s var(--emph) .2s 1 both; }
 .cht-mini-who { display: inline-flex; align-items: center; gap: 8px; margin: 0; font: 500 13px/1 var(--mono); color: #a3a3a3; }
 .cht-mini-who img { width: 18px; height: 18px; border-radius: 50%; object-fit: cover; }
 .cht-mini-code { display: flex; flex-direction: column; padding: 14px 0 16px; border-radius: 18px; background: #0a0a0a; border: 1px solid rgba(255, 255, 255, .1); font-size: 13.5px; line-height: 1.85; color: #d4d4d4; animation: cht-in .6s var(--emph) .6s 1 both; }
@@ -204,25 +204,25 @@
 .cht-mini-run2 { display: flex; gap: 10px; margin: 0; font-size: 13px; color: #a3a3a3; overflow-wrap: anywhere; animation: cht-in .4s var(--emph) 2.1s 1 both; }
 .cht-mini-run2 span { color: #f5f5f5; }
 .cht-ln { display: block; padding: 0 18px 0 36px; text-indent: -18px; white-space: pre-wrap; overflow-wrap: anywhere; animation: cht-type .45s steps(24, end) 1 both; animation-delay: calc(.9s + var(--j) * .22s); }
-.cht-ln i { display: inline-block; width: 18px; text-indent: 0; font-style: normal; color: light-dark(#737373, var(--muted-foreground)); }
-.cht-ln.del { color: light-dark(#737373, var(--muted-foreground)); text-decoration: line-through; text-decoration-color: rgba(255, 255, 255, .3); }
-.cht-ln.add { background: light-dark(rgba(255, 255, 255, .1), color-mix(in srgb, var(--background) 10%, transparent)); color: #fff; font-weight: 500; }
+.cht-ln i { display: inline-block; width: 18px; text-indent: 0; font-style: normal; color: #737373; }
+.cht-ln.del { color: #737373; text-decoration: line-through; text-decoration-color: rgba(255, 255, 255, .3); }
+.cht-ln.add { background: rgba(255, 255, 255, .1); color: #fff; font-weight: 500; }
 .cht-ln.add i { color: #fff; }
 @keyframes cht-type { from { clip-path: inset(0 100% 0 0); } to { clip-path: inset(0 0 0 0); } }
 .cht-mini-ok { display: inline-flex; align-items: center; gap: 10px; margin: 0; font-size: 14px; color: #d4d4d4; animation: cht-in .5s var(--emph) 2.6s 1 both; }
-.cht-mini-ok span { display: grid; place-items: center; width: 20px; height: 20px; border-radius: 50%; background: light-dark(#f5f5f5, var(--muted)); color: light-dark(#000, var(--foreground)); font-size: 12px; animation: cht-blink 2.6s ease-in-out 3.6s infinite; }
+.cht-mini-ok span { display: grid; place-items: center; width: 20px; height: 20px; border-radius: 50%; background: #f5f5f5; color: #000; font-size: 12px; animation: cht-blink 2.6s ease-in-out 3.6s infinite; }
 
 /* files: attachments land in the composer, then float */
 .cht-art-files { flex-direction: column; padding: 0 8%; }
 .cht-attach { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 10px; width: min(560px, 100%); }
 .cht-chip { display: inline-flex; align-items: center; gap: 10px; height: 56px; padding: 0 16px 0 10px; border-radius: 16px; background: #171717; border: 1px solid rgba(255, 255, 255, .1); color: #e5e5e5; font-size: 14px; animation: cht-drop .8s var(--emph) 1 both, cht-breathe 4.8s ease-in-out infinite; animation-delay: calc(.2s + var(--j) * .18s), calc(1.8s + var(--j) * .7s); }
-.cht-chip i { position: relative; width: 30px; height: 38px; border-radius: 6px; background: light-dark(#f5f5f5, var(--muted)); }
-.cht-chip.doc i { background: repeating-linear-gradient(transparent 0 6px, #a3a3a3 6px 7.5px) 6px 8px / calc(100% - 12px) calc(100% - 14px) no-repeat, light-dark(#f5f5f5, var(--muted)); }
-.cht-chip.sheet i { background: linear-gradient(90deg, transparent 32%, #737373 32% 35%, transparent 35% 65%, #737373 65% 68%, transparent 68%), linear-gradient(transparent 32%, #737373 32% 35%, transparent 35% 65%, #737373 65% 68%, transparent 68%), light-dark(#e5e5e5, var(--secondary)); }
+.cht-chip i { position: relative; width: 30px; height: 38px; border-radius: 6px; background: #f5f5f5; }
+.cht-chip.doc i { background: repeating-linear-gradient(transparent 0 6px, #a3a3a3 6px 7.5px) 6px 8px / calc(100% - 12px) calc(100% - 14px) no-repeat, #f5f5f5; }
+.cht-chip.sheet i { background: linear-gradient(90deg, transparent 32%, #737373 32% 35%, transparent 35% 65%, #737373 65% 68%, transparent 68%), linear-gradient(transparent 32%, #737373 32% 35%, transparent 35% 65%, #737373 65% 68%, transparent 68%), #e5e5e5; }
 .cht-chip.pic { padding: 0; width: 56px; overflow: hidden; }
 .cht-chip.pic img { width: 100%; height: 100%; object-fit: cover; }
 @keyframes cht-drop { from { opacity: 0; transform: translateY(-28px); } }
-.cht-art-bar { display: flex; align-items: center; gap: 12px; width: min(560px, 100%); height: 60px; margin-top: 18px; padding: 0 8px 0 20px; border-radius: 20px; background: light-dark(#f5f5f5, var(--muted)); color: light-dark(#525252, var(--muted-foreground)); font-size: 16px; }
+.cht-art-bar { display: flex; align-items: center; gap: 12px; width: min(560px, 100%); height: 60px; margin-top: 18px; padding: 0 8px 0 20px; border-radius: 20px; background: #f5f5f5; color: #525252; font-size: 16px; }
 .cht-art-ph { animation: cht-blink 3s ease-in-out 2s infinite; }
 .cht-art-bar b { display: grid; place-items: center; width: 44px; height: 44px; margin-left: auto; border-radius: 14px; background: #000; color: #fff; }
 
@@ -232,7 +232,7 @@
 .cht-say-t { margin: 0; font-size: clamp(1.25rem, 1.8vw, 1.6rem); line-height: 1.4; letter-spacing: -.015em; color: #f5f5f5; animation: cht-in .6s var(--emph) .2s 1 both; }
 .cht-wave { display: flex; align-items: center; gap: 5px; height: 84px; }
 .cht-wave i { display: block; width: 5px; height: 100%; transform: scaleY(var(--h)); animation: cht-bar 1.6s var(--emph) 1 both; animation-delay: calc(.6s + var(--j) * 25ms); }
-.cht-wave b { display: block; width: 100%; height: 100%; border-radius: 3px; background: light-dark(#f5f5f5, var(--muted)); animation: cht-pulse 1.3s ease-in-out infinite; animation-delay: calc(2.4s + var(--j) * 60ms); }
+.cht-wave b { display: block; width: 100%; height: 100%; border-radius: 3px; background: #f5f5f5; animation: cht-pulse 1.3s ease-in-out infinite; animation-delay: calc(2.4s + var(--j) * 60ms); }
 .cht-wave i:nth-child(4n + 2) b { background: #737373; }
 @keyframes cht-bar { from { transform: scaleY(.06); } }
 @keyframes cht-pulse { 0%, 100% { transform: none; } 50% { transform: scaleY(.55); } }
@@ -245,12 +245,12 @@
 .cht-convo-t { margin: 0; padding-bottom: 12px; border-bottom: 1px solid rgba(255, 255, 255, .08); font-size: 14px; font-weight: 600; color: #f5f5f5; }
 .cht-convo-t span { margin-right: 6px; color: #a3a3a3; }
 .cht-convo-a { margin: 0; font-size: 14.5px; line-height: 1.55; color: #a3a3a3; }
-.cht-convo-a mark { padding: 1px 3px; border-radius: 4px; background: light-dark(rgba(255, 255, 255, .16), color-mix(in srgb, var(--background) 16%, transparent)); color: #fff; }
-.cht-convo-pin { display: flex; gap: 10px; align-items: flex-start; margin: 0; padding: 12px; border-radius: 12px; background: light-dark(rgba(255, 255, 255, .1), color-mix(in srgb, var(--background) 10%, transparent)); border: 1px solid rgba(255, 255, 255, .3); font-size: 14px; line-height: 1.45; color: #f5f5f5; animation: cht-arrive .8s var(--emph) 1.2s 1 both; }
+.cht-convo-a mark { padding: 1px 3px; border-radius: 4px; background: rgba(255, 255, 255, .16); color: #fff; }
+.cht-convo-pin { display: flex; gap: 10px; align-items: flex-start; margin: 0; padding: 12px; border-radius: 12px; background: rgba(255, 255, 255, .1); border: 1px solid rgba(255, 255, 255, .3); font-size: 14px; line-height: 1.45; color: #f5f5f5; animation: cht-arrive .8s var(--emph) 1.2s 1 both; }
 .cht-convo-pin svg { flex: none; margin-top: 2px; }
-.cht-convo-ph { margin: auto 0 0; padding: 12px 14px; border-radius: 12px; background: light-dark(#f5f5f5, var(--muted)); color: light-dark(#525252, var(--muted-foreground)); font-size: 14px; }
+.cht-convo-ph { margin: auto 0 0; padding: 12px 14px; border-radius: 12px; background: #f5f5f5; color: #525252; font-size: 14px; }
 @keyframes cht-arrive { from { opacity: 0; transform: translateX(-34px); } }
-.cht-carry { display: grid; place-items: center; width: 56px; height: 56px; flex: none; border-radius: 50%; background: light-dark(#f5f5f5, var(--muted)); color: light-dark(#000, var(--foreground)); animation: cht-hop 1.2s var(--emph) .3s 1 both; }
+.cht-carry { display: grid; place-items: center; width: 56px; height: 56px; flex: none; border-radius: 50%; background: #f5f5f5; color: #000; animation: cht-hop 1.2s var(--emph) .3s 1 both; }
 .cht-carry-in { display: grid; place-items: center; animation: cht-ferry 3.2s ease-in-out 2.2s infinite; }
 @keyframes cht-hop { from { transform: translateX(-60px); opacity: 0; } }
 @keyframes cht-ferry { 0%, 100% { transform: none; } 50% { transform: translateX(5px); } }
@@ -260,8 +260,8 @@
 .cht-switch { position: relative; display: grid; grid-template-columns: 1fr 1fr; width: 240px; height: 52px; flex: none; padding: 4px; border-radius: 999px; background: #171717; border: 1px solid rgba(255, 255, 255, .1); }
 .cht-switch span { position: relative; z-index: 1; display: grid; place-items: center; font-size: 16px; font-weight: 500; color: #a3a3a3; }
 .cht-switch span:first-child { animation: cht-ink1 .5s ease 1.5s 1 both; }
-.cht-switch span:nth-child(2) { color: light-dark(#000, var(--foreground)); animation: cht-ink2 .5s ease 1.5s 1 both; }
-.cht-switch i { position: absolute; left: 4px; top: 4px; bottom: 4px; width: calc(50% - 4px); border-radius: 999px; background: light-dark(#f5f5f5, var(--muted)); transform: translateX(100%); animation: cht-slide .6s var(--emph) 1.4s 1 both; }
+.cht-switch span:nth-child(2) { color: #000; animation: cht-ink2 .5s ease 1.5s 1 both; }
+.cht-switch i { position: absolute; left: 4px; top: 4px; bottom: 4px; width: calc(50% - 4px); border-radius: 999px; background: #f5f5f5; transform: translateX(100%); animation: cht-slide .6s var(--emph) 1.4s 1 both; }
 @keyframes cht-slide { from { transform: none; } }
 @keyframes cht-ink1 { from { color: light-dark(#000, var(--foreground)); } }
 @keyframes cht-ink2 { from { color: #a3a3a3; } }
@@ -280,7 +280,7 @@
 .cht-dev-l i { font-style: normal; color: #f5f5f5; }
 .cht-dev-l.cmd { color: #f5f5f5; margin-bottom: 4px; }
 .cht-dev-l.ok { color: #f5f5f5; margin-top: 4px; }
-.cht-dev-l .cht-caret { background: light-dark(#f5f5f5, var(--muted)); animation: cht-blink 1s steps(1, end) 3.8s infinite; }
+.cht-dev-l .cht-caret { background: #f5f5f5; animation: cht-blink 1s steps(1, end) 3.8s infinite; }
 
 /* ---------- 3. proof, who answers: one card that opens into the model's page ---------- */
 .cht-who-grid { align-items: center; }

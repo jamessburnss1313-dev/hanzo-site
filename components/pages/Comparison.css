@@ -103,7 +103,7 @@ html:not(.light) .xcm-paper .pf-plus.ghost i { background: var(--secondary); }
 .xcm-duties .pf-head { color: #fafafa; }
 .xcm-duties .pf-kick { color: #a3a3a3; }
 .xcm-duties .pf-pin-meter { color: #a3a3a3; }
-.xcm-duties .pf-pin-meter i { background: light-dark(rgba(255, 255, 255, .16), color-mix(in srgb, var(--background) 16%, transparent)); }
+.xcm-duties .pf-pin-meter i { background: rgba(255, 255, 255, .16); }
 .xcm-duties .pf-pin-meter b { color: #fafafa; }
 .xcm-duty { color: #a3a3a3; max-width: 32ch; }
 .xcm-d-p { color: #fafafa; white-space: nowrap; }

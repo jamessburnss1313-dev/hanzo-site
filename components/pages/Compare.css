@@ -115,7 +115,7 @@ html:not(.light) .xcp .pf-plus.ghost i { background: var(--secondary); }
 .xcp .xcp-ask-d:hover { background: light-dark(#fff, var(--background)); border-color: light-dark(#fff, var(--border)); }
 .xcp-ask-d:focus-visible { outline-color: light-dark(#fff, var(--border)); }
 .xcp-diff-c { grid-column: 9 / 13; display: flex; flex-direction: column; justify-content: space-between; gap: 48px; min-height: 220px; padding: 27px; border-radius: 24px; background: #171717; color: #fafafa; text-decoration: none; transition: background-color 150ms cubic-bezier(0, 0, .2, 1), transform 90ms cubic-bezier(0, 0, .2, 1); }
-@media (hover: hover) { .xcp-diff-c:hover { background: #262626; } .xcp-diff-c:hover i { background: light-dark(#fafafa, var(--background)); color: light-dark(#0a0a0a, var(--foreground)); } }
+@media (hover: hover) { .xcp-diff-c:hover { background: #262626; } .xcp-diff-c:hover i { background: #fafafa; color: #0a0a0a; } }
 .xcp-diff-c:active { transform: scale(.97); }
 .xcp-diff-a { font-size: 26px; font-weight: 497; letter-spacing: -.018em; }
 .xcp-diff-c i { align-self: flex-end; display: grid; place-items: center; width: 52px; height: 52px; border-radius: 50%; border: 1px solid rgba(255, 255, 255, .3); color: #fafafa; transition: background-color 150ms cubic-bezier(0, 0, .2, 1), color 150ms; }

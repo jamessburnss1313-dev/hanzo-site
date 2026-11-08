@@ -121,7 +121,7 @@ html:not(.light) .xbl .v2s-link, html:not(.light) .xbl .v2s-tlink { text-decorat
 .xbl-bar-c i::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 0%, light-dark(rgba(255, 255, 255, .85), var(--white-20)) 50%, transparent 100%); transform: translateY(110%); opacity: 0; }
 .xbl-strip.seen .xbl-bar-c i::after { animation: xbl-sweep 8s cubic-bezier(.65, 0, .35, 1) infinite; animation-delay: calc(1.6s + var(--i) * .14s); } /* idle: a silver light runs across the months, oldest to newest */
 @keyframes xbl-sweep { 0% { transform: translateY(110%); opacity: 0; } 4% { opacity: 1; } 16% { transform: translateY(-110%); opacity: 1; } 17%, 100% { transform: translateY(-110%); opacity: 0; } }
-.xbl-bar.on .xbl-bar-c i::after { background: linear-gradient(180deg, transparent 0%, light-dark(rgba(255, 255, 255, .28), color-mix(in srgb, var(--background) 28%, transparent)) 50%, transparent 100%); }
+.xbl-bar.on .xbl-bar-c i::after { background: linear-gradient(180deg, transparent 0%, rgba(255, 255, 255, .28) 50%, transparent 100%); }
 .xbl-bar.on .xbl-bar-c i { background: var(--acc); }
 .xbl-bar-k { font: 500 13px/1 var(--mono); letter-spacing: .04em; color: var(--faint); }
 .xbl-bar.on .xbl-bar-k, .xbl-bar.on .xbl-bar-n { color: var(--ink); }

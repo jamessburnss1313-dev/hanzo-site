@@ -64,8 +64,8 @@
 
 /* buttons: one solid per screen (ink), the rest outlined or text links; press answers with scale .98, hover with a
    border and a nudged arrow, never a fade */
-.v2f-btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 48px; padding: 0 24px; border-radius: 999px; border: 1px solid light-dark(rgba(0, 0, 0, .14), var(--border-control)); background: var(--x-raised); color: var(--ink); font: 606 16px/1 var(--sans); text-decoration: none; white-space: nowrap; cursor: pointer; touch-action: manipulation; transition: transform 150ms var(--ease-o), border-color var(--ui) var(--ease-o), background-color var(--ui) var(--ease-o); }
-@media (hover: hover) { .v2f-btn:hover { border-color: light-dark(rgba(0, 0, 0, .4), var(--border-control)); } .v2f-btn.solid:hover, .v2f-btn.acc:hover { background: #262626; border-color: light-dark(#262626, var(--foreground)); } }
+.v2f-btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 48px; padding: 0 24px; border-radius: 999px; border: 1px solid rgba(0, 0, 0, .14); background: var(--x-raised); color: var(--ink); font: 606 16px/1 var(--sans); text-decoration: none; white-space: nowrap; cursor: pointer; touch-action: manipulation; transition: transform 150ms var(--ease-o), border-color var(--ui) var(--ease-o), background-color var(--ui) var(--ease-o); }
+@media (hover: hover) { .v2f-btn:hover { border-color: rgba(0, 0, 0, .4); } .v2f-btn.solid:hover, .v2f-btn.acc:hover { background: #262626; border-color: light-dark(#262626, var(--foreground)); } }
 .v2f-btn:active { transform: scale(.97); transition-duration: var(--press); }
 .v2f-btn svg { transition: transform var(--ui) var(--out); }
 @media (hover: hover) { .v2f-btn:hover svg { transform: translateX(3px); } }
