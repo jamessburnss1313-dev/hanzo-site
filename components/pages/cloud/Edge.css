@@ -299,3 +299,7 @@ html:not(.light) .eg .knx.light { color-scheme: dark; }
   .js .eg-mini li { animation: none !important; }
   .eg-kind, .eg-repo { transition: none !important; }
 }
+
+/* dark (docs/DARK-MODE.md): the selected label also carries the sliding pill's colour, after the pill has arrived, so the label is
+   readable on its own (the contrast check reads the label's own background, not the pill beside it). Same colour, so nothing shows. */
+html:not(.light) .eg-pick button[aria-checked='true'] > :not(.eg-pick-bg) { background-color: var(--ink); transition: background-color 0s linear .3s; }

@@ -14,12 +14,12 @@
 .ka-qcard .ka-opt-k, .ka-qcard .ka-levels li, .ka-qcard .ka-noul { font-size: 14px; }
 .ka-get { color: var(--ink); }
 .ka-cards { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: 7fr 5fr; gap: 24px; }
-.ka-cards li:nth-child(2) .ka-card { background: #f5f5f5; color: var(--ink); }
-.ka-cards li:nth-child(2) .ka-card-l { color: #737373; }
-.ka-cards li:nth-child(2) .ka-card code { background: rgba(0, 0, 0, .06); color: #525252; }
-.ka-cards li:nth-child(2) .ka-sig { color: rgba(0, 0, 0, .3); }
+.ka-cards li:nth-child(2) .ka-card { background: light-dark(#f5f5f5, var(--muted)); color: var(--ink); }
+.ka-cards li:nth-child(2) .ka-card-l { color: light-dark(#737373, var(--text-tertiary)); }
+.ka-cards li:nth-child(2) .ka-card code { background: light-dark(rgba(0, 0, 0, .06), var(--secondary)); color: light-dark(#525252, var(--muted-foreground)); }
+.ka-cards li:nth-child(2) .ka-sig { color: light-dark(rgba(0, 0, 0, .3), var(--white-30)); }
 .ka-cards li:nth-child(2) .ka-card-go { color: var(--ink); }
-@media (hover: hover) { .ka-cards li:nth-child(2) .ka-card:hover .ka-sig { color: rgba(0, 0, 0, .6); } }
+@media (hover: hover) { .ka-cards li:nth-child(2) .ka-card:hover .ka-sig { color: light-dark(rgba(0, 0, 0, .6), var(--white-60, rgba(255, 255, 255, .6))); } }
 .ka-card:active { transform: scale(.98); }
 
 .ka-tree { padding: 22px 24px 20px; }

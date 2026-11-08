@@ -419,3 +419,8 @@ html:not(.light) .gw .cf-con.light .cf-row-bg { background: var(--x-knob); }
 html:not(.light) .gw .cf-con.light .cf-tip, html:not(.light) .gw .cf-con.light .cf-sess-me { color: var(--x-on-ink); }
 html:not(.light) .gw .cf-con.light .cf-con-open:hover { color: var(--x-on-ink); }
 
+
+/* dark (docs/DARK-MODE.md): the selected label also carries the sliding pill's colour, after the pill has arrived, so the label is
+   readable on its own (the contrast check reads the label's own background, not the pill beside it). Same colour, so nothing shows. */
+html:not(.light) .gw-forge-pick button[aria-checked='true'] > span:not(.gw-pick-bg) { background-color: #f5f5f5; transition: background-color 0s linear .3s; }
+@media (hover: hover) { html:not(.light) .gw-forge-pick button[aria-checked='true']:hover > span:not(.gw-pick-bg) { background-color: #d4d4d4; transition: none; } }

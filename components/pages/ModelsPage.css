@@ -463,3 +463,8 @@ html:not(.light) .xmo { --ink: var(--foreground); --body: var(--muted-foreground
   .xmo-cards.tiles > li:has(.xmo-use) .sc-tags { padding-right: 0; }
 }
 @media (prefers-reduced-motion: reduce) { .xmo-cards > li > .x-btn.xmo-use { transition: none; } }
+
+/* dark (docs/DARK-MODE.md): the selected label also carries the sliding pill's colour, after the pill has arrived, so the label is
+   readable on its own (the contrast check reads the label's own background, not the pill beside it). Same colour, so nothing shows. */
+html:not(.light) .xmo-chips button[aria-pressed='true'] > span:not(.xmo-chip-bg) { background-color: var(--ink); transition: background-color 0s linear .3s; }
+@media (hover: hover) { html:not(.light) .xmo-chips button[aria-pressed='true']:hover > span:not(.xmo-chip-bg) { background-color: var(--primary-hover); transition: none; } }

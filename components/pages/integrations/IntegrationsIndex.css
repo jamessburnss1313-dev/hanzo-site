@@ -297,3 +297,7 @@ html:not(.light) .xii .xii-lede { color: var(--muted-foreground); } /* page-scop
 html:not(.light) .xii-card { box-shadow: inset 0 0 0 1px var(--border); }
 html:not(.light) .xii-hub-c, html:not(.light) .xii-win { box-shadow: 0 0 0 1px var(--border); }
 html:not(.light) .xii-open-card { box-shadow: 0 24px 60px -16px rgba(0, 0, 0, .18), 0 0 0 1px var(--border); }
+
+/* dark (docs/DARK-MODE.md): the selected label also carries the sliding pill's colour, after the pill has arrived, so the label is
+   readable on its own (the contrast check reads the label's own background, not the pill beside it). Same colour, so nothing shows. */
+html:not(.light) .xii-chips button[aria-selected='true'] > span:not(.xii-chip-bg) { background-color: var(--ink); transition: background-color 0s linear .3s, color 150ms var(--e-out); }

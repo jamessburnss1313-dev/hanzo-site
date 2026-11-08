@@ -289,3 +289,7 @@ html:not(.light) .iv .lx-pause:not([aria-pressed='true']) { background: var(--se
    light mode draws nothing here */
 html:not(.light) .iv-hero { position: relative; isolation: isolate; }
 html:not(.light) .iv-hero::before { content: ''; position: absolute; inset: 0; z-index: -1; pointer-events: none; background: radial-gradient(circle, var(--white-20) 1px, transparent 1.6px) 0 0 / 5px 5px; -webkit-mask-image: radial-gradient(ellipse 75% 70% at 45% 45%, transparent 35%, #000 100%), linear-gradient(#000 70%, transparent); -webkit-mask-composite: source-in; mask-image: radial-gradient(ellipse 75% 70% at 45% 45%, transparent 35%, #000 100%), linear-gradient(#000 70%, transparent); mask-composite: intersect; }
+
+/* dark (docs/DARK-MODE.md): the selected label also carries the sliding pill's colour, after the pill has arrived, so the label is
+   readable on its own (the contrast check reads the label's own background, not the pill beside it). Same colour, so nothing shows. */
+html:not(.light) .iv-vendors button[aria-selected='true'] > .iv-v-t { background-color: var(--iv-k); transition: background-color 0s linear .3s; }

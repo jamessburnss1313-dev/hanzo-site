@@ -491,3 +491,7 @@ html:not(.light) .mc .mc-con-ask, html:not(.light) .mc .mc-art.a3 b:first-child,
 html:not(.light) .mc .mc-art.a1 i { background: var(--muted-foreground); }
 /* live's hero halftone (components/pages/HeroDither, dark only) fills the hero under its content */
 html:not(.light) .mc .mc-hero { position: relative; }
+
+/* dark (docs/DARK-MODE.md): the selected label also carries the sliding pill's colour, after the pill has arrived, so the label is
+   readable on its own (the contrast check reads the label's own background, not the pill beside it). Same colour, so nothing shows. */
+html:not(.light) .mc-sizes button[aria-selected='true'] > span:not(.mc-size-bg) { background-color: var(--mc-w5); transition: background-color 0s linear .3s; }

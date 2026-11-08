@@ -1,5 +1,8 @@
 /* dark mode: the shared AppType sets ink and body greys in hex; follow the page tokens here (light values unchanged) */
 .dl { color: var(--ink); }
+html:not(.light) .av.dl { background: var(--bg); color: var(--ink); }
+html:not(.light) .dl .av-kick { color: var(--faint); }
+html:not(.light) .dl .av-kick b { color: var(--ink); }
 .dl :where(.av-body, .av-lede) { color: light-dark(#525252, #a3a3a3); }
 
 /* ---------- /download: a precise dial, cards that open, your kit (deck scale, greys only, calm) ---------- */
@@ -250,3 +253,6 @@ a.dl-card-a:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; 
   .dl-kit-f { display: none; }
   .dl-kit-d { width: 44px; height: 44px; }
 }
+
+/* dark: the selected label also carries the sliding pill's colour once the pill has arrived (same colour, nothing shows), so it reads on its own */
+html:not(.light) .dl-q button[aria-checked='true'] span:not(.dl-q-bg) { background-color: #fafafa; transition: background-color 0s linear .3s; }
