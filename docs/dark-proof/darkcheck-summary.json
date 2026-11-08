@@ -1,0 +1,452 @@
+{
+ "/affiliate": {
+  "notDark": false,
+  "count": 0,
+  "samples": [],
+  "w1470": 0,
+  "n1470": "145/150",
+  "w375": 0,
+  "n375": "122/150"
+ },
+ "/about": {
+  "notDark": false,
+  "count": 0,
+  "samples": [],
+  "w1470": 0,
+  "n1470": "296/350",
+  "w375": 0,
+  "n375": "236/350"
+ },
+ "/agents": {
+  "notDark": false,
+  "count": 0,
+  "samples": [],
+  "w1470": 0,
+  "n1470": "232/415",
+  "w375": 0,
+  "n375": "173/415"
+ },
+ "/agents/crew": {
+  "notDark": false,
+  "count": 0,
+  "samples": [],
+  "w1470": 0,
+  "n1470": "160/161",
+  "w375": 0,
+  "n375": "121/161"
+ },
+ "/api": {
+  "notDark": false,
+  "count": 0,
+  "samples": [],
+  "w1470": 0,
+  "n1470": "209/263",
+  "w375": 0,
+  "n375": "176/263"
+ },
+ "/analytics": {
+  "notDark": false,
+  "count": 0,
+  "samples": [],
+  "w1470": 0,
+  "n1470": "299/305",
+  "w375": 0,
+  "n375": "252/305"
+ },
+ "/authz": {
+  "notDark": false,
+  "count": 0,
+  "samples": [],
+  "w1470": 0,
+  "n1470": "253/257",
+  "w375": 0,
+  "n375": "204/257"
+ },
+ "/auto": {
+  "notDark": false,
+  "count": 0,
+  "samples": [],
+  "w1470": 0,
+  "n1470": "192/233",
+  "w375": 0,
+  "n375": "180/233"
+ },
+ "/automations": {
+  "notDark": false,
+  "count": 0,
+  "samples": [],
+  "w1470": 0,
+  "n1470": "312/313",
+  "w375": 0,
+  "n375": "242/313"
+ },
+ "/base": {
+  "notDark": false,
+  "count": 0,
+  "samples": [],
+  "w1470": 0,
+  "n1470": "133/215",
+  "w375": 0,
+  "n375": "114/215"
+ },
+ "/benchmarks/cronquestions": {
+  "notDark": false,
+  "count": 0,
+  "samples": [],
+  "w1470": 0,
+  "n1470": "172/233",
+  "w375": 0,
+  "n375": "144/233"
+ },
+ "/beta": {
+  "notDark": false,
+  "count": 0,
+  "samples": [],
+  "w1470": 0,
+  "n1470": "139/140",
+  "w375": 0,
+  "n375": "114/140"
+ },
+ "/beta/apply": {
+  "notDark": false,
+  "count": 0,
+  "samples": [],
+  "w1470": 0,
+  "n1470": "134/135",
+  "w375": 0,
+  "n375": "115/135"
+ },
+ "/beta/research": {
+  "notDark": false,
+  "count": 0,
+  "samples": [],
+  "w1470": 0,
+  "n1470": "132/133",
+  "w375": 0,
+  "n375": "115/133"
+ },
+ "/billing": {
+  "notDark": false,
+  "count": 0,
+  "samples": [],
+  "w1470": 0,
+  "n1470": "267/279",
+  "w375": 0,
+  "n375": "229/279"
+ },
+ "/blockchain": {
+  "notDark": false,
+  "count": 0,
+  "samples": [],
+  "w1470": 0,
+  "n1470": "395/447",
+  "w375": 0,
+  "n375": "335/447"
+ },
+ "/blockchain/bundler": {
+  "notDark": false,
+  "count": 0,
+  "samples": [],
+  "w1470": 0,
+  "n1470": "270/472",
+  "w375": 0,
+  "n375": "218/472"
+ },
+ "/": {
+  "notDark": false,
+  "count": 0,
+  "samples": [],
+  "w1470": 0,
+  "n1470": "443/1078",
+  "w375": 0,
+  "n375": "500/1078"
+ },
+ "/blog/kai-decision-models": {
+  "notDark": false,
+  "count": 0,
+  "samples": [],
+  "w1470": 0,
+  "n1470": "191/223",
+  "w375": 0,
+  "n375": "157/223"
+ },
+ "/benchmarks": {
+  "notDark": false,
+  "count": 0,
+  "samples": [],
+  "w1470": 0,
+  "n1470": "609/944",
+  "w375": 0,
+  "n375": "470/944"
+ },
+ "/blog": {
+  "notDark": false,
+  "count": 0,
+  "samples": [],
+  "w1470": 0,
+  "n1470": "254/258",
+  "w375": 0,
+  "n375": "216/258"
+ },
+ "/brand": {
+  "notDark": false,
+  "count": 0,
+  "samples": [],
+  "w1470": 0,
+  "n1470": "205/206",
+  "w375": 0,
+  "n375": "168/206"
+ },
+ "/bounty": {
+  "notDark": false,
+  "count": 0,
+  "samples": [],
+  "w1470": 0,
+  "n1470": "280/292",
+  "w375": 0,
+  "n375": "235/292"
+ },
+ "/buying-specialist": {
+  "notDark": false,
+  "count": 0,
+  "samples": [],
+  "w1470": 0,
+  "n1470": "155/159",
+  "w375": 0,
+  "n375": "134/159"
+ },
+ "/captable": {
+  "notDark": false,
+  "count": 0,
+  "samples": [],
+  "w1470": 0,
+  "n1470": "284/345",
+  "w375": 0,
+  "n375": "217/345"
+ },
+ "/careers": {
+  "notDark": false,
+  "count": 0,
+  "samples": [],
+  "w1470": 0,
+  "n1470": "274/276",
+  "w375": 0,
+  "n375": "220/276"
+ },
+ "/bot": {
+  "notDark": false,
+  "count": 0,
+  "samples": [],
+  "w1470": 0,
+  "n1470": "454/955",
+  "w375": 0,
+  "n375": "322/955"
+ },
+ "/careers/academic-research-intern": {
+  "notDark": false,
+  "count": 0,
+  "samples": [],
+  "w1470": 0,
+  "n1470": "189/191",
+  "w375": 0,
+  "n375": "147/191"
+ },
+ "/chat": {
+  "notDark": false,
+  "count": 0,
+  "samples": [],
+  "w1470": 0,
+  "n1470": "185/210",
+  "w375": 0,
+  "n375": "161/210"
+ },
+ "/chrome": {
+  "notDark": false,
+  "count": 0,
+  "samples": [],
+  "w1470": 0,
+  "n1470": "241/259",
+  "w375": 0,
+  "n375": "181/259"
+ },
+ "/cloud/ai-metrics": {
+  "notDark": false,
+  "count": 0,
+  "samples": [],
+  "w1470": 0,
+  "n1470": "189/214",
+  "w375": 0,
+  "n375": "156/214"
+ },
+ "/cli": {
+  "notDark": false,
+  "count": 0,
+  "samples": [],
+  "w1470": 0,
+  "n1470": "241/267",
+  "w375": 0,
+  "n375": "188/267"
+ },
+ "/compare/model-routing": {
+  "notDark": false,
+  "count": 0,
+  "samples": [],
+  "w1470": 0,
+  "n1470": "164/236",
+  "w375": 0,
+  "n375": "144/236"
+ },
+ "/compare": {
+  "notDark": false,
+  "count": 0,
+  "samples": [],
+  "w1470": 0,
+  "n1470": "179/240",
+  "w375": 0,
+  "n375": "167/240"
+ },
+ "/comparison": {
+  "notDark": false,
+  "count": 0,
+  "samples": [],
+  "w1470": 0,
+  "n1470": "170/183",
+  "w375": 0,
+  "n375": "151/183"
+ },
+ "/commerce": {
+  "notDark": false,
+  "count": 0,
+  "samples": [],
+  "w1470": 0,
+  "n1470": "375/622",
+  "w375": 0,
+  "n375": "238/622"
+ },
+ "/computer": {
+  "notDark": false,
+  "count": 0,
+  "samples": [],
+  "w1470": 0,
+  "n1470": "163/169",
+  "w375": 0,
+  "n375": "136/169"
+ },
+ "/contact-sales": {
+  "notDark": false,
+  "count": 0,
+  "samples": [],
+  "w1470": 0,
+  "n1470": "137/139",
+  "w375": 0,
+  "n375": "118/139"
+ },
+ "/contact": {
+  "notDark": false,
+  "count": 0,
+  "samples": [],
+  "w1470": 0,
+  "n1470": "142/144",
+  "w375": 0,
+  "n375": "114/144"
+ },
+ "/console": {
+  "notDark": false,
+  "count": 0,
+  "samples": [],
+  "w1470": 0,
+  "n1470": "280/358",
+  "w375": 0,
+  "n375": "217/358"
+ },
+ "/customers": {
+  "notDark": false,
+  "count": 0,
+  "samples": [],
+  "w1470": 0,
+  "n1470": "226/227",
+  "w375": 0,
+  "n375": "191/227"
+ },
+ "/crawl": {
+  "notDark": false,
+  "count": 0,
+  "samples": [],
+  "w1470": 0,
+  "n1470": "202/246",
+  "w375": 0,
+  "n375": "172/246"
+ },
+ "/customers/damon-motorcycles": {
+  "notDark": false,
+  "count": 0,
+  "samples": [],
+  "w1470": 0,
+  "n1470": "154/155",
+  "w375": 0,
+  "n375": "127/155"
+ },
+ "/dashboards": {
+  "notDark": false,
+  "count": 0,
+  "samples": [],
+  "w1470": 0,
+  "n1470": "209/231",
+  "w375": 0,
+  "n375": "148/231"
+ },
+ "/dataroom": {
+  "notDark": false,
+  "count": 0,
+  "samples": [],
+  "w1470": 0,
+  "n1470": "228/322",
+  "w375": 0,
+  "n375": "190/329"
+ },
+ "/datastore": {
+  "notDark": false,
+  "count": 0,
+  "samples": [],
+  "w1470": 0,
+  "n1470": "251/268",
+  "w375": 0,
+  "n375": "228/268"
+ },
+ "/design": {
+  "notDark": false,
+  "count": 0,
+  "samples": [],
+  "w1470": 0,
+  "n1470": "258/261",
+  "w375": 0,
+  "n375": "215/261"
+ },
+ "/desktop": {
+  "notDark": false,
+  "count": 0,
+  "samples": [],
+  "w1470": 0,
+  "n1470": "233/236",
+  "w375": 0,
+  "n375": "164/236"
+ },
+ "/dev": {
+  "notDark": false,
+  "count": 0,
+  "samples": [],
+  "w1470": 0,
+  "n1470": "264/312",
+  "w375": 0,
+  "n375": "210/312"
+ },
+ "/dns": {
+  "notDark": false,
+  "count": 0,
+  "samples": [],
+  "w1470": 0,
+  "n1470": "271/282",
+  "w375": 0,
+  "n375": "223/282"
+ }
+}

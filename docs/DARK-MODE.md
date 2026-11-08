@@ -75,3 +75,12 @@ We use Hanzo's own system, exactly as live hanzo.ai runs it, and build none of o
 - `/pricing`: the `.xpr-*` panel, tabs and rail.
 - `/chat`: the `.cht-*` window, tools and rows.
 - Every other page: run `darkcheck.mjs` on it.
+
+## Converting a whole page at once (group 1, 8 Nov)
+The 50 group-1 pages were converted with three scripts. They work for any page.
+1. **Find what is dark on purpose.** `HZ_BASE=http://localhost:4181 node scripts/darkctx.mjs pages.txt ctx.json` loads each page in light and records, for every CSS rule, whether its elements sit on a dark fill (terminals, films, black rooms, a dark console shell and the white chips inside it).
+2. **Convert.** `CTX=ctx.json node scripts/darkify.mjs your.css …` rewrites each hard-coded light colour as `light-dark(<the exact old colour>, <Hanzo token>)`: white/near-white fills → `--background`, light greys → `--muted` / `--secondary`, dark text → `--foreground`, mid-grey text → `--muted-foreground` / `--text-tertiary`, black hairlines and rings → `--border` / `--border-control`. `var(--hz-*)` greys count as their hex. It leaves dark fills, light text, shadows, colours already in `light-dark()`/`var()`, rules written for dark, and the rules from step 1. Light mode keeps the exact old colour by construction.
+3. **Check.** `darkcheck.mjs` now reads the background actually painted under each text (`elementsFromPoint`, so a sliding pill or a sibling card counts) at 1470 and 375, and skips text that is clipped, off to the side or fully transparent. `lightcheck.mjs` against a build of the old code must say `light: OK`.
+4. **Prove.** `HZ_BASE=… PAGES=pages.txt node scripts/darkproof.mjs` writes live-dark vs ours-dark side by side to `docs/dark-proof/`, and logs sideways scroll and console errors.
+- Things the script can't know need a hand rule, e.g. text on an ink fill (`var(--ink)` turns light in dark, so its caption must use `--x-on-ink`), or a demo tile that is white in both modes.
+- In the cloud sandbox, serve the build with `NODE_USE_ENV_PROXY=1 NODE_EXTRA_CA_CERTS=/root/.ccr/ca-bundle.crt node scripts/serve.mjs 4181` so Hanzo's own images load.
