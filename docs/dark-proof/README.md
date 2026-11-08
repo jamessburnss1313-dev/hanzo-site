@@ -1,6 +1,6 @@
 # Dark-mode proof, group 1 (50 pages)
 
-Each image is one page, full length: **live hanzo.ai in dark on the left, ours in dark on the right**, at 1470×801 (`<page>-1470.jpg`) and 375×812 (`<page>-375.jpg`). Captured 8 Nov from a production build (`HZ_LIVE_OFFLINE=1 npm run build`, `node scripts/serve.mjs`), device set to dark, reduced motion on (so animations sit still).
+Each image is one page, full length: **live hanzo.ai in dark on the left, ours in dark on the right**, at 1470×801 (`<page>-1470.jpg`) and 375×812 (`<page>-375.jpg`). Captured 8 Nov from a production build of this branch merged with hanzo-handoff 806b74d2 (Next 16) (`HZ_LIVE_OFFLINE=1 npm run build`, `node scripts/serve.mjs`), device set to dark, reduced motion on (so animations sit still).
 
 - **Dark:** `scripts/darkcheck.mjs` reports **0 issues on all 50 pages** at both widths (details: `darkcheck-summary.json`).
 - **Light:** `scripts/lightcheck.mjs` against the code before this change reports **0 colour differences** on all 50 pages at both widths, for normal visitors. With reduce-motion on, `/benchmarks/cronquestions` differs only because the old build hit a hydration error that dropped the page’s `js` class (fixed here).
