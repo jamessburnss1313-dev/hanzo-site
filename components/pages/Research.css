@@ -268,3 +268,5 @@
 @media (prefers-reduced-motion: reduce) {
   .xrs-row-t .xrs-row-tt, .xrs-when b, .xrs-row-go { transition-duration: .01s !important; }
 }
+/* dark: the hidden real line stays invisible (the overlay draws it), but carries the overlay's colour */
+html:not(.light) .xrs-open-r, html:not(.light) .xrs-open-t .xrs-open-r a { color: inherit; -webkit-text-fill-color: transparent; text-decoration-color: transparent; }

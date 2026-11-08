@@ -140,7 +140,7 @@ function Form() {
       }
     }
     g.clearRect(0, 0, W, H);
-    g.fillStyle = '#0a0a0a';
+    g.fillStyle = getComputedStyle(c).getPropertyValue('--eo-ink').trim() || '#0a0a0a'; // dark sets --eo-ink (Enso.css)
     for (const p of P) { g.globalAlpha = p.al; const s = p.sz * d; g.fillRect(p.x * d - s / 2, p.y * d - s / 2, s, s); }
     g.globalAlpha = 1;
   });

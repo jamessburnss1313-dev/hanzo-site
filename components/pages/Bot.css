@@ -648,3 +648,5 @@ html:not(.js) .bt .x-line-in { transform: none !important; }
 .bt-answered > span { grid-area: 1 / 1; }
 .bt-answered > span[hidden] { display: block; visibility: hidden; }
 .bt-answered.wait { background: light-dark(#e4e4e7, var(--secondary)); color: var(--ink); }
+/* dark: the alternate dimmed names take Hanzo's tertiary text, a step below the foreground that still reads */
+html:not(.light) .bt-any-list li:nth-child(even), html:not(.light) .bt-any-list li:not(:last-child)::after { color: var(--text-tertiary); }

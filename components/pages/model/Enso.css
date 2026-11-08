@@ -250,3 +250,6 @@ html:not(.js) .eo-disc-a { display: none; }
 
 /* Hanzo's line on the default (enso-auto) leads the three tiers (live hanzo.ai, 9 Nov) */
 .eo-auto { max-width: 46ch; margin: 0 0 clamp(24px, 3vw, 40px); font-size: clamp(1.25rem, 1.8vw, 1.625rem); line-height: 1.35; letter-spacing: -.015em; color: var(--ink); text-wrap: pretty; }
+
+/* dark: the particle ring is drawn in ink; give the canvas Hanzo's foreground so it isn't black on black (light keeps #0a0a0a) */
+html:not(.light) .eo-dots { --eo-ink: var(--foreground); }

@@ -580,3 +580,6 @@ html:not(.light) .xch .av-dark .av-kick { color: var(--white-55); }
   .xch .xch-close h2 { font-size: 32px; }
   .xch .xch-close p.av-lede { font-size: 17px; }
 }
+
+/* dark: the selected tab's text sits on a sibling motion pill; its label carries the pill's own colour (after the pill has slid in) so the ancestor walk sees what the eye sees. Light untouched. */
+html:not(.light) .xch-mode button[aria-checked='true'] > span:not(.xch-mode-bg) { background: #fafafa; transition: background-color 0s .3s; }

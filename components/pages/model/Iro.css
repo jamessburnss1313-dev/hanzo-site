@@ -58,3 +58,5 @@ html:not(.light) .lv:has(> [data-hero=iro]) .lv-ch-rail button::before { backgro
 /* dark: the shared Creative.css draws these two headings in #0a0a0a in both modes; on this page they take Hanzo's
    foreground in dark until the shared file is converted */
 html:not(.light) .lv:has(> .lv-stage[data-hero=iro]) :is(.cr-caps-h, .cr-fits-list h3) { color: var(--foreground); }
+html:not(.light) .lv:has(> .lv-stage[data-hero=iro]) .cr-fit-x { color: var(--muted-foreground); }
+html:not(.light) .lv:has(> .lv-stage[data-hero=iro]) :is(.cr-fits-list, .cr-fits-list li) { border-color: var(--border); }

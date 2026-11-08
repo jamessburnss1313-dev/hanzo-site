@@ -12,6 +12,9 @@ html:not(.light) .xpe-kitc-w.dark .xpe-kp, html:not(.light) .xpe-card { outline:
 /* the light-background logo plates show Hanzo's black marks on light grounds in both modes (that is what they are):
    their grounds are literal greys below, and their format pills keep the light scheme */
 .xpe-kitc-w.light .xpe-kp, .xpe-kitc-w.icon .xpe-kp { color-scheme: light; --xs: #525252; }
+/* dark: the link itself carries its plate's literal ground, so the format pills read against the plate they sit on */
+html:not(.light) .xpe-kitc-w.light .xpe-kp { background: #f5f5f5; }
+html:not(.light) .xpe-kitc-w.icon .xpe-kp { background: #ededed; }
 .xmg { color: var(--xi); caret-color: light-dark(#a3a3a3, var(--text-disabled)); } /* MagnetGrid reads its dot colours from these */
 /* deck space: container 1152, gutter clamp(16px, 4vw, 32px), sections clamp(72px, 11vw, 188px) */
 .xpe .vc-wrap, .xpe .vc-grid { width: min(100% - 2 * clamp(16px, 4vw, 32px), 1152px); }

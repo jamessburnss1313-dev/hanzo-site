@@ -523,3 +523,5 @@ html:not(.light) .cht-tool-art { background: var(--background); box-shadow: inse
 html:not(.light) .cht-tool-i { background: var(--secondary); }
 html:not(.light) .cht-tool-d { color: var(--muted-foreground); }
 @media (hover: hover) { html:not(.light) .cht-tool:hover { background: var(--secondary); } }
+/* the lit lane carries its own ink fill in dark (same colour as the sliding lane pill behind it) */
+html:not(.light) .cht-lanes li.lit { background: var(--ink); }

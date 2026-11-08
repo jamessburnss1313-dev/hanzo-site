@@ -334,3 +334,6 @@ html:not(.light) body:has(main.bl2) .l2-sheet { background: var(--x-raised); }
 html:not(.light) body:has(main.bl2) .l2-sheet-bar { border-bottom-color: var(--border); }
 html:not(.light) body:has(main.bl2) .l2-sheet-bar p { color: var(--muted-foreground); }
 html:not(.light) body:has(main.bl2) .l2-sheet-x { background: var(--secondary); }
+
+/* dark: the dark .bl2-chip surface above also landed on the issued chip, hiding its solid fill under #0a0a0a text; issued stays Hanzo's solid primary chip. */
+html:not(.light) .bl2-chip.issued { background: var(--primary); color: var(--primary-foreground); }

@@ -353,3 +353,5 @@ html:not(.light) .xsk.a2 .xsk-hero::before { content: ''; position: absolute; in
   mask-composite: intersect; }
 html:not(.light) .xsk.a2 .xsk-hero::after { content: ''; position: absolute; inset: 0 0 auto; height: 640px; z-index: -1; pointer-events: none;
   background: radial-gradient(60% 70% at 50% 0%, color-mix(in srgb, var(--foreground) 9%, transparent), transparent 70%); }
+/* dark: the pressed step carries its ::before fill on the button itself, so its black label sits on its own ground (the room is black in both modes) */
+html:not(.light) .xsk-steps button[aria-pressed='true'] { background: #fafafa; }

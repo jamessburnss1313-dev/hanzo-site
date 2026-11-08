@@ -92,3 +92,13 @@
   .ka-card { min-height: 300px; padding: 24px; }
 }
 @media (prefers-reduced-motion: reduce) { .ka-caret[data-on] { animation: none; } }
+
+/* dark: the second model card was a light #f5f5f5 panel under light type; lay it on Hanzo's muted surface, and edge both
+   cards with the hairline so the black card isn't lost on the dark page */
+html:not(.light) .ka-card { box-shadow: inset 0 0 0 1px var(--border); }
+html:not(.light) .ka-cards li:nth-child(2) .ka-card { background: var(--muted); color: var(--foreground); }
+html:not(.light) .ka-cards li:nth-child(2) .ka-card-l { color: var(--muted-foreground); }
+html:not(.light) .ka-cards li:nth-child(2) .ka-card code { background: var(--secondary); color: var(--muted-foreground); }
+html:not(.light) .ka-cards li:nth-child(2) .ka-sig { color: color-mix(in srgb, var(--foreground) 30%, transparent); }
+html:not(.light) .ka-cards li:nth-child(2) .ka-card-go { color: var(--foreground); }
+@media (hover: hover) { html:not(.light) .ka-cards li:nth-child(2) .ka-card:hover .ka-sig { color: color-mix(in srgb, var(--foreground) 60%, transparent); } }

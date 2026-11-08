@@ -136,3 +136,6 @@ html:not(.js) .x-hero [style*='opacity'], html:not(.js) .x-hero .x-line-in { opa
 .xs-feed > .xs-signed { display: block; order: -1; }
 .xs-signed > span { display: none; }
 .xs-signed > span.on { display: inline; }
+/* dark: GitHub's mark is its brand black (#181717), which vanishes on the dark tile; GitHub's own rule for a dark ground
+   is the mark in white, so in dark it takes Hanzo's foreground like the other monochrome marks in the dock */
+html:not(.light) .x-agents .x-ico svg[color='#181717'] { color: var(--foreground); }

@@ -203,3 +203,10 @@ html:has(main.xbs):not([data-xbs-solid]) header[data-slot=masthead] a[data-x-ask
   .xbs-dock-q b:nth-of-type(2) { margin-left: 8px; }
   .xbs-dock-go { flex: none; }
 }
+
+/* dark: the suggested asks were white chips; raise them on Hanzo's card */
+html:not(.light) .xbs-asks button { background: var(--x-raised); border-color: var(--border); color: var(--foreground); }
+@media (hover: hover) { html:not(.light) .xbs-asks button:hover { background: var(--muted); border-color: var(--border-strong, var(--border)); } }
+/* dark: the chat composer field was #fff under light typed text; it goes on the raised surface with a control border */
+html:not(.light) .xbs-composer input { background: var(--x-raised); border-color: var(--border-control, var(--border)); color: var(--foreground); }
+html:not(.light) .xbs-composer input:focus { border-color: var(--xp-accent); }

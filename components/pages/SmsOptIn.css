@@ -148,3 +148,19 @@
   .xsm-card { margin-top: 32px; }
   .xsm-form { gap: 20px; }
 }
+
+/* dark: the topic chips were white; raise them on Hanzo's card, and the pressed/hovered one takes the primary fill */
+html:not(.light) .xsm-parts button { background: var(--x-raised); border-color: var(--border); color: var(--muted-foreground); }
+html:not(.light) .xsm-parts button[aria-pressed='true'] { background: var(--primary); border-color: var(--primary); color: var(--primary-foreground); }
+@media (hover: hover) { html:not(.light) .xsm-parts button:hover { background: var(--primary); border-color: var(--primary); color: var(--primary-foreground); } }
+
+/* dark: the phone's screen was a white #fff surface under light type; it takes Hanzo's card surface (the bezel stays black),
+   with muted keys, secondary bubbles, and the lit/confirmed states on the primary fill; the consent box goes on the card */
+html:not(.light) .xsm-screen { background: var(--card); }
+html:not(.light) .xsm-keys { background: var(--muted); }
+html:not(.light) .xsm-keys span { background: var(--x-raised); border-color: var(--border); }
+html:not(.light) .xsm-keys.lit span, html:not(.light) .xsm-msgs li.xsm-ok { background: var(--primary); color: var(--primary-foreground); }
+html:not(.light) .xsm-msgs li { background: var(--secondary); }
+html:not(.light) .xsm-msgs.lit li { background: var(--muted); box-shadow: inset 0 0 0 1px var(--border); }
+html:not(.light) .xsm-phone { box-shadow: 0 0 0 1px var(--border); }
+html:not(.light) .xsm-box { background: var(--x-raised); border-color: var(--border-control, var(--border)); }

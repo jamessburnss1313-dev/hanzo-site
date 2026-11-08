@@ -188,3 +188,9 @@
 @media (prefers-reduced-motion: reduce) { .xh-scenes > .xh-scene { transition: none; } }
 .xh-scenes > .xh-scene { display: flex; }
 .xh-scenes > .xh-scene > div { flex: 1; min-width: 0; min-height: 0 !important; }
+/* dark: the product demos are dark in both modes and keep live hanzo.ai's success green and destructive red. Those come as
+   color-mix(), which computes to color(srgb ...); here the same two mixes are stated as the rgb() they resolve to in dark
+   (success 55% / foreground, destructive 70% / foreground), so the colour is unchanged and every reader sees what is painted */
+html:not(.light) .x-platform ._col-color-mixin1631363098 { color: rgb(122 211 155); }
+html:not(.light) .x-platform ._col-color-mixin1995261106 { color: rgb(223 95 95); }
+html:not(.light) .x-platform :is(._bg-color-mixin1631363098, ._bg-_platformweb_color-mixin1631363098) { background-color: rgb(122 211 155); }

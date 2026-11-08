@@ -500,3 +500,7 @@ html:not(.light) .xsq.a2 .xsq-hero::after { content: ''; position: absolute; ins
 .xsq-cv-d { display: grid; gap: 14px; margin: 0; padding: 14px 0 0; border-top: 1px solid rgba(0, 0, 0, .08); }
 .xsq-cv-d dt { margin: 0 0 4px; font-size: 11.5px; letter-spacing: .1em; color: #6e6e73; }
 .xsq-cv-d dd { margin: 0; font-size: 14px; line-height: 1.45; color: #3a3a3c; text-wrap: pretty; }
+/* dark: the code window is dark in both modes. The selected tab carries the same light fill as its sliding pill, so its
+   dark label sits on its own ground; the diff gutter numbers lift to Hanzo's neutral 500 so they read on the window */
+html:not(.light) .xsq-tabs button[aria-selected='true'] { background: #f5f5f7; }
+html:not(.light) .xsq-diff-t td:nth-child(-n+2) { color: var(--neutral-500); }

@@ -387,3 +387,5 @@ html:not(.light) .xsd-cmd { box-shadow: inset 0 0 0 1px var(--border); }
 .xsd-lang em { background: light-dark(#f5f5f7, var(--secondary)); }
 .xsd-mod:focus-visible { outline-color: var(--ink); }
 html:not(.light) .xsd-con { outline: 1px solid var(--border); outline-offset: -1px; }
+/* dark: the selected dialect / language carries its own fill (same colour as the sliding pill behind it) */
+html:not(.light) .xsd-dia button[aria-selected='true'], html:not(.light) .xsd-pick-l button[aria-selected='true'] { background: var(--acc); }

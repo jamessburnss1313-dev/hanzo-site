@@ -158,3 +158,5 @@ html:not(.light) .xcm-paper .pf-plus.ghost i { background: var(--secondary); }
   .xcm-lines li, .xcm-stackbar b, .xcm-twice { opacity: 1; transform: none; transition: none; }
   .xcm-u li, .xcm-lines button, .xcm-lines button i, .xcm-l-n, .xcm-l-p, .xcm-reset { transition: none; }
 }
+/* dark: the pinned duty lines inside the dark room lose to .pf-r .pf-lede's fixed #525252; they take Hanzo's muted foreground (their light #a3a3a3) */
+html:not(.light) .xcm-duty { color: var(--muted-foreground); }

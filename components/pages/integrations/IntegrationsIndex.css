@@ -297,3 +297,5 @@ html:not(.light) .xii .xii-lede { color: var(--muted-foreground); } /* page-scop
 html:not(.light) .xii-card { box-shadow: inset 0 0 0 1px var(--border); }
 html:not(.light) .xii-hub-c, html:not(.light) .xii-win { box-shadow: 0 0 0 1px var(--border); }
 html:not(.light) .xii-open-card { box-shadow: 0 24px 60px -16px rgba(0, 0, 0, .18), 0 0 0 1px var(--border); }
+/* dark: the selected chip carries its own ink fill (same colour as the sliding pill behind it) */
+html:not(.light) .xii-chips button[aria-selected='true'] { background: var(--ink); }

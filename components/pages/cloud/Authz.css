@@ -282,3 +282,5 @@ html:not(.light) .az {
   --ac: var(--text-tertiary); --ac-text: var(--muted-foreground); --ac-ink: var(--primary-foreground);
   background: var(--bg);
 }
+/* dark: the checked scope carries its own ink fill (same colour as the sliding pill behind it) */
+html:not(.light) .az-pk-row button[aria-checked='true'] { background: var(--ink); }

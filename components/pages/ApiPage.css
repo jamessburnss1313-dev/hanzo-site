@@ -349,3 +349,31 @@ html:not([data-api-ask]):has(main.api) header[data-slot=masthead] a[data-x-ask] 
   .api-next-d { grid-area: d; }
   .api-next-go { grid-area: go; }
 }
+
+/* dark: the shared AppType paints .av white with hex greys; give this page Hanzo's dark tokens (as Bot/Chrome/Computer do) */
+html:not(.light) .av.api { background: var(--bg); color: var(--ink); }
+html:not(.light) .api .av-lede, html:not(.light) .api .av-body { color: var(--soft); }
+html:not(.light) .api .av-kick, html:not(.light) .api .av-spec dt { color: var(--faint); }
+html:not(.light) .api .av-kick b, html:not(.light) .api .av-spec dd { color: var(--ink); }
+html:not(.light) .api .av-spec, html:not(.light) .api .av-spec dt, html:not(.light) .api .av-spec dd { border-color: var(--line); }
+html:not(.light) .api .av-obj { box-shadow: 0 0 0 1px var(--line); }
+html:not(.light) .api .av-card { background: var(--x-fill); }
+html:not(.light) .api .av-dark .av-body, html:not(.light) .api .av-dark .av-lede { color: rgba(255, 255, 255, .78); }
+html:not(.light) .api .av-dark .av-kick { color: rgba(255, 255, 255, .55); }
+/* dark: the selected endpoint chip carries the terminal's light pill itself, so its dark type reads on what is behind it */
+html:not(.light) .api-term .api-chips button[aria-selected='true'] { background: #f5f5f7; }
+
+/* dark: the diagrams (bill, identity, generated clients, gateway) and the endpoint picker were drawn as #fff cards and
+   ink blocks with white type; cards go on Hanzo's card surface, ink blocks keep ink with on-ink type, hairlines use the border */
+html:not(.light) .av.api { --ac: var(--muted-foreground); --ac-soft: var(--muted); }
+html:not(.light) .api-doc:not(.api-term .api-doc), html:not(.light) .api-bill-sum, html:not(.light) .api-id-card,
+html:not(.light) .api-gen li span, html:not(.light) .api-gw-app, html:not(.light) .api-svc, html:not(.light) .api-vis-key { background: var(--x-raised); box-shadow: 0 0 0 1px var(--border); color: var(--foreground); }
+html:not(.light) .api-doc:not(.api-term .api-doc) { border-color: var(--border); }
+@media (hover: hover) { html:not(.light) .api-doc:not(.api-term .api-doc):hover, html:not(.light) .api-more button:hover { border-color: var(--border-strong, var(--border)); } }
+html:not(.light) .api-bill-key, html:not(.light) .api-id-gate, html:not(.light) .api-id-gate span, html:not(.light) .api-gw-gate span { color: var(--x-on-ink); }
+html:not(.light) .api-bill-flow, html:not(.light) .api-gw-in, html:not(.light) .api-wire, html:not(.light) .api-bill-m, html:not(.light) .api-gen-dots i { background: var(--border); }
+html:not(.light) .js .api-gen:not(.on) .api-gen-dots i:last-child { background: var(--ink); }
+html:not(.light) .api-id-drop, html:not(.light) .api-gw-in em { color: var(--foreground) !important; }
+html:not(.light) .api-seg-bg { background: var(--x-knob); box-shadow: none; }
+html:not(.light) .api-seg button[aria-selected='true'] { background: var(--x-knob); }
+@media (hover: hover) { html:not(.light) .api-next-a:hover .api-next-go { color: var(--x-on-ink); } }

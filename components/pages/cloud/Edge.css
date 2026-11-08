@@ -299,3 +299,6 @@ html:not(.light) .eg .knx.light { color-scheme: dark; }
   .js .eg-mini li { animation: none !important; }
   .eg-kind, .eg-repo { transition: none !important; }
 }
+
+/* dark: the selected tab's text sits on a sibling motion pill; its label carries the pill's own colour (after the pill has slid in) so the ancestor walk sees what the eye sees. Light untouched. */
+html:not(.light) .eg-pick button[aria-checked='true'] > span:not(.eg-pick-bg) { background: var(--ink); transition: background-color 0s .3s; }

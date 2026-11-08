@@ -268,3 +268,5 @@ html:not(.light) .xos .v2f-btn.solid { color: var(--primary-foreground); }
   .xos-wave b, .xos-wave.play b { display: none !important; }
   .xos-row, .xos-src-bg, .xos .x-arrow > span::after, .xos .x-arrow svg { transition: none; }
 }
+/* dark: the real name stays invisible (the overlay draws it), but carries the overlay's ink as its colour */
+html:not(.light) .xos-nm-t { color: var(--ink); -webkit-text-fill-color: transparent; }

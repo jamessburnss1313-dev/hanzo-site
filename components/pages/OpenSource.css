@@ -426,3 +426,5 @@ html:not(.light) .xos-after .pf-kick { color: var(--text-tertiary); }
 @media (prefers-reduced-motion: reduce) {
   .xos-h1 .xos-ln > span, .xos-hero .xos-cap, .xos-hero .xos-lede, .xos-hero .xos-acts, .xos-hero-b, .xos-oc-bar i { animation: none !important; }
 }
+/* dark: the selected chip carries its own ink fill (same colour as the sliding pill behind it) */
+html:not(.light) .xos-eco button[aria-selected='true'], html:not(.light) .xos-chips button[aria-selected='true'] { background: var(--ink); }

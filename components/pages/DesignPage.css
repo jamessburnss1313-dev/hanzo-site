@@ -412,3 +412,14 @@
 
 /* dark: the shared Band's solid ask reads as Hanzo's primary (the shared rule paints it black on #171717) */
 html:not(.light) .dz .x-band .x-btn.solid { background: var(--primary); color: var(--primary-foreground); border-color: var(--primary); }
+
+/* dark: the shared AppType paints .av white with hex greys; give this page Hanzo's dark tokens (as Bot/Chrome/Computer do) */
+html:not(.light) .av.dz { background: var(--bg); color: var(--ink); }
+html:not(.light) .dz .av-lede, html:not(.light) .dz .av-body { color: var(--soft); }
+html:not(.light) .dz .av-kick, html:not(.light) .dz .av-spec dt { color: var(--faint); }
+html:not(.light) .dz .av-kick b, html:not(.light) .dz .av-spec dd { color: var(--ink); }
+html:not(.light) .dz .av-spec, html:not(.light) .dz .av-spec dt, html:not(.light) .dz .av-spec dd { border-color: var(--line); }
+html:not(.light) .dz .av-obj { box-shadow: 0 0 0 1px var(--line); }
+html:not(.light) .dz .av-card { background: var(--x-fill); }
+html:not(.light) .dz .av-dark .av-body, html:not(.light) .dz .av-dark .av-lede { color: rgba(255, 255, 255, .78); }
+html:not(.light) .dz .av-dark .av-kick { color: rgba(255, 255, 255, .55); }

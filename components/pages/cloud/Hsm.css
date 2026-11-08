@@ -279,3 +279,8 @@ html:not(.light) .hs .lx-pause { color: var(--ink); }
   /* a phone's room is far taller than the screen: it pulls back from a little closer, never from black */
   .js .hc-in[data-entrance]:not([data-in]) { transform: scale(1.08); opacity: 0; }
 }
+/* dark: the selected vendor carries the same ink as its sliding pill, so its primary-foreground label sits on its own fill;
+   the names not yet lit take Hanzo's tertiary text */
+html:not(.light) .hs-vendors button[aria-selected='true'] { background: var(--ink); }
+html:not(.light) .hs-names li { color: var(--text-tertiary); }
+html:not(.light) .hs-names li[data-on] { color: var(--ink); }

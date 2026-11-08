@@ -398,3 +398,6 @@
 html:not(.light) .dn { --ink: var(--foreground); --soft: var(--muted-foreground); --faint: var(--text-tertiary); --line: var(--border); --body: var(--muted-foreground); --quiet: var(--text-tertiary); --hair: var(--border); background: var(--background); }
 /* dark: the latency bars are drawn in Hanzo's muted grey, not white */
 html:not(.light) .dn .dn-par-l i b { background: var(--muted-foreground); }
+
+/* dark: the hub turns light (ink fill), so its mono caption takes the on-ink colour, softened, instead of a light grey */
+html:not(.light) .dn-hub span { color: color-mix(in srgb, var(--primary-foreground) 65%, transparent); }

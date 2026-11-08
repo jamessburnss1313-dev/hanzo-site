@@ -491,3 +491,5 @@ html:not(.light) .mc .mc-con-ask, html:not(.light) .mc .mc-art.a3 b:first-child,
 html:not(.light) .mc .mc-art.a1 i { background: var(--muted-foreground); }
 /* live's hero halftone (components/pages/HeroDither, dark only) fills the hero under its content */
 html:not(.light) .mc .mc-hero { position: relative; }
+/* dark: the selected size carries the same fill as its gliding pill, so its label sits on its own ground */
+html:not(.light) .mc .mc-sizes button[aria-selected='true'] { background: var(--mc-w5); }

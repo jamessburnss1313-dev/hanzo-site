@@ -123,6 +123,11 @@ html.x-arriving .xbr-hero .vc-ml-css { animation-play-state: running; }
 .xbr-reads ul.lt li b { color: light-dark(var(--b-ink2), #525252); }
 .xbr-v { display: grid; place-items: center; color: var(--b-ink); }
 .xbr-reads ul.dk .xbr-v { color: var(--b-dk-ink); }
+/* dark: on the Hanzo White sample the grey names and verdicts keep dark type (the sample is white in both modes), and the
+   pressed background carries its gliding pill's fill so its black label sits on its own ground */
+html:not(.light) .xbr-reads ul.lt li b { color: var(--neutral-600); }
+html:not(.light) .xbr-reads ul.lt .xbr-v { color: var(--primary-foreground); }
+html:not(.light) .xbr-seg button[aria-pressed='true'] { background: var(--b-dk-ink); }
 .xbr-grads { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 4fr) minmax(0, 3fr); gap: 24px; }
 .xbr-grad { display: grid; grid-template-columns: 1fr auto; gap: 12px; align-items: baseline; }
 .xbr-grad span { grid-column: 1 / -1; height: 220px; border-radius: var(--b-r-l); border: 1px solid var(--b-dk-hair); }

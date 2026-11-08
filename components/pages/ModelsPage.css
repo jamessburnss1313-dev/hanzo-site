@@ -463,3 +463,8 @@ html:not(.light) .xmo { --ink: var(--foreground); --body: var(--muted-foreground
   .xmo-cards.tiles > li:has(.xmo-use) .sc-tags { padding-right: 0; }
 }
 @media (prefers-reduced-motion: reduce) { .xmo-cards > li > .x-btn.xmo-use { transition: none; } }
+/* dark: the pressed chip carries its own ink fill (same colour as the sliding pill behind it) */
+html:not(.light) .xmo-chips button[aria-pressed='true'] { background: var(--ink); }
+@media (hover: hover) { html:not(.light) .xmo-chips button[aria-pressed='true']:hover { background: var(--primary-hover); } }
+/* dark: the request console stays black in both modes, so its selected tab keeps dark type on its white pill (the button carries the pill's fill too) */
+html:not(.light) .xmo-tabs button[aria-selected='true'] { color: var(--primary-foreground); background: #fafafa; }

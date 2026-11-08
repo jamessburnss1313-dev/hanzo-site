@@ -250,3 +250,16 @@ a.dl-card-a:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; 
   .dl-kit-f { display: none; }
   .dl-kit-d { width: 44px; height: 44px; }
 }
+
+/* dark: the shared AppType paints .av white with hex greys; give this page Hanzo's dark tokens (as Bot/Chrome/Computer do) */
+html:not(.light) .av.dl { background: var(--bg); color: var(--ink); }
+html:not(.light) .dl .av-lede, html:not(.light) .dl .av-body { color: var(--soft); }
+html:not(.light) .dl .av-kick, html:not(.light) .dl .av-spec dt { color: var(--faint); }
+html:not(.light) .dl .av-kick b, html:not(.light) .dl .av-spec dd { color: var(--ink); }
+html:not(.light) .dl .av-spec, html:not(.light) .dl .av-spec dt, html:not(.light) .dl .av-spec dd { border-color: var(--line); }
+html:not(.light) .dl .av-obj { box-shadow: 0 0 0 1px var(--line); }
+html:not(.light) .dl .av-card { background: var(--x-fill); }
+html:not(.light) .dl .av-dark .av-body, html:not(.light) .dl .av-dark .av-lede { color: rgba(255, 255, 255, .78); }
+html:not(.light) .dl .av-dark .av-kick { color: rgba(255, 255, 255, .55); }
+/* dark: the checked build chip carries its light pill itself (the gliding .dl-q-bg is a sibling), so its dark type reads */
+html:not(.light) .dl-q button[aria-checked='true'] { background: #fafafa; }

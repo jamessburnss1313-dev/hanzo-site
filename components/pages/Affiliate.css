@@ -172,4 +172,23 @@
 /* One solid at a time from the first paint: the header's ask is outlined on this route (the same look as the shared
    html[data-ask=quiet]) until the page's hook says none of its own Apply buttons is on screen (html[data-xaf-solid]). */
 html:has(main.xaf):not([data-xaf-solid]) header[data-slot=masthead] a[href="https://hanzo.ai/signup"],
-html:has(main.xaf):not([data-xaf-solid]) header[data-slot=masthead] a[data-x-ask] { background-color: transparent; color: var(--foreground); box-shadow: inset 0 0 0 1px var(--border, light-dark(rgba(0, 0, 0, .14), var(--border-control))); }
+html:has(main.xaf):not([data-xaf-solid]) header[data-slot=masthead] a[data-x-ask] { background-color: transparent; color: var(--foreground); box-shadow: inset 0 0 0 1px var(--border, rgba(0, 0, 0, .14)); }
+
+/* ---------- dark (Hanzo's tokens; light above is untouched) ---------- */
+html:not(.light) .xaf-to, html:not(.light) .xaf-link-k, html:not(.light) .xaf-req-or, html:not(.light) .xaf-mt small, html:not(.light) .xaf-out, html:not(.light) .xaf-code-l { color: var(--soft); }
+html:not(.light) .xaf-caret { background: var(--ink); }
+html:not(.light) .xaf-link-in, html:not(.light) .xaf-q-t, html:not(.light) .xaf-q-btn, html:not(.light) .xaf-q-row button, html:not(.light) .xaf-q-row.here .xaf-q-i, html:not(.light) .xaf-sum-code, html:not(.light) .xaf-close .x-link, html:not(.light) .xaf-mail b, html:not(.light) .xaf-mail-i, html:not(.light) .xaf-av, html:not(.light) .xaf-mt b, html:not(.light) .xaf-code-v, html:not(.light) .xaf-code-l em, html:not(.light) .xaf-you, html:not(.light) .xaf-code-in { color: var(--ink); }
+/* ink chips become Hanzo's primary pill */
+html:not(.light) .xaf-lnk-code, html:not(.light) .xaf-sum-code b, html:not(.light) .xaf-sum-av, html:not(.light) .xaf-av.h, html:not(.light) .xaf-org { background: var(--primary); color: var(--primary-foreground); }
+html:not(.light) .xaf-org-i { background: var(--primary-foreground); color: var(--primary); }
+/* surfaces */
+html:not(.light) .xaf-q-btn, html:not(.light) .xaf-mail, html:not(.light) .xaf-row, html:not(.light) .xaf-code-l { background: var(--x-raised); }
+html:not(.light) .xaf-mail-i, html:not(.light) .xaf-av:not(.h), html:not(.light) .xaf-code-in { background: var(--muted); }
+html:not(.light) .xaf-stage { background: linear-gradient(180deg, var(--card), var(--muted)); }
+html:not(.light) .xaf-req-top { border: 1px solid var(--border); }
+html:not(.light) .xaf-row.in { border-color: var(--border-strong); }
+@media (hover: hover) {
+  html:not(.light) .xaf-q-btn:not(:disabled):hover { background: var(--muted); border-color: var(--border-strong); }
+  html:not(.light) .xaf-q-row button:not(:disabled):hover { background: var(--muted); }
+}
+html:not(.light) .xaf-q-btn:focus-visible, html:not(.light) .xaf-q-row button:focus-visible { outline-color: var(--ink); }

@@ -416,3 +416,6 @@ html:has(main.ld[data-ask-on]) header[data-slot=masthead] :is(a[href='https://ha
   .ld-rc-sum b { animation: none; }
   .ld-tick { display: none; }
 }
+
+/* dark: the selected tab's text sits on a sibling motion pill; its label carries the pill's own colour (after the pill has slid in) so the ancestor walk sees what the eye sees. Light untouched. */
+html:not(.light) .ld-caps-tabs button[aria-selected='true'] > span:not(.ld-caps-pill) { background: var(--ld-snow); transition: background-color 0s .3s; }
