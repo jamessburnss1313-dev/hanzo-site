@@ -2,7 +2,7 @@
 /* one solid from first paint: until the page's hook hands over to the shared html[data-ask=quiet] flag, the header's ask
    is an outline (the hero's own solid ask is on the first screen); same look as the shared quiet rule in system.css */
 html:not([data-api-ask]):has(main.api) header[data-slot=masthead] a[href="https://hanzo.ai/signup"],
-html:not([data-api-ask]):has(main.api) header[data-slot=masthead] a[data-x-ask] { background-color: transparent; color: var(--foreground); box-shadow: inset 0 0 0 1px var(--border, rgba(0, 0, 0, .14)); }
+html:not([data-api-ask]):has(main.api) header[data-slot=masthead] a[data-x-ask] { background-color: transparent; color: var(--foreground); box-shadow: inset 0 0 0 1px var(--border, light-dark(rgba(0, 0, 0, .14), var(--border-control))); }
 .api code { font: 500 .88em/1.4 var(--mono); padding: 2px 7px; border-radius: 7px; background: var(--card); color: var(--ink); white-space: nowrap; }
 
 /* hero: headline, lede and the one ask (5 cols) beside the live console (7 cols), all in the first screen */
@@ -22,30 +22,30 @@ html:not([data-api-ask]):has(main.api) header[data-slot=masthead] a[data-x-ask] 
 .api-top-r { grid-column: 5 / -1; }
 
 /* the signature: a terminal. The curl types itself, its output streams back, and the row below picks the next command */
-.api-con.api-term { padding: 10px; background: #0a0a0a; border-color: #0a0a0a; color: #f5f5f7; box-shadow: 0 0 0 1px rgba(0, 0, 0, .9); }
+.api-con.api-term { padding: 10px; background: #0a0a0a; border-color: light-dark(#0a0a0a, var(--foreground)); color: #f5f5f7; box-shadow: 0 0 0 1px light-dark(rgba(0, 0, 0, .9), var(--border-control)); }
 .api-term-bar { display: flex; align-items: center; gap: 10px; min-height: 52px; padding: 0 4px 0 14px; }
-.api-term-bar .api-ret-k { flex: 1; color: #86868b; }
+.api-term-bar .api-ret-k { flex: 1; color: light-dark(#86868b, var(--text-tertiary)); }
 .api-term .api-pause { background: #1c1c1f; border-color: rgba(255, 255, 255, .14); color: #f5f5f7; }
 @media (hover: hover) { .api-term .api-pause:hover { border-color: rgba(255, 255, 255, .4); } }
-.api-term .api-pause:focus-visible { outline-color: #f5f5f7; }
+.api-term .api-pause:focus-visible { outline-color: light-dark(#f5f5f7, var(--border)); }
 .api-term-cmd { margin: 0; font-size: clamp(13.5px, 1.05vw, 15.5px); line-height: 1.75; letter-spacing: -.01em; color: #d1d1d6; min-height: 7em; } /* four lines held, so a path that wraps after the host never moves the page */
 .api-ln { display: block; }
 .api-ln.ind { padding-left: 2ch; }
 .api-url, .api-host { white-space: nowrap; }
-.api-term-ps { color: #86868b; user-select: none; }
-.api-meth { color: #0a0a0a; background: #f5f5f7; padding: 1px 7px; border-radius: 6px; font-weight: 600; }
-.api-host { color: #86868b; }
+.api-term-ps { color: light-dark(#86868b, var(--text-tertiary)); user-select: none; }
+.api-meth { color: light-dark(#0a0a0a, var(--foreground)); background: light-dark(#f5f5f7, var(--muted)); padding: 1px 7px; border-radius: 6px; font-weight: 600; }
+.api-host { color: light-dark(#86868b, var(--text-tertiary)); }
 .api-path { color: #fff; font-weight: 500; }
 .api-term-key { color: #a1a1a6; }
-.api-caret { display: inline-block; vertical-align: -.15em; width: .55em; height: 1.1em; margin-left: 2px; background: #f5f5f7; }
+.api-caret { display: inline-block; vertical-align: -.15em; width: .55em; height: 1.1em; margin-left: 2px; background: light-dark(#f5f5f7, var(--muted)); }
 .api-caret.idle { animation: api-blink 1s steps(1) 4; }
 .api-con.held .api-caret { animation: none; }
 @keyframes api-blink { 50% { opacity: 0; } }
-.api-send { display: grid; place-items: center; flex: none; width: 44px; height: 44px; border-radius: 50%; background: #f5f5f7; color: #0a0a0a; transition: transform .3s var(--av-ease); }
+.api-send { display: grid; place-items: center; flex: none; width: 44px; height: 44px; border-radius: 50%; background: light-dark(#f5f5f7, var(--muted)); color: light-dark(#0a0a0a, var(--foreground)); transition: transform .3s var(--av-ease); }
 @media (hover: hover) { .api-send:hover { transform: translateX(3px); } }
 .api-send:active { transform: scale(.98); }
-.api-pause { order: 2; flex: none; width: 44px; height: 44px; border-radius: 50%; border: 1px solid rgba(0, 0, 0, .1); background: #fff; color: #0a0a0a; display: grid; place-items: center; cursor: pointer; transition: border-color .15s cubic-bezier(0, 0, .2, 1); }
-@media (hover: hover) { .api-pause:hover { border-color: rgba(0, 0, 0, .3); } }
+.api-pause { order: 2; flex: none; width: 44px; height: 44px; border-radius: 50%; border: 1px solid light-dark(rgba(0, 0, 0, .1), var(--border)); background: light-dark(#fff, var(--background)); color: light-dark(#0a0a0a, var(--foreground)); display: grid; place-items: center; cursor: pointer; transition: border-color .15s cubic-bezier(0, 0, .2, 1); }
+@media (hover: hover) { .api-pause:hover { border-color: light-dark(rgba(0, 0, 0, .3), var(--border-control)); } }
 .api-pause:active { transform: scale(.97); }
 .api-pause:focus-visible { outline: 2px solid var(--focus, #0a0a0a); outline-offset: 2px; }
 .api-con-main { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: 10px; }
@@ -57,13 +57,13 @@ html:not([data-api-ask]):has(main.api) header[data-slot=masthead] a[data-x-ask] 
 @media (hover: hover) { .api-term .api-doc:hover { border-color: rgba(255, 255, 255, .4); } }
 .api-term .api-chips { background: #000; box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .08); margin-top: 10px; }
 .api-term .api-chips button { color: #a1a1a6; }
-.api-term .api-chips button span.x-mono::before { content: '$ '; color: #636366; }
-.api-term .api-chips button[aria-selected='true'] { color: #0a0a0a; }
-.api-term .api-chips button[aria-selected='true'] span.x-mono::before { color: #636366; }
+.api-term .api-chips button span.x-mono::before { content: '$ '; color: light-dark(#636366, var(--muted-foreground)); }
+.api-term .api-chips button[aria-selected='true'] { color: light-dark(#0a0a0a, var(--foreground)); }
+.api-term .api-chips button[aria-selected='true'] span.x-mono::before { color: light-dark(#636366, var(--muted-foreground)); }
 @media (hover: hover) { .api-term .api-chips button:hover:not([aria-selected='true']) { color: #f5f5f7; background: #1c1c1f; } }
-.api-term .api-chip-bg { background: #f5f5f7; box-shadow: none; }
+.api-term .api-chip-bg { background: light-dark(#f5f5f7, var(--muted)); box-shadow: none; }
 .api-term .api-chip-t { background: #0a0a0a; }
-.api-term .api-chips button:focus-visible { outline-color: #f5f5f7; }
+.api-term .api-chips button:focus-visible { outline-color: light-dark(#f5f5f7, var(--border)); }
 /* the box is sized by the longest answer, so streaming never moves anything */
 .api-desc-box { display: grid; width: 100%; flex: 1; }
 .api-desc-box > .api-desc { grid-area: 1 / 1; }
@@ -71,8 +71,8 @@ html:not([data-api-ask]):has(main.api) header[data-slot=masthead] a[data-x-ask] 
 .api-desc span { transition: opacity .3s var(--av-ease); }
 .api-desc span.stale { opacity: .28; }
 .api-desc { margin: 0; max-width: 32ch; font-size: clamp(19px, 1.5vw, 23px); line-height: 1.3; letter-spacing: -.022em; color: var(--ink); text-wrap: pretty; }
-.api-doc { display: inline-flex; align-items: center; gap: 6px; height: 44px; padding: 0 18px; border-radius: 999px; background: #fff; border: 1px solid var(--line); font: 500 15px/1 var(--sans); color: var(--ink); text-decoration: none; transition: border-color .2s; }
-@media (hover: hover) { .api-doc:hover { border-color: rgba(0, 0, 0, .25); } }
+.api-doc { display: inline-flex; align-items: center; gap: 6px; height: 44px; padding: 0 18px; border-radius: 999px; background: light-dark(#fff, var(--background)); border: 1px solid var(--line); font: 500 15px/1 var(--sans); color: var(--ink); text-decoration: none; transition: border-color .2s; }
+@media (hover: hover) { .api-doc:hover { border-color: light-dark(rgba(0, 0, 0, .25), var(--border-control)); } }
 .api-doc:active { transform: scale(.98); }
 .api-model { position: relative; border-radius: 18px; overflow: hidden; background: #000; min-height: 240px; }
 .api-model-in { position: absolute; inset: 0; }
@@ -85,7 +85,7 @@ html:not([data-api-ask]):has(main.api) header[data-slot=masthead] a[data-x-ask] 
 .api-chips button:active { transform: scale(.98); }
 .api-chips button span:not(.api-chip-bg) { position: relative; font-size: 13px; }
 .api-chips button:focus-visible { outline: 2px solid var(--focus, var(--ink)); outline-offset: -2px; }
-.api-chip-bg { position: absolute; inset: 0; border-radius: 12px; background: #fff; box-shadow: 0 1px 3px rgba(0, 0, 0, .12); }
+.api-chip-bg { position: absolute; inset: 0; border-radius: 12px; background: light-dark(#fff, var(--background)); box-shadow: 0 1px 3px rgba(0, 0, 0, .12); }
 .api-chip-t { position: absolute; left: 12px; right: 12px; bottom: 6px; height: 2px; border-radius: 2px; background: var(--ink); transform-origin: 0 50%; animation: api-time 5.8s linear forwards; }
 @keyframes api-time { from { transform: scaleX(0); } to { transform: scaleX(1); } }
 
@@ -116,7 +116,7 @@ html:not([data-api-ask]):has(main.api) header[data-slot=masthead] a[data-x-ask] 
   .api-fit-v { min-height: 0; }
 }
 .api-vis { position: relative; width: 100%; height: 100%; border-radius: 28px; background: var(--card); padding: clamp(28px, 3vw, 48px); display: flex; flex-direction: column; justify-content: center; gap: 18px; overflow: hidden; }
-.api-vis-key { margin: 0; align-self: flex-start; padding: 12px 18px; border-radius: 12px; background: #fff; box-shadow: 0 0 0 1px var(--line); font-size: 15px; color: var(--ink); }
+.api-vis-key { margin: 0; align-self: flex-start; padding: 12px 18px; border-radius: 12px; background: light-dark(#fff, var(--background)); box-shadow: 0 0 0 1px var(--line); font-size: 15px; color: var(--ink); }
 
 /* 1: one key, one bill (meters fill, then the total) */
 .api-bill { align-items: center; gap: 0; }
@@ -125,7 +125,7 @@ html:not([data-api-ask]):has(main.api) header[data-slot=masthead] a[data-x-ask] 
 .api-bill-flow i { position: absolute; left: -3px; top: 0; width: 8px; height: 8px; border-radius: 50%; background: var(--ink); opacity: 0; }
 .api-bill.on .api-bill-flow i { animation: api-fall 1.6s cubic-bezier(.5, 0, .5, 1) calc(var(--i) * .32s) 3; }
 @keyframes api-fall { 0% { opacity: 0; transform: translateY(0); } 15% { opacity: 1; } 85% { opacity: 1; } 100% { opacity: 0; transform: translateY(clamp(80px, 12vh, 132px)); } }
-.api-bill-sum { width: min(100%, 420px); padding: 22px 24px; border-radius: 16px; background: #fff; box-shadow: 0 0 0 1px var(--line); }
+.api-bill-sum { width: min(100%, 420px); padding: 22px 24px; border-radius: 16px; background: light-dark(#fff, var(--background)); box-shadow: 0 0 0 1px var(--line); }
 .api-bill-sum span { font-size: 14px; font-weight: 600; color: var(--ink); overflow-wrap: anywhere; }
 .api-bill-sum p { margin: 6px 0 16px; font-size: 16px; color: var(--soft); }
 .api-bill-m { display: block; height: 6px; border-radius: 6px; background: rgba(0, 0, 0, .08); overflow: hidden; }
@@ -137,9 +137,9 @@ html:not([data-api-ask]):has(main.api) header[data-slot=masthead] a[data-x-ask] 
 .api-id { flex-direction: column; align-items: stretch; gap: 14px; }
 .api-id .api-id-col { flex: none; }
 .api-id-col { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 12px; }
-.api-id-card { display: flex; flex-direction: column; gap: 12px; padding: 18px 16px; border-radius: 16px; background: #fff; box-shadow: 0 0 0 1px rgba(0, 0, 0, .1); }
+.api-id-card { display: flex; flex-direction: column; gap: 12px; padding: 18px 16px; border-radius: 16px; background: light-dark(#fff, var(--background)); box-shadow: 0 0 0 1px light-dark(rgba(0, 0, 0, .1), var(--border)); }
 .api-id-card span { font-size: 14px; color: var(--soft); overflow-wrap: anywhere; }
-.api-id-drop { position: relative; color: #262626 !important; }
+.api-id-drop { position: relative; color: light-dark(#262626, var(--foreground)) !important; }
 .api-id-drop::after { content: ''; position: absolute; left: 0; right: 0; top: 50%; height: 1.5px; background: currentColor; transform: scaleX(0); transform-origin: 0 50%; }
 .api-id.on .api-id-drop::after { animation: api-strike 4.8s var(--av-ease) 1 both; }
 @keyframes api-strike { 0%, 30% { transform: scaleX(0); } 42%, 100% { transform: scaleX(1); } }
@@ -157,7 +157,7 @@ html:not([data-api-ask]):has(main.api) header[data-slot=masthead] a[data-x-ask] 
 .api-gen-h span:last-child { grid-column: 3; }
 .api-gen ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
 .api-gen li { display: grid; grid-template-columns: minmax(0, 1fr) 24px minmax(0, 1fr); gap: 16px; align-items: center; }
-.api-gen li span { padding: 16px 16px; border-radius: 12px; background: #fff; box-shadow: 0 0 0 1px var(--line); font-size: 14px; overflow-wrap: anywhere; line-height: 1.35; }
+.api-gen li span { padding: 16px 16px; border-radius: 12px; background: light-dark(#fff, var(--background)); box-shadow: 0 0 0 1px var(--line); font-size: 14px; overflow-wrap: anywhere; line-height: 1.35; }
 .api-gen li svg { color: var(--ac); }
 .api-gen-dots { display: none; }
 /* with JS: one row at a time, stacked in one slot; each holds 1.6s, the last one stays */
@@ -179,7 +179,7 @@ html:not([data-api-ask]):has(main.api) header[data-slot=masthead] a[data-x-ask] 
 
 /* 4: one gateway, every service, and a 429 coming back */
 .api-gw { flex-direction: row; align-items: center; gap: 0; }
-.api-gw-app { flex: none; width: clamp(140px, 13vw, 190px); display: flex; flex-direction: column; gap: 8px; padding: 16px; border-radius: 16px; background: #fff; box-shadow: 0 0 0 1px var(--line); }
+.api-gw-app { flex: none; width: clamp(140px, 13vw, 190px); display: flex; flex-direction: column; gap: 8px; padding: 16px; border-radius: 16px; background: light-dark(#fff, var(--background)); box-shadow: 0 0 0 1px var(--line); }
 .api-gw-app b { font-size: 15px; font-weight: 600; }
 .api-gw-app span { font-size: 12.5px; line-height: 1.4; color: var(--soft); overflow-wrap: anywhere; }
 .api-gw-in { position: relative; flex: none; width: 56px; height: 2px; background: rgba(0, 0, 0, .14); }
@@ -188,7 +188,7 @@ html:not([data-api-ask]):has(main.api) header[data-slot=masthead] a[data-x-ask] 
 .api-gw.on .api-gw-in i:nth-child(2) { animation-delay: 1.2s; }
 .api-gw-in i.back { background: #737373; }
 .api-gw.on .api-gw-in i.back { animation: api-back 7.2s var(--av-ease) 1; }
-.api-gw-in em { position: absolute; left: 50%; top: 16px; translate: -50% 0; font-style: normal; font-size: 13px; font-weight: 600; white-space: nowrap; color: #262626; opacity: 0; }
+.api-gw-in em { position: absolute; left: 50%; top: 16px; translate: -50% 0; font-style: normal; font-size: 13px; font-weight: 600; white-space: nowrap; color: light-dark(#262626, var(--foreground)); opacity: 0; }
 .api-gw.on .api-gw-in em { animation: api-tag 7.2s var(--av-ease) 1; }
 @keyframes api-run { from { transform: translateX(0); opacity: 0; } 10% { opacity: 1; } 90% { opacity: 1; } to { transform: translateX(48px); opacity: 0; } }
 @keyframes api-back { 0%, 62% { transform: translateX(48px); opacity: 0; } 66% { opacity: 1; } 80% { transform: translateX(0); opacity: 1; } 84%, 100% { transform: translateX(0); opacity: 0; } }
@@ -201,7 +201,7 @@ html:not([data-api-ask]):has(main.api) header[data-slot=masthead] a[data-x-ask] 
 .api-wire i { position: absolute; inset: 0; background: var(--ac); transform: translateX(-100%); }
 .api-gw.on .api-wire i { animation: api-wire 2.4s linear calc(var(--i) * .4s) 2; }
 @keyframes api-wire { 0% { transform: translateX(-100%); } 50%, 100% { transform: translateX(100%); } }
-.api-svc { flex: 1; min-width: 0; padding: 10px 14px; border-radius: 10px; background: #fff; box-shadow: 0 0 0 1px var(--line); font-size: 13px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.api-svc { flex: 1; min-width: 0; padding: 10px 14px; border-radius: 10px; background: light-dark(#fff, var(--background)); box-shadow: 0 0 0 1px var(--line); font-size: 13px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 
 /* the dark room */
 .api-base-h { margin-bottom: clamp(24px, 3vw, 40px); color: #f5f5f7; }
@@ -217,19 +217,19 @@ html:not([data-api-ask]):has(main.api) header[data-slot=masthead] a[data-x-ask] 
 .api-dark code { background: #1c1c1f; color: #f5f5f7; box-shadow: 0 0 0 1px rgba(255, 255, 255, .1); white-space: normal; }
 .api-base-r { grid-column: 7 / -1; }
 .api-call { padding: 24px; border-radius: 28px; background: #111113; box-shadow: 0 0 0 1px rgba(255, 255, 255, .1); }
-.api-call-k { margin: 0 0 12px; font: 500 13px/1 var(--mono); letter-spacing: .1em; text-transform: uppercase; color: #86868b; }
+.api-call-k { margin: 0 0 12px; font: 500 13px/1 var(--mono); letter-spacing: .1em; text-transform: uppercase; color: light-dark(#86868b, var(--text-tertiary)); }
 .api-call-list { display: flex; flex-direction: column; gap: 2px; max-height: 236px; overflow-y: auto; overscroll-behavior: contain; padding: 4px; border-radius: 16px; background: #000; box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .1); }
 .api-call-list button { display: flex; align-items: center; gap: 12px; min-height: 44px; padding: 0 12px; border: 0; border-radius: 10px; background: none; color: #a1a1a6; font-size: 14px; text-align: left; cursor: pointer; transition: background .2s, color .2s; }
-.api-call-list button[aria-selected='true'] { background: #f5f5f7; color: #000; }
+.api-call-list button[aria-selected='true'] { background: light-dark(#f5f5f7, var(--muted)); color: light-dark(#000, var(--foreground)); }
 @media (hover: hover) { .api-call-list button:hover:not([aria-selected='true']) { background: #1c1c1f; color: #f5f5f7; } }
 .api-call-list button:active { transform: scale(.98); }
-.api-call-list button:focus-visible { outline: 2px solid #f5f5f7; outline-offset: -2px; }
+.api-call-list button:focus-visible { outline: 2px solid light-dark(#f5f5f7, var(--border)); outline-offset: -2px; }
 .api-call-lm { width: 44px; flex: none; font-size: 12px; font-weight: 600; letter-spacing: .04em; opacity: .8; }
 /* the curl wraps whole (the path never splits mid-word); copy is unchanged, wrapping is only visual */
 .api-call-line code { padding: 0; background: none; box-shadow: none; white-space: pre-wrap; font: inherit; color: inherit; }
 .api-call-line { margin: 22px 0 18px; padding: 22px; border-radius: 16px; background: #000; overflow-wrap: anywhere; font: 400 clamp(14px, 1.15vw, 17px)/1.8 var(--mono); color: #f5f5f7; }
-.api-call-m { color: #000; padding: 2px 8px; border-radius: 6px; background: #f5f5f7; font-weight: 600; }
-.api-call-host { color: #86868b; }
+.api-call-m { color: light-dark(#000, var(--foreground)); padding: 2px 8px; border-radius: 6px; background: light-dark(#f5f5f7, var(--muted)); font-weight: 600; }
+.api-call-host { color: light-dark(#86868b, var(--text-tertiary)); }
 .api-call-path { display: inline-block; color: #fff; }
 .api-call-f { display: flex; flex-wrap: wrap; align-items: center; gap: 16px 24px; font-size: 15px; }
 .api-call-f .x-copy { height: 44px; padding: 0 18px; font-size: 14px; background: #1c1c1f; border-color: rgba(255, 255, 255, .16); color: #d1d1d6; }
@@ -243,7 +243,7 @@ html:not([data-api-ask]):has(main.api) header[data-slot=masthead] a[data-x-ask] 
 .api-seg button { position: relative; min-width: 64px; height: 40px; padding: 0 14px; border: 0; background: none; border-radius: 999px; font: 500 14px/1 var(--sans); color: var(--soft); cursor: pointer; }
 .api-seg button[aria-selected='true'] { color: var(--ink); }
 .api-seg button span:not(.api-seg-bg) { position: relative; }
-.api-seg-bg { position: absolute; inset: 0; border-radius: 999px; background: #fff; box-shadow: 0 1px 3px rgba(0, 0, 0, .12); }
+.api-seg-bg { position: absolute; inset: 0; border-radius: 999px; background: light-dark(#fff, var(--background)); box-shadow: 0 1px 3px rgba(0, 0, 0, .12); }
 .api-q { flex: 1 1 160px; display: flex; align-items: center; gap: 8px; height: 48px; padding: 0 16px; border-radius: 999px; border: 1px solid var(--line); color: var(--faint); }
 .api-q input { flex: 1; min-width: 0; border: 0; outline: 0; background: none; font: 500 16px var(--mono); color: var(--ink); }
 .api-q:focus-within { border-color: var(--ac); }
@@ -272,7 +272,7 @@ html:not([data-api-ask]):has(main.api) header[data-slot=masthead] a[data-x-ask] 
 .js .api-more { display: block; }
 .api-more button { display: inline-flex; align-items: center; gap: 12px; min-height: 52px; margin-top: 20px; padding: 0 22px; border: 1px solid var(--line); border-radius: 999px; background: none; color: var(--ink); font: 500 15px/1 var(--sans); cursor: pointer; transition: border-color .2s, transform .2s var(--av-ease); }
 .api-more button .x-mono { font-size: 13px; color: var(--faint); }
-@media (hover: hover) { .api-more button:hover { border-color: rgba(0, 0, 0, .3); } }
+@media (hover: hover) { .api-more button:hover { border-color: light-dark(rgba(0, 0, 0, .3), var(--border-control)); } }
 .api-more button:active { transform: scale(.98); }
 .api-more button:focus-visible { outline: 2px solid var(--focus, var(--ink)); outline-offset: 3px; }
 .api-none { padding: 28px 0; color: var(--soft); }

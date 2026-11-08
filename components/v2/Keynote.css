@@ -39,7 +39,7 @@
 .kn-btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 48px; padding: 0 24px; border-radius: 999px; border: 1px solid var(--hair); background: var(--x-raised); color: var(--ink); font: 497 16px/1 var(--sans); text-decoration: none; white-space: nowrap; cursor: pointer; transition: border-color .15s var(--e-out), background-color .15s var(--e-out), transform .15s var(--e-out); }
 .kn-btn.solid { background: var(--ink); border-color: var(--ink); color: var(--x-on-ink); }
 @media (hover: hover) {
-  .kn-btn:hover { border-color: rgba(0, 0, 0, .3); background-color: light-dark(#f5f5f5, var(--muted)); }
+  .kn-btn:hover { border-color: light-dark(rgba(0, 0, 0, .3), var(--border-control)); background-color: light-dark(#f5f5f5, var(--muted)); }
   .kn-btn.solid:hover { background-color: #262626; }
 }
 .kn-btn:active { transform: scale(.97); transition-duration: 90ms; }

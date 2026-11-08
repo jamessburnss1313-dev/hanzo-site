@@ -44,10 +44,10 @@
 
 /* the shared code pane (cloud/Frame.jsx Code) in greys on every Business page: 0 UI hues, weight tells parts apart */
 .bz .cf-code .s { color: #d4d4d4; } .bz .cf-code .k { color: #fff; font-weight: 606; } .bz .cf-code .c { color: #a3a3a3; }
-.bz .cf-code.light .s { color: #525252; } .bz .cf-code.light .k { color: var(--bz-ink); font-weight: 606; } .bz .cf-code.light .c { color: #737373; }
-.bz .cf-mark { background: #e4e4e7; color: inherit; border-radius: 4px; box-shadow: none; }
+.bz .cf-code.light .s { color: light-dark(#525252, var(--muted-foreground)); } .bz .cf-code.light .k { color: var(--bz-ink); font-weight: 606; } .bz .cf-code.light .c { color: light-dark(#737373, var(--muted-foreground)); }
+.bz .cf-mark { background: light-dark(#e4e4e7, var(--secondary)); color: inherit; border-radius: 4px; box-shadow: none; }
 .bz .cf-code:not(.light) .cf-mark { background: rgba(255, 255, 255, .14); }
-.bz .cf-code.light .cf-mark { background-image: none; background-color: #e4e4e7; }
+.bz .cf-code.light .cf-mark { background-image: none; background-color: light-dark(#e4e4e7, var(--secondary)); }
 .bz .cf-paste-k, .bz .x-copy-t, .bz .cf-code-k { font-size: 13px; }
 
 /* BizLines: line-masked cut-in (translateY 105% to 0, 700ms, ease-emphasis, 60ms between lines). The hero plays it in
@@ -80,8 +80,8 @@
 .bz-ch-meta b { color: var(--bz-ink); font-weight: 606; font-variant-numeric: tabular-nums; }
 
 /* BizSheet: the spec drawer */
-.bz-sheet-btn { display: inline-flex; align-items: center; gap: 10px; height: 48px; padding: 0 22px 0 18px; border-radius: 999px; border: 1px solid rgba(0, 0, 0, .14); background: var(--x-raised); color: var(--bz-ink); font: 497 15px/1 var(--sans); cursor: pointer; transition: background-color .15s var(--bz-out), border-color .15s var(--bz-out), transform .09s var(--bz-out); }
-@media (hover: hover) { .bz-sheet-btn:hover { background-color: var(--bz-room); border-color: rgba(0, 0, 0, .3); } }
+.bz-sheet-btn { display: inline-flex; align-items: center; gap: 10px; height: 48px; padding: 0 22px 0 18px; border-radius: 999px; border: 1px solid light-dark(rgba(0, 0, 0, .14), var(--border-control)); background: var(--x-raised); color: var(--bz-ink); font: 497 15px/1 var(--sans); cursor: pointer; transition: background-color .15s var(--bz-out), border-color .15s var(--bz-out), transform .09s var(--bz-out); }
+@media (hover: hover) { .bz-sheet-btn:hover { background-color: var(--bz-room); border-color: light-dark(rgba(0, 0, 0, .3), var(--border-control)); } }
 .bz-sheet-btn:active { transform: scale(.97); }
 .bz-sheet-btn svg { color: var(--bz-ink); }
 .bz-sheet-back { position: fixed; inset: 0; z-index: 940; background: rgba(0, 0, 0, .3); opacity: 0; visibility: hidden; transition: opacity .3s var(--bz-out), visibility 0s .3s; }

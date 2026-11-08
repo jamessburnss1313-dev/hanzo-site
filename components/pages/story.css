@@ -38,12 +38,12 @@
 .v2s-head > .v2s-lede, .v2s-head > .v2s-side { grid-column: 9 / 14; grid-row: 1 / 3; align-self: end; }
 
 /* asks: one solid pill (48px), and text links for the rest */
-.v2s-btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 48px; padding: 0 22px; border-radius: 999px; border: 1px solid rgba(0, 0, 0, .1); background: #fff; color: var(--ink); font: 497 16px/1 var(--sans); text-decoration: none; white-space: nowrap; transition: background .15s var(--e-out), border-color .15s var(--e-out), transform .15s var(--e-out); }
+.v2s-btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 48px; padding: 0 22px; border-radius: 999px; border: 1px solid light-dark(rgba(0, 0, 0, .1), var(--border)); background: light-dark(#fff, var(--background)); color: var(--ink); font: 497 16px/1 var(--sans); text-decoration: none; white-space: nowrap; transition: background .15s var(--e-out), border-color .15s var(--e-out), transform .15s var(--e-out); }
 .v2s-btn:active { transform: scale(.97); transition-duration: 90ms; }
 .v2s-btn.solid { background: var(--ink); color: #fff; border-color: var(--ink); }
-@media (hover: hover) { .v2s-btn:hover { border-color: rgba(0, 0, 0, .3); } .v2s-btn.solid:hover { background: #262626; } .v2s-btn:hover svg { transform: translateX(3px); } }
+@media (hover: hover) { .v2s-btn:hover { border-color: light-dark(rgba(0, 0, 0, .3), var(--border-control)); } .v2s-btn.solid:hover { background: #262626; } .v2s-btn:hover svg { transform: translateX(3px); } }
 .v2s-btn svg { transition: transform .15s var(--e-out); }
-.v2s-link, .v2s-tlink { display: inline-flex; align-items: center; gap: 6px; min-height: 44px; font: 497 16px/1.3 var(--sans); color: var(--ink); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; text-decoration-color: rgba(10, 10, 10, .3); transition: text-decoration-color .15s var(--e-out); }
+.v2s-link, .v2s-tlink { display: inline-flex; align-items: center; gap: 6px; min-height: 44px; font: 497 16px/1.3 var(--sans); color: var(--ink); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; text-decoration-color: light-dark(rgba(10, 10, 10, .3), var(--border-control)); transition: text-decoration-color .15s var(--e-out); }
 .v2s-link span { text-decoration: inherit; }
 .v2s-link svg, .v2s-tlink svg { transition: transform .15s var(--e-out); }
 .v2s-tlink:active, .v2s-link:active { transform: translateY(1px); }
@@ -81,7 +81,7 @@
 .xst-close .x-band-note a { display: inline-flex; align-items: center; min-height: 44px; color: #fafafa; text-underline-offset: 3px; }
 
 /* the pause control (StoryPause): 44px, quiet, first in the DOM of what moves by itself */
-.xst-pause { display: inline-grid; place-items: center; width: 44px; height: 44px; padding: 0; border-radius: 999px; border: 1px solid rgba(0, 0, 0, .1); background: #fff; color: #0a0a0a; cursor: pointer; transition: border-color .15s cubic-bezier(0, 0, .2, 1), transform .15s cubic-bezier(0, 0, .2, 1); }
+.xst-pause { display: inline-grid; place-items: center; width: 44px; height: 44px; padding: 0; border-radius: 999px; border: 1px solid light-dark(rgba(0, 0, 0, .1), var(--border)); background: light-dark(#fff, var(--background)); color: light-dark(#0a0a0a, var(--foreground)); cursor: pointer; transition: border-color .15s cubic-bezier(0, 0, .2, 1), transform .15s cubic-bezier(0, 0, .2, 1); }
 .xst-pause:active { transform: scale(.97); transition-duration: 90ms; }
-@media (hover: hover) { .xst-pause:hover { border-color: rgba(0, 0, 0, .3); } }
+@media (hover: hover) { .xst-pause:hover { border-color: light-dark(rgba(0, 0, 0, .3), var(--border-control)); } }
 @media (prefers-reduced-motion: reduce) { .xst-pause { display: none; } }

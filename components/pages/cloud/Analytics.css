@@ -50,13 +50,13 @@
 .an-fb-row { width: 100%; display: flex; align-items: center; gap: 12px; min-height: 44px; padding: 6px 10px 6px 8px; border: 1px solid transparent; border-radius: 10px; background: transparent; color: inherit; cursor: pointer; text-align: left; transition: background-color .2s var(--e-out), border-color .2s var(--e-out); }
 .an-fb-row .an-fb-ref { margin-left: auto; }
 .an-fb-dot { position: relative; flex: none; width: 6px; height: 6px; border-radius: 50%; background: #525252; transition: background-color .2s var(--e-out), transform .2s var(--e-out); }
-@media (hover: hover), (pointer: none) { .an-fb-row:hover { background: rgba(255, 255, 255, .06); } }
+@media (hover: hover), (pointer: none) { .an-fb-row:hover { background: light-dark(rgba(255, 255, 255, .06), color-mix(in srgb, var(--background) 6%, transparent)); } }
 .an-fb-row.held { border-color: rgba(255, 255, 255, .55); }
-.an-fb-row.held .an-fb-dot { background: #fafafa; transform: scale(1.4); }
-.an-fb-row[aria-pressed='true'] { background: rgba(255, 255, 255, .1); }
+.an-fb-row.held .an-fb-dot { background: light-dark(#fafafa, var(--background)); transform: scale(1.4); }
+.an-fb-row[aria-pressed='true'] { background: light-dark(rgba(255, 255, 255, .1), color-mix(in srgb, var(--background) 10%, transparent)); }
 .an-fb-row:active { transform: scale(.99); }
-.an-fb-row:focus-visible { outline: 2px solid #fafafa; outline-offset: 2px; }
-.an-fb-rows li:first-child .an-fb-dot { background: #fafafa; }
+.an-fb-row:focus-visible { outline: 2px solid light-dark(#fafafa, var(--border)); outline-offset: 2px; }
+.an-fb-rows li:first-child .an-fb-dot { background: light-dark(#fafafa, var(--background)); }
 
 /* the kit's link Cta gets a 44px target here (the system gives .x-arrow no hit area); on hover an underline draws
    in from the left and the arrow steps on, so a link ask always answers the pointer */
@@ -419,13 +419,13 @@
 .an-anom { padding: 20px; border-radius: 16px; background: #171717; display: flex; flex-direction: column; gap: 14px; }
 .an-anom-h { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
 .an-anom-h b { font-size: 16px; font-weight: 497; color: #fafafa; }
-.an-flag { padding: 6px 10px; border-radius: 999px; background: rgba(255, 255, 255, .1); color: #fafafa; font: 497 13px/1 var(--mono); }
+.an-flag { padding: 6px 10px; border-radius: 999px; background: light-dark(rgba(255, 255, 255, .1), color-mix(in srgb, var(--background) 10%, transparent)); color: #fafafa; font: 497 13px/1 var(--mono); }
 .an-anom-plot { position: relative; height: 96px; }
 .an-anom-plot svg { width: 100%; height: 100%; overflow: visible; }
-.an-anom-plot path { fill: none; stroke: #fafafa; stroke-width: 2; stroke-linejoin: round; stroke-linecap: round; stroke-dasharray: 1 1; }
+.an-anom-plot path { fill: none; stroke: light-dark(#fafafa, var(--muted)); stroke-width: 2; stroke-linejoin: round; stroke-linecap: round; stroke-dasharray: 1 1; }
 .js .an-anom-plot path { stroke-dashoffset: 1; }
 .js .an-ai-p[data-in] .an-anom-plot path { stroke-dashoffset: 0; transition: stroke-dashoffset 1.2s var(--e-in) .2s; }
-.an-spike { position: absolute; left: 58%; top: 20%; width: 10px; height: 10px; margin: -5px 0 0 -5px; border-radius: 50%; background: #fafafa; }
+.an-spike { position: absolute; left: 58%; top: 20%; width: 10px; height: 10px; margin: -5px 0 0 -5px; border-radius: 50%; background: light-dark(#fafafa, var(--background)); }
 .an-spike::after { content: ''; position: absolute; inset: -6px; border-radius: 50%; border: 1.5px solid rgba(255, 255, 255, .4); }
 .js .an-spike { opacity: 0; transform: scale(.4); transition: opacity .3s var(--e-out) 1.2s, transform .4s var(--e-in) 1.2s; }
 .js .an-ai-p[data-in] .an-spike { opacity: 1; transform: none; }
@@ -434,7 +434,7 @@
 .an-anom-f .an-conf { font-family: var(--mono); color: #a3a3a3; }
 .an-ai-s { margin: 4px 0 0; }
 .an-ins { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px; }
-.an-ins li { display: flex; flex-direction: column; gap: 4px; padding: 14px 16px; border-radius: 12px; background: rgba(255, 255, 255, .05); }
+.an-ins li { display: flex; flex-direction: column; gap: 4px; padding: 14px 16px; border-radius: 12px; background: light-dark(rgba(255, 255, 255, .05), color-mix(in srgb, var(--background) 5%, transparent)); }
 .an-ins b { font-size: 16px; font-weight: 497; color: #fafafa; }
 .an-ins span { font-size: 14px; color: #a3a3a3; }
 .an-rec { display: flex; flex-direction: column; gap: 12px; padding-top: 6px; }
@@ -444,7 +444,7 @@
 .an-apply svg { flex: none; transform: scale(0); transition: transform .3s var(--e-in); }
 @media (hover: hover), (pointer: none) { .an-apply:hover { border-color: rgba(255, 255, 255, .55); } }
 .an-apply:active { transform: scale(.97); transition-duration: 90ms; }
-.an-apply.done { border-color: #fafafa; }
+.an-apply.done { border-color: light-dark(#fafafa, var(--border)); }
 .an-apply.done svg { transform: none; }
 
 /* ---------- add the script ---------- */
@@ -675,7 +675,7 @@
 /* leaf spans inside bold labels (so each label is one text run): they take everything from their label */
 .an span.lf { all: unset; display: inline; }
 /* the install line draws its own "$ " (not text: never copied, never read) */
-.an .an-npm .x-codeblock-l::before { content: '$ '; color: #6e6e73; user-select: none; -webkit-user-select: none; }
+.an .an-npm .x-codeblock-l::before { content: '$ '; color: light-dark(#6e6e73, var(--muted-foreground)); user-select: none; -webkit-user-select: none; }
 
 /* dark mode (docs/DARK-MODE.md): the deck's greys (components/v2/Keynote.css .kn) are light-only, so on this page they
    resolve to Hanzo's dark tokens, and the page sits on Hanzo's background like live; the graphite room keeps its own */

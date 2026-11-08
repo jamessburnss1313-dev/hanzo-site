@@ -178,7 +178,7 @@
 @media (prefers-reduced-motion: reduce) { .am2-panel.on li button .am2-at { animation: none; } }
 
 /* not here: the gallery's last panel, the page's one dark room */
-.am2-panel.am2-not, .am2-panel.am2-not.on { width: 860px; display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); gap: 40px; align-items: center; padding: 40px; background: #000; border-color: #000; color: #fafafa; }
+.am2-panel.am2-not, .am2-panel.am2-not.on { width: 860px; display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); gap: 40px; align-items: center; padding: 40px; background: #000; border-color: light-dark(#000, var(--foreground)); color: #fafafa; }
 .am2-not .l2-head { color: #fafafa; }
 .am2-not .l2-lede { font-size: 17px; color: rgba(255, 255, 255, .78); }
 .am2-not-l .l2-lede { margin-top: 18px; }
@@ -191,7 +191,7 @@
 .am2-req-node b { display: block; margin-top: 8px; font-size: 32px; font-weight: 497; letter-spacing: -.03em; }
 .am2-req-node.key b { color: #a3a3a3; }
 .am2-req-wire { display: block; width: 2px; height: 40px; overflow: visible; }
-.am2-req-wire path { fill: none; stroke: #fafafa; stroke-width: 2; }
+.am2-req-wire path { fill: none; stroke: light-dark(#fafafa, var(--muted)); stroke-width: 2; }
 
 /* entrances: the markup's own state is the final one; [data-ent=wait] (set after mount, out of view) holds the start
    state, [data-ent=go] runs each section's own keyframes once */

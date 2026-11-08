@@ -5,7 +5,7 @@
 
 /* signature: word-light. Hanzo's lede as a long statement; each word goes from quiet grey to ink as it is read */
 .xcu-say { padding: clamp(72px, 9vw, 140px) 0 clamp(44px, 5vw, 72px); }
-.xcu-wl { grid-column: 1 / span 10; margin: 0; max-width: 30ch; font-size: clamp(26px, 3vw, 44px); font-weight: 497; line-height: 1.2; letter-spacing: -.025em; color: #0a0a0a; text-wrap: pretty; }
+.xcu-wl { grid-column: 1 / span 10; margin: 0; max-width: 30ch; font-size: clamp(26px, 3vw, 44px); font-weight: 497; line-height: 1.2; letter-spacing: -.025em; color: light-dark(#0a0a0a, var(--foreground)); text-wrap: pretty; }
 .xcu-wl .w { transition: color .3s cubic-bezier(0, 0, .2, 1); }
 @media (prefers-reduced-motion: no-preference) { html.js .xcu-wl .w:not(.on) { color: #d4d4d4; } }
 
@@ -18,10 +18,10 @@
 }
 .xcu-hero-g > .xcu-h1, .xcu-lens { grid-column: 1 / -1; grid-row: 1; align-self: start; }
 .xcu-lens { position: relative; margin: 0; pointer-events: none; }
-.xcu-lens-in { display: block; background: #fff; transform-origin: var(--lx, 0) var(--ly, 0); transform: scale(1.4); clip-path: circle(0px at var(--lx, 0) var(--ly, 0)); transition: clip-path .3s cubic-bezier(.16, 1, .3, 1); }
+.xcu-lens-in { display: block; background: light-dark(#fff, var(--background)); transform-origin: var(--lx, 0) var(--ly, 0); transform: scale(1.4); clip-path: circle(0px at var(--lx, 0) var(--ly, 0)); transition: clip-path .3s cubic-bezier(.16, 1, .3, 1); }
 .xcu-lens-l { display: block; }
 .xcu-lens[data-on] .xcu-lens-in { clip-path: circle(58px at var(--lx, 0) var(--ly, 0)); }
-.xcu-lens::after { content: ''; position: absolute; left: calc(var(--lx, 0px) - 82px); top: calc(var(--ly, 0px) - 82px); width: 164px; height: 164px; border-radius: 50%; box-shadow: inset 0 0 0 1px rgba(0, 0, 0, .14); opacity: 0; transform: scale(.6); transition: opacity .15s cubic-bezier(0, 0, .2, 1), transform .3s cubic-bezier(.16, 1, .3, 1); }
+.xcu-lens::after { content: ''; position: absolute; left: calc(var(--lx, 0px) - 82px); top: calc(var(--ly, 0px) - 82px); width: 164px; height: 164px; border-radius: 50%; box-shadow: inset 0 0 0 1px light-dark(rgba(0, 0, 0, .14), var(--border-control)); opacity: 0; transform: scale(.6); transition: opacity .15s cubic-bezier(0, 0, .2, 1), transform .3s cubic-bezier(.16, 1, .3, 1); }
 .xcu-lens[data-on]::after { opacity: 1; transform: none; }
 @media (max-width: 899px) { .xcu-lens { display: none; } }
 

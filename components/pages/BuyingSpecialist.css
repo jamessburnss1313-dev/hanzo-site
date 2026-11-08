@@ -8,7 +8,7 @@
 .xbs-h1 { max-width: none; }
 .xbs-lede { margin-top: 32px; max-width: 46ch; }
 .xbs-asks { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 40px; }
-.xbs-asks button { min-height: 48px; padding: 0 20px; border-radius: 999px; border: 1px solid var(--line); background: #fff; font: 500 16px/1 var(--sans); color: var(--ink); cursor: pointer; transition: border-color .2s var(--xp-ease), background-color .2s var(--xp-ease), translate .2s var(--xp-ease); }
+.xbs-asks button { min-height: 48px; padding: 0 20px; border-radius: 999px; border: 1px solid var(--line); background: light-dark(#fff, var(--background)); font: 500 16px/1 var(--sans); color: var(--ink); cursor: pointer; transition: border-color .2s var(--xp-ease), background-color .2s var(--xp-ease), translate .2s var(--xp-ease); }
 /* chips: every one answers hover (translate, so Motion's inline transform cannot cancel it) and press */
 @media (hover: hover) { .xbs-asks button:hover { border-color: var(--hz-950); background: var(--hz-50); translate: 0 -1px; } }
 .xbs-asks button:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
@@ -42,7 +42,7 @@
 
 /* the composer stays under the thumb */
 .xbs-composer { position: relative; z-index: 5; display: flex; align-items: center; margin-top: auto; padding-top: 28px; }
-.xbs-composer input { width: 100%; height: 56px; padding: 0 60px 0 22px; border-radius: 28px; border: 1px solid rgba(0, 0, 0, .14); background: #fff; font: 400 16px/1 var(--sans); color: var(--ink); outline: none; transition: border-color .15s var(--ease); }
+.xbs-composer input { width: 100%; height: 56px; padding: 0 60px 0 22px; border-radius: 28px; border: 1px solid light-dark(rgba(0, 0, 0, .14), var(--border-control)); background: light-dark(#fff, var(--background)); font: 400 16px/1 var(--sans); color: var(--ink); outline: none; transition: border-color .15s var(--ease); }
 .xbs-composer input:focus { border-color: var(--xp-accent); }
 .xbs-composer button { position: absolute; right: 6px; bottom: 6px; width: 44px; height: 44px; border-radius: 50%; border: 0; background: var(--xp-accent); color: #fff; display: grid; place-items: center; cursor: pointer; transition: transform .1s, background-color .2s; }
 @media (hover: hover) { .xbs-composer button:hover:not(:disabled) { background: var(--hz-700); } }
@@ -55,24 +55,24 @@
 .xbs-sheet { border-radius: 24px; background: #0a0a0a; color: #fafafa; padding: clamp(22px, 2.2vw, 30px); display: grid; gap: 14px; }
 .xbs-sheet-h { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 8px 12px; }
 .xbs-sheet-h b { font: 497 18px/1.2 var(--sans); letter-spacing: -.01em; }
-.xbs-sheet-h span { font-size: 12px; font-weight: 600; padding: 5px 10px; border-radius: 999px; background: #f5f5f7; color: #0a0a0b; }
+.xbs-sheet-h span { font-size: 12px; font-weight: 600; padding: 5px 10px; border-radius: 999px; background: light-dark(#f5f5f7, var(--muted)); color: light-dark(#0a0a0b, var(--foreground)); }
 .xbs-team { margin: 0; font-size: 14px; color: #a1a1a6; }
 .xbs-team b { font: 220 64px/1 var(--sans); letter-spacing: -.04em; color: #fafafa; margin-right: 8px; }
 .xbs-seats { display: grid; grid-template-columns: repeat(20, 1fr); gap: 5px; }
-.xbs-seats i { aspect-ratio: 1; border-radius: 3px; background: rgba(255, 255, 255, .07); transition: background .35s var(--xp-ease), transform .35s var(--xp-ease); }
-.xbs-seats i.s { transform: scale(1.04); background: rgba(255, 255, 255, .6); }
+.xbs-seats i { aspect-ratio: 1; border-radius: 3px; background: light-dark(rgba(255, 255, 255, .07), color-mix(in srgb, var(--background) 7%, transparent)); transition: background .35s var(--xp-ease), transform .35s var(--xp-ease); }
+.xbs-seats i.s { transform: scale(1.04); background: light-dark(rgba(255, 255, 255, .6), color-mix(in srgb, var(--background) 60%, transparent)); }
 /* the members slider, drawn: a light track, a 24px thumb, a 44px hit area */
 .xbs-range { -webkit-appearance: none; appearance: none; width: 100%; height: 44px; margin: 0; background: transparent; cursor: pointer; }
 .xbs-range:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; border-radius: 22px; }
-.xbs-range::-webkit-slider-runnable-track { height: 6px; border-radius: 3px; background: rgba(255, 255, 255, .16); }
-.xbs-range::-moz-range-track { height: 6px; border-radius: 3px; background: rgba(255, 255, 255, .16); }
-.xbs-range::-moz-range-progress { height: 6px; border-radius: 3px; background: #f5f5f7; }
-.xbs-range::-webkit-slider-thumb { -webkit-appearance: none; width: 24px; height: 24px; margin-top: -9px; border-radius: 50%; background: #f5f5f7; box-shadow: 0 0 0 6px rgba(255, 255, 255, .12); transition: transform .15s; }
-.xbs-range::-moz-range-thumb { width: 24px; height: 24px; border: 0; border-radius: 50%; background: #f5f5f7; box-shadow: 0 0 0 6px rgba(255, 255, 255, .12); }
+.xbs-range::-webkit-slider-runnable-track { height: 6px; border-radius: 3px; background: light-dark(rgba(255, 255, 255, .16), color-mix(in srgb, var(--background) 16%, transparent)); }
+.xbs-range::-moz-range-track { height: 6px; border-radius: 3px; background: light-dark(rgba(255, 255, 255, .16), color-mix(in srgb, var(--background) 16%, transparent)); }
+.xbs-range::-moz-range-progress { height: 6px; border-radius: 3px; background: light-dark(#f5f5f7, var(--muted)); }
+.xbs-range::-webkit-slider-thumb { -webkit-appearance: none; width: 24px; height: 24px; margin-top: -9px; border-radius: 50%; background: light-dark(#f5f5f7, var(--muted)); box-shadow: 0 0 0 6px rgba(255, 255, 255, .12); transition: transform .15s; }
+.xbs-range::-moz-range-thumb { width: 24px; height: 24px; border: 0; border-radius: 50%; background: light-dark(#f5f5f7, var(--muted)); box-shadow: 0 0 0 6px rgba(255, 255, 255, .12); }
 .xbs-range:active::-webkit-slider-thumb { transform: scale(1.12); }
 .xbs-tot { margin: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
 .xbs-tot.one { grid-template-columns: 1fr; }
-.xbs-tot > div { padding: 14px 16px; border-radius: 16px; background: rgba(255, 255, 255, .06); }
+.xbs-tot > div { padding: 14px 16px; border-radius: 16px; background: light-dark(rgba(255, 255, 255, .06), color-mix(in srgb, var(--background) 6%, transparent)); }
 /* both labels hold two lines, so the two prices share one baseline whether or not "(RECOMMENDED)" wraps */
 .xbs-tot dt { font: 500 12px/1.3 var(--mono); letter-spacing: .1em; text-transform: uppercase; color: #a1a1a6; min-height: 2.6em; }
 .xbs-tot.one dt { min-height: 0; }
@@ -86,7 +86,7 @@
 
 /* the signature: the plan stamped onto the quote (Stamp in the page file) */
 .xbs-sheet { position: relative; transform-origin: 50% 100%; }
-.xbs-stamp { position: absolute; z-index: 2; right: clamp(22px, 2.2vw, 30px); top: clamp(78px, 7vw, 92px); display: grid; justify-items: center; gap: 2px; padding: 8px 14px; border: 2px solid #f5f5f7; outline: 1px solid rgba(245, 245, 247, .5); outline-offset: 3px; border-radius: 8px; color: #f5f5f7; text-transform: uppercase; letter-spacing: .1em; pointer-events: none; mix-blend-mode: normal; }
+.xbs-stamp { position: absolute; z-index: 2; right: clamp(22px, 2.2vw, 30px); top: clamp(78px, 7vw, 92px); display: grid; justify-items: center; gap: 2px; padding: 8px 14px; border: 2px solid light-dark(#f5f5f7, var(--border)); outline: 1px solid rgba(245, 245, 247, .5); outline-offset: 3px; border-radius: 8px; color: #f5f5f7; text-transform: uppercase; letter-spacing: .1em; pointer-events: none; mix-blend-mode: normal; }
 .xbs-stamp b { font: 600 14px/1.1 var(--mono); }
 .xbs-stamp span { font: 500 11px/1.1 var(--mono); color: #a1a1a6; }
 
@@ -104,31 +104,31 @@
 .xbs-sx { margin: 0; font-size: 13px; color: #a1a1a6; }
 .xbs-sx b { font: 220 40px/1 var(--sans); letter-spacing: -.03em; color: #fafafa; margin-right: 6px; }
 .xbs-sg { display: grid; grid-template-columns: repeat(20, 1fr); gap: 5px; }
-.xbs-sg i { aspect-ratio: 1; border-radius: 3px; background: rgba(255, 255, 255, .08); }
-.xbs-sg i.s { background: rgba(255, 255, 255, .62); }
+.xbs-sg i { aspect-ratio: 1; border-radius: 3px; background: light-dark(rgba(255, 255, 255, .08), color-mix(in srgb, var(--background) 8%, transparent)); }
+.xbs-sg i.s { background: light-dark(rgba(255, 255, 255, .62), color-mix(in srgb, var(--background) 62%, transparent)); }
 .xbs-sg.sweep i.s { animation: xbs-in .5s var(--xp-ease) both; animation-delay: calc(var(--k) * 14ms); }
-@keyframes xbs-in { from { transform: scale(.4); background: rgba(255, 255, 255, .08); } }
+@keyframes xbs-in { from { transform: scale(.4); background: light-dark(rgba(255, 255, 255, .08), color-mix(in srgb, var(--background) 8%, transparent)); } }
 .xbs-sp { margin: 0; font: 497 52px/1 var(--sans); letter-spacing: -.035em; font-feature-settings: 'tnum'; }
 .xbs-sp small, .xbs-mt small { font: 400 15px var(--sans); letter-spacing: 0; color: #a1a1a6; }
 /* scene: the rate tiles, the annual one picked */
 .xbs-mt { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-.xbs-mt > div { display: grid; gap: 10px; align-content: start; padding: 16px; border-radius: 14px; background: rgba(255, 255, 255, .06); box-shadow: inset 0 0 0 1px transparent; transition: box-shadow .3s var(--xp-ease); }
+.xbs-mt > div { display: grid; gap: 10px; align-content: start; padding: 16px; border-radius: 14px; background: light-dark(rgba(255, 255, 255, .06), color-mix(in srgb, var(--background) 6%, transparent)); box-shadow: inset 0 0 0 1px transparent; transition: box-shadow .3s var(--xp-ease); }
 .xbs-mt > div.on { box-shadow: inset 0 0 0 1.5px #f5f5f7; }
 .xbs-mt > div > span { font-size: 11px; line-height: 1.3; letter-spacing: .08em; text-transform: uppercase; color: #a1a1a6; min-height: 2.6em; }
 .xbs-mt b { font: 497 28px/1 var(--sans); letter-spacing: -.03em; font-feature-settings: 'tnum'; }
 .xbs-save { animation: xbs-glint 2.8s var(--ease-calm, ease) infinite alternate; }
 @keyframes xbs-glint { from { transform: scale(1); } to { transform: scale(1.05); } }
 /* scene: the slider moving by itself */
-.xbs-mr { position: relative; height: 6px; border-radius: 3px; background: rgba(255, 255, 255, .16); margin: 6px 12px 4px 0; }
-.xbs-mr b { display: block; height: 100%; border-radius: 3px; background: #f5f5f7; transition: width .4s var(--xp-ease); }
-.xbs-mr-t { position: absolute; top: 50%; width: 20px; height: 20px; margin: -10px 0 0 -10px; border-radius: 50%; background: #f5f5f7; box-shadow: 0 0 0 5px rgba(255, 255, 255, .12); transition: left .4s var(--xp-ease); }
+.xbs-mr { position: relative; height: 6px; border-radius: 3px; background: light-dark(rgba(255, 255, 255, .16), color-mix(in srgb, var(--background) 16%, transparent)); margin: 6px 12px 4px 0; }
+.xbs-mr b { display: block; height: 100%; border-radius: 3px; background: light-dark(#f5f5f7, var(--muted)); transition: width .4s var(--xp-ease); }
+.xbs-mr-t { position: absolute; top: 50%; width: 20px; height: 20px; margin: -10px 0 0 -10px; border-radius: 50%; background: light-dark(#f5f5f7, var(--muted)); box-shadow: 0 0 0 5px rgba(255, 255, 255, .12); transition: left .4s var(--xp-ease); }
 /* scenes: the chat, small */
 .xbs-mchat { display: grid; gap: 12px; }
-.xbs-mme { justify-self: end; max-width: 80%; margin: 0; padding: 9px 14px; border-radius: 14px 14px 4px 14px; background: #f5f5f7; color: #0a0a0b; font-size: 14px; line-height: 1.4; animation: xbs-up .5s var(--xp-ease) both; }
+.xbs-mme { justify-self: end; max-width: 80%; margin: 0; padding: 9px 14px; border-radius: 14px 14px 4px 14px; background: light-dark(#f5f5f7, var(--muted)); color: light-dark(#0a0a0b, var(--foreground)); font-size: 14px; line-height: 1.4; animation: xbs-up .5s var(--xp-ease) both; }
 .xbs-mai { display: grid; grid-template-columns: 32px 1fr; gap: 10px; align-items: start; animation: xbs-up .5s var(--xp-ease) .5s both; }
-.xbs-av.dk { background: rgba(255, 255, 255, .1); border-color: rgba(255, 255, 255, .2); color: #f5f5f7; }
+.xbs-av.dk { background: light-dark(rgba(255, 255, 255, .1), color-mix(in srgb, var(--background) 10%, transparent)); border-color: rgba(255, 255, 255, .2); color: #f5f5f7; }
 .xbs-mans { display: grid; gap: 10px; justify-items: start; min-width: 0; }
-.xbs-mb { margin: 0; padding: 10px 14px; border-radius: 4px 14px 14px 14px; background: rgba(255, 255, 255, .08); border: 1px solid rgba(255, 255, 255, .12); font-size: 14px; line-height: 1.5; color: #e4e4e7; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+.xbs-mb { margin: 0; padding: 10px 14px; border-radius: 4px 14px 14px 14px; background: light-dark(rgba(255, 255, 255, .08), color-mix(in srgb, var(--background) 8%, transparent)); border: 1px solid rgba(255, 255, 255, .12); font-size: 14px; line-height: 1.5; color: #e4e4e7; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
 .xbs-mb strong { color: #fafafa; }
 .xbs-mpill { display: inline-flex; align-items: center; min-height: 34px; padding: 0 14px; border-radius: 999px; border: 1px solid rgba(255, 255, 255, .3); font-size: 13px; color: #fafafa; animation: xbs-up .5s var(--xp-ease) 1s both; }
 .xbs-mlink { margin: 0 0 0 42px; font-size: 13px; color: #a1a1a6; text-decoration: underline; text-underline-offset: 3px; animation: xbs-up .5s var(--xp-ease) 1.3s both; }
@@ -136,8 +136,8 @@
 @keyframes xbs-up { from { opacity: 0; transform: translateY(8px); } }
 /* scene: the composer, a question typing itself, the privacy line under it */
 .xbs-mcomp { display: grid; gap: 12px; }
-.xbs-min { position: relative; display: flex; align-items: center; height: 52px; padding: 0 56px 0 18px; border-radius: 26px; background: #f5f5f7; color: #0a0a0b; font-size: 15px; overflow: hidden; }
-.xbs-mtype { display: inline-block; overflow: hidden; white-space: nowrap; border-right: 2px solid #0a0a0b; padding-right: 2px; animation: xbs-type 3.6s steps(30) infinite; max-width: 100%; }
+.xbs-min { position: relative; display: flex; align-items: center; height: 52px; padding: 0 56px 0 18px; border-radius: 26px; background: light-dark(#f5f5f7, var(--muted)); color: light-dark(#0a0a0b, var(--foreground)); font-size: 15px; overflow: hidden; }
+.xbs-mtype { display: inline-block; overflow: hidden; white-space: nowrap; border-right: 2px solid light-dark(#0a0a0b, var(--foreground)); padding-right: 2px; animation: xbs-type 3.6s steps(30) infinite; max-width: 100%; }
 @keyframes xbs-type { 0% { width: 0; } 60%, 100% { width: 100%; } }
 .xbs-msend { position: absolute; right: 5px; top: 5px; width: 42px; height: 42px; border-radius: 50%; background: #0a0a0b; color: #f5f5f7; display: grid; place-items: center; font-style: normal; font-size: 16px; }
 .xbs-mlegal { margin: 0; text-align: center; font-size: 13px; color: #a1a1a6; }
@@ -157,7 +157,7 @@
 /* One solid at a time from the first paint (the /affiliate move): the header's ask is outlined on this route until
    the page's hook says none of its own solid asks is on screen (html[data-xbs-solid]). */
 html:has(main.xbs):not([data-xbs-solid]) header[data-slot=masthead] a[href="https://hanzo.ai/signup"],
-html:has(main.xbs):not([data-xbs-solid]) header[data-slot=masthead] a[data-x-ask] { background-color: transparent; color: var(--foreground); box-shadow: inset 0 0 0 1px var(--border, rgba(0, 0, 0, .14)); }
+html:has(main.xbs):not([data-xbs-solid]) header[data-slot=masthead] a[data-x-ask] { background-color: transparent; color: var(--foreground); box-shadow: inset 0 0 0 1px var(--border, light-dark(rgba(0, 0, 0, .14), var(--border-control))); }
 
 /* the phone bar under the thumb */
 .xbs-dock { display: none; }
@@ -173,8 +173,8 @@ html:has(main.xbs):not([data-xbs-solid]) header[data-slot=masthead] a[data-x-ask
   .xbs-mini-q { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; row-gap: 12px; color: #a3a3a3; font-size: 13px; text-decoration: none; }
   .xbs-mini-q b { font: 497 26px/1 var(--sans); color: #fafafa; margin-right: 6px; }
   .xbs-mini-q:active { translate: 0 1px; }
-  .xbs-mini-bar { display: block; flex-basis: 100%; height: 3px; border-radius: 2px; background: rgba(255, 255, 255, .14); overflow: hidden; }
-  .xbs-mini-bar b { display: block; height: 100%; background: #f5f5f7; transform-origin: left; transition: transform .6s var(--xp-ease); }
+  .xbs-mini-bar { display: block; flex-basis: 100%; height: 3px; border-radius: 2px; background: light-dark(rgba(255, 255, 255, .14), color-mix(in srgb, var(--background) 14%, transparent)); overflow: hidden; }
+  .xbs-mini-bar b { display: block; height: 100%; background: light-dark(#f5f5f7, var(--muted)); transform-origin: left; transition: transform .6s var(--xp-ease); }
   .xbs-mini-go { height: 44px; }
   .xbs-asks { margin-top: 28px; }
   .xbs-asks button { width: 100%; text-align: left; }
@@ -197,7 +197,7 @@ html:has(main.xbs):not([data-xbs-solid]) header[data-slot=masthead] a[data-x-ask
   .xbs-mme { font-size: 13px; }
 }
 @media (max-width: 700px) {
-  .xbs-dock { position: fixed; left: 0; right: 0; bottom: 0; z-index: 40; display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 10px 16px calc(10px + env(safe-area-inset-bottom)); background: #fff; border-top: 1px solid var(--line); }
+  .xbs-dock { position: fixed; left: 0; right: 0; bottom: 0; z-index: 40; display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 10px 16px calc(10px + env(safe-area-inset-bottom)); background: light-dark(#fff, var(--background)); border-top: 1px solid var(--line); }
   .xbs-dock-q { display: flex; align-items: center; gap: 4px; min-height: 44px; font-size: 13px; color: var(--soft); text-decoration: none; white-space: nowrap; }
   .xbs-dock-q b { font: 497 18px/1 var(--sans); color: var(--ink); }
   .xbs-dock-q b:nth-of-type(2) { margin-left: 8px; }

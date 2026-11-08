@@ -4,7 +4,7 @@
 
 /* 1. tile-flip: the patch panel forms out of a grid of flipping tiles (CSS only, on load) */
 .xcte-tiles { position: absolute; inset: -4px; z-index: 6; display: grid; grid-auto-rows: 1fr; pointer-events: none; }
-.xcte-tiles i { display: block; background: #fff; backface-visibility: hidden; transform-origin: 0 50%; animation: xcte-flip .5s cubic-bezier(.16, 1, .3, 1) calc(.7s + var(--d)) both; }
+.xcte-tiles i { display: block; background: light-dark(#fff, var(--background)); backface-visibility: hidden; transform-origin: 0 50%; animation: xcte-flip .5s cubic-bezier(.16, 1, .3, 1) calc(.7s + var(--d)) both; }
 @keyframes xcte-flip {
   from { transform: perspective(700px) rotateY(0deg); opacity: 1; }
   to { transform: perspective(700px) rotateY(92deg); opacity: 0; }

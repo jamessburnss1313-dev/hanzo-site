@@ -22,7 +22,7 @@
 @media (hover: hover) { .xbt-prod:hover { text-decoration-color: var(--hz-950); } }
 .xbt-shelf { display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px; }
 .xbt-shelf-k { font: 500 13px/1 var(--mono); letter-spacing: .12em; text-transform: uppercase; color: var(--hz-500); }
-.xbt-pause { display: grid; place-items: center; width: 44px; height: 44px; border-radius: 50%; border: 1px solid var(--line); background: #fff; color: var(--hz-950); cursor: pointer; transition: transform .1s, box-shadow .2s; }
+.xbt-pause { display: grid; place-items: center; width: 44px; height: 44px; border-radius: 50%; border: 1px solid var(--line); background: light-dark(#fff, var(--background)); color: var(--hz-950); cursor: pointer; transition: transform .1s, box-shadow .2s; }
 @media (hover: hover) { .xbt-pause:hover { box-shadow: inset 0 0 0 100vmax rgba(128, 128, 128, .1); } }
 .xbt-pause:active { transform: scale(.94); }
 .xbt-pause:focus-visible { outline: 2px solid var(--focus); outline-offset: 3px; }
@@ -31,19 +31,19 @@
 .xbt-tile.film { background: #000; }
 .xbt-film { position: absolute; inset: -12px 0 0 0; width: 100%; height: calc(100% + 12px); object-fit: cover; transition: transform .5s var(--xp-ease); }
 /* the hairline: faint at rest, ink on hover (the kit .x-card's stronger line, drawn inset so the film is not cut) */
-.xbt-tile { outline: 1px solid rgba(10, 10, 11, .06); outline-offset: -1px; }
+.xbt-tile { outline: 1px solid light-dark(rgba(10, 10, 11, .06), var(--border)); outline-offset: -1px; }
 .xbt-tile.film { outline-color: rgba(255, 255, 255, .08); }
 .xbt-sk { transition: transform .5s var(--xp-ease); }
 @media (hover: hover) { .xbt-tile:hover { outline-color: var(--hz-400); } .xbt-tile.film:hover { outline-color: rgba(255, 255, 255, .4); } .xbt-tile:hover .xbt-sk { transform: translateY(-12px); } .xbt-tile:hover .xbt-film { transform: translateY(-12px); } .xbt-tile:hover .xbt-tile-n { text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px; } }
 .xbt-tile:active { transform: scale(.97); transition-duration: 90ms; }
 .xbt-tile.film::before { content: ''; position: absolute; inset: auto 0 0 0; height: 40%; background: linear-gradient(transparent, rgba(0, 0, 0, .55)); z-index: 1; pointer-events: none; }
-.xbt-tile-n { position: absolute; left: 24px; bottom: 22px; z-index: 2; font: 497 21px/1 var(--sans); letter-spacing: -.015em; color: #0a0a0a; }
+.xbt-tile-n { position: absolute; left: 24px; bottom: 22px; z-index: 2; font: 497 21px/1 var(--sans); letter-spacing: -.015em; color: light-dark(#0a0a0a, var(--foreground)); }
 .xbt-tile.film .xbt-tile-n { color: #f5f5f7; }
-.xbt-tile::after { content: '↗'; position: absolute; right: 18px; bottom: 12px; z-index: 2; display: grid; place-items: center; width: 40px; height: 40px; border-radius: 50%; background: #fff; color: var(--hz-950); font: 500 16px/1 var(--sans); opacity: 0; transform: scale(.8); transition: opacity .3s var(--xp-ease), transform .3s var(--xp-ease); }
+.xbt-tile::after { content: '↗'; position: absolute; right: 18px; bottom: 12px; z-index: 2; display: grid; place-items: center; width: 40px; height: 40px; border-radius: 50%; background: light-dark(#fff, var(--background)); color: var(--hz-950); font: 500 16px/1 var(--sans); opacity: 0; transform: scale(.8); transition: opacity .3s var(--xp-ease), transform .3s var(--xp-ease); }
 @media (hover: hover) { .xbt-tile:hover::after { opacity: 1; transform: none; } }
 .xbt-tile:focus-visible::after { opacity: 1; transform: none; }
 .xbt-tile:focus-visible { outline: 2px solid var(--focus); outline-offset: 3px; }
-.xbt-sk { position: absolute; inset: 24px 24px 76px; display: flex; flex-direction: column; justify-content: center; gap: 12px; padding: 22px; border-radius: 16px; background: #fff; border: 1px solid var(--line); box-shadow: 0 30px 60px -40px rgba(0, 0, 0, .35); }
+.xbt-sk { position: absolute; inset: 24px 24px 76px; display: flex; flex-direction: column; justify-content: center; gap: 12px; padding: 22px; border-radius: 16px; background: light-dark(#fff, var(--background)); border: 1px solid var(--line); box-shadow: 0 30px 60px -40px rgba(0, 0, 0, .35); }
 .xbt-sk i { display: block; height: 9px; border-radius: 5px; background: var(--hz-100); transform-origin: 0 50%; }
 .xbt-sk.dev.run i { animation: xbt-write .7s var(--xp-ease) both; animation-delay: calc(var(--i) * 110ms); }
 @keyframes xbt-write { from { transform: scaleX(0); } to { transform: none; } }
@@ -55,7 +55,7 @@
 .xbt-sk.studio { gap: 16px; }
 .xbt-sk.studio i { height: 26px; border-radius: 8px; background: var(--hz-100); }
 .xbt-sk.studio i:nth-child(2) { background: var(--hz-700); }
-.xbt-sk.studio b { position: absolute; top: 14px; bottom: 14px; left: 46%; width: 2px; background: var(--hz-950); border-radius: 2px; box-shadow: 0 0 0 4px rgba(10, 10, 11, .06); }
+.xbt-sk.studio b { position: absolute; top: 14px; bottom: 14px; left: 46%; width: 2px; background: var(--hz-950); border-radius: 2px; box-shadow: 0 0 0 4px light-dark(rgba(10, 10, 11, .06), var(--border)); }
 
 /* the passes: tiles carrying Hanzo's own media; each opens into a sheet */
 .xbt-grid { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); grid-template-rows: repeat(2, minmax(360px, 42svh)); gap: 24px; }
@@ -89,14 +89,14 @@
 .xbt-cell.c0 .xbt-t { font-size: 32px; letter-spacing: -.025em; }
 .xbt-d { margin: 0; max-width: 36ch; font-size: clamp(1.0625rem, 1.32vw, 1.1875rem); line-height: 1.5; color: var(--room-soft); }
 .xbt-stub { margin-top: 4px; min-height: 44px; font-size: 17px; color: inherit; }
-.xbt-plus { position: absolute; top: clamp(20px, 2.4vw, 32px); right: clamp(20px, 2.4vw, 32px); z-index: 2; display: grid; place-items: center; width: 48px; height: 48px; border-radius: 50%; background: #fff; color: var(--hz-950); box-shadow: 0 8px 24px -10px rgba(0, 0, 0, .4); transition: transform .4s var(--xp-ease); pointer-events: none; }
+.xbt-plus { position: absolute; top: clamp(20px, 2.4vw, 32px); right: clamp(20px, 2.4vw, 32px); z-index: 2; display: grid; place-items: center; width: 48px; height: 48px; border-radius: 50%; background: light-dark(#fff, var(--background)); color: var(--hz-950); box-shadow: 0 8px 24px -10px rgba(0, 0, 0, .4); transition: transform .4s var(--xp-ease); pointer-events: none; }
 @media (hover: hover) { .xbt-pass:hover .xbt-plus { transform: rotate(90deg) scale(1.06); } }
 
 /* the opened pass */
 .xbt-sheet-wrap { position: fixed; inset: 0; z-index: 90; width: 100%; height: 100%; max-width: none; max-height: none; margin: 0; padding: 0; border: 0; background: transparent; overflow: hidden; }
 .xbt-sheet-wrap::backdrop { background: transparent; }
 .xbt-veil { position: absolute; inset: 0; background: rgba(10, 10, 11, .5); }
-.xbt-sheet { position: absolute; inset: clamp(12px, 2.4vw, 36px); border-radius: 28px; background: #fff; overflow: hidden; display: flex; align-items: flex-end; padding: clamp(28px, 5vw, 88px); box-shadow: 0 24px 60px -16px rgba(0, 0, 0, .18); isolation: isolate; }
+.xbt-sheet { position: absolute; inset: clamp(12px, 2.4vw, 36px); border-radius: 28px; background: light-dark(#fff, var(--background)); overflow: hidden; display: flex; align-items: flex-end; padding: clamp(28px, 5vw, 88px); box-shadow: 0 24px 60px -16px rgba(0, 0, 0, .18); isolation: isolate; }
 .xbt-sheet.dark { background: #000; color: #f5f5f7; }
 .xbt-sheet-m { position: absolute; inset: 0; z-index: -1; }
 .xbt-sheet-m .xbt-pass-img { object-position: 70% 40%; }
@@ -104,7 +104,7 @@
 .xbt-sheet-m .xbt-pass-sk { inset: 0 0 50% 40%; }
 .xbt-sheet-in { position: relative; display: grid; gap: 24px; justify-items: start; max-width: 900px; }
 .xbt-sheet-in .xp-display { color: inherit; }
-.xbt-close { position: absolute; top: clamp(16px, 2vw, 28px); right: clamp(16px, 2vw, 28px); z-index: 2; width: 52px; height: 52px; border-radius: 50%; border: 0; background: #fff; color: var(--hz-950); cursor: pointer; display: grid; place-items: center; box-shadow: 0 8px 24px -10px rgba(0, 0, 0, .4); transition: transform .1s; }
+.xbt-close { position: absolute; top: clamp(16px, 2vw, 28px); right: clamp(16px, 2vw, 28px); z-index: 2; width: 52px; height: 52px; border-radius: 50%; border: 0; background: light-dark(#fff, var(--background)); color: var(--hz-950); cursor: pointer; display: grid; place-items: center; box-shadow: 0 8px 24px -10px rgba(0, 0, 0, .4); transition: transform .1s; }
 .xbt-close:active { transform: scale(.94); }
 .xbt-close:focus-visible { outline: 2px solid var(--focus); outline-offset: 3px; }
 
@@ -155,7 +155,7 @@
 [data-off] .xbt-sk i, [data-off] .xbt-sk b { animation-play-state: paused; }
 
 /* Hanzo's own pass letters (A, B, C), as on hanzo.ai/beta: a small key in the card's top-left corner */
-.xbt-key { position: absolute; top: clamp(20px, 2.4vw, 32px); left: clamp(20px, 2.4vw, 32px); z-index: 2; display: grid; place-items: center; min-width: 28px; height: 28px; padding: 0 6px; border-radius: 8px; border: 1px solid rgba(0, 0, 0, .14); font-size: 12px; color: var(--hz-950); pointer-events: none; }
+.xbt-key { position: absolute; top: clamp(20px, 2.4vw, 32px); left: clamp(20px, 2.4vw, 32px); z-index: 2; display: grid; place-items: center; min-width: 28px; height: 28px; padding: 0 6px; border-radius: 8px; border: 1px solid light-dark(rgba(0, 0, 0, .14), var(--border-control)); font-size: 12px; color: var(--hz-950); pointer-events: none; }
 .xbt-pass.dark .xbt-key { border-color: rgba(255, 255, 255, .3); color: #f5f5f7; }
 
 /* ---------- dark (docs/DARK-MODE.md): the hz ramp is constant, so the sketch tiles, the Design partner pass and their

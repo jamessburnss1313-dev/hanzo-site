@@ -14,7 +14,7 @@
 .bs .kns-acts .x-btn[data-cta='base.hero'] { background-color: var(--btn-solid-bg); border-color: var(--btn-solid-bg); color: var(--btn-solid-ink); }
 .bs .kns-acts .x-btn[data-cta='base.hero']:active { transform: scale(.98); }
 @media (hover: hover) { .bs .kns-acts .x-btn[data-cta='base.hero']:hover { background-color: var(--btn-solid-hover); border-color: var(--btn-solid-hover); } }
-html.bs-own-ask header[data-slot=masthead] a[data-x-ask] { background-color: transparent; color: var(--foreground); box-shadow: inset 0 0 0 1px var(--border, rgba(0, 0, 0, .14)); }
+html.bs-own-ask header[data-slot=masthead] a[data-x-ask] { background-color: transparent; color: var(--foreground); box-shadow: inset 0 0 0 1px var(--border, light-dark(rgba(0, 0, 0, .14), var(--border-control))); }
 /* the text-link asks answer on hover: the words underline and the arrow steps 4px */
 @media (hover: hover) {
   .bs .x-arrow:hover span { text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 1px; }
@@ -112,7 +112,7 @@ html.bs-own-ask header[data-slot=masthead] a[data-x-ask] { background-color: tra
 .bs-zn-path { font: 400 19px/1.35 var(--mono); overflow-wrap: anywhere; }
 .bs-zn-path b { font-weight: 606; }
 .bs-zn .bs-verbs span { font-size: 16px; }
-.bs-zn-bin { background: #0a0a0a; color: #fafafa; border-color: #0a0a0a; justify-content: center; }
+.bs-zn-bin { background: #0a0a0a; color: #fafafa; border-color: light-dark(#0a0a0a, var(--foreground)); justify-content: center; }
 .bs-zn-bin .bs-k { color: #a3a3a3; }
 .bs-zn-n { margin: 0; font: 497 52px/1 var(--mono); letter-spacing: -.03em; }
 .bs-zn-api { margin: 0; font: 400 16px/1 var(--mono); color: rgba(255, 255, 255, .78); }

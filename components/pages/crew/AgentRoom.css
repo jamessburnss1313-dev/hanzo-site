@@ -99,7 +99,7 @@ html:not(.light) .xag-shot:not([data-night]) { --ink: #0a0a0a; --tile: #f5f5f5; 
 .xag-seat[data-dim] { opacity: .22; }
 .xag-seat:focus-visible { outline: 2px solid var(--ink); outline-offset: 6px; }
 .xag-baton { position: absolute; inset: 0; pointer-events: none; }
-.xag-baton i { position: absolute; left: 50%; top: calc(var(--s) + 6px); width: 1px; height: calc(var(--R) - var(--s) - 80px); background: linear-gradient(var(--ink), rgba(255, 255, 255, 0)); }
+.xag-baton i { position: absolute; left: 50%; top: calc(var(--s) + 6px); width: 1px; height: calc(var(--R) - var(--s) - 80px); background: linear-gradient(var(--ink), light-dark(rgba(255, 255, 255, 0), color-mix(in srgb, var(--background) 0%, transparent))); }
 .xag-hub { position: absolute; left: 50%; top: 50%; width: 220px; transform: translate(-50%, -50%); text-align: center; display: grid; gap: 6px; justify-items: center; }
 .xag-hub b { display: block; font-size: 32px; font-weight: 497; letter-spacing: -.02em; line-height: 1.05; }
 .xag-hub span { display: block; min-height: 2.8em; font-size: 14px; line-height: 1.4; color: var(--xag-soft); max-width: 22ch; }
@@ -137,7 +137,7 @@ html:not(.light) .xag-shot:not([data-night]) { --ink: #0a0a0a; --tile: #f5f5f5; 
 .xag-shot:not([data-night]) .xag-shot-bar { background: var(--tile); color: var(--ink); border-color: var(--line); }
 .xag-dots { display: inline-flex; gap: 6px; } .xag-dots i { width: 10px; height: 10px; border-radius: 50%; background: currentColor; opacity: .3; }
 .xag-url { display: inline-flex; align-items: center; gap: 8px; margin: 0 auto; padding: 6px 12px; border-radius: 6px; background: var(--on-black-line); font-size: 13px; }
-.xag-shot:not([data-night]) .xag-url { background: #fff; }
+.xag-shot:not([data-night]) .xag-url { background: light-dark(#fff, var(--background)); }
 .xag-live { width: 6px; height: 6px; border-radius: 50%; background: currentColor; }
 .xag-night { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-width: 44px; height: 44px; padding: 0 12px; border: 0; border-radius: 999px; background: transparent; color: inherit; font: 606 13px/1 var(--sans); cursor: pointer; transition: background-color var(--t-fast) var(--e-out); }
 @media (hover: hover) { .xag-night:hover { background: var(--on-black-line); } .xag-shot:not([data-night]) .xag-night:hover { background: var(--line); } }
@@ -152,7 +152,7 @@ html:not(.light) .xag-shot:not([data-night]) { --ink: #0a0a0a; --tile: #f5f5f5; 
 .xag-sk { --sk-ink: var(--on-black); --sk-2: var(--on-black-2); --sk-3: var(--on-black-3); --sk-fill: var(--on-black-line); --sk-line: var(--on-black-line);
   position: relative; display: grid; grid-template-columns: 22% 1fr; font-size: 14px; color: var(--sk-ink); }
 .xag-shot-i[data-pic] .xag-sk { position: absolute; inset: 0; }
-.xag-shot:not([data-night]) .xag-shot-i { background: #fff; }
+.xag-shot:not([data-night]) .xag-shot-i { background: light-dark(#fff, var(--background)); }
 .xag-shot:not([data-night]) .xag-sk { --sk-ink: #0a0a0a; --sk-2: #525252; --sk-3: #525252; --sk-fill: #f5f5f5; --sk-line: rgba(0, 0, 0, .1); }
 .xag-sk aside { display: flex; flex-direction: column; gap: 2px; padding: 20px 12px; border-right: 1px solid var(--sk-line); }
 .xag-sk aside span { display: flex; align-items: center; gap: 10px; min-height: 36px; padding: 0 12px; border-radius: 8px; color: var(--sk-2); transition: background-color var(--t-base) var(--e-out), color var(--t-base) var(--e-out); }

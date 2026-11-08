@@ -12,7 +12,7 @@
 .xst-t { margin: 0; max-width: 62ch; font-size: 16px; line-height: 1.6; color: var(--body); text-wrap: pretty; }
 .xst-cap, .xst-n, .xst-meta { margin: 0; font: 500 12px/1.35 var(--mono); letter-spacing: .14em; text-transform: uppercase; }
 .xst-cap, .xst-n { color: var(--quiet); }
-.xst-mark { background: linear-gradient(transparent 60%, #e4e4e7 60%); color: inherit; padding: 0 .05em; animation: xst-mark var(--d-slower) var(--e-em) both; }
+.xst-mark { background: linear-gradient(transparent 60%, light-dark(#e4e4e7, var(--secondary)) 60%); color: inherit; padding: 0 .05em; animation: xst-mark var(--d-slower) var(--e-em) both; }
 @keyframes xst-mark { from { opacity: .2; } }
 
 /* a picture over its caption plate (the plate shows when the file cannot load) */
@@ -24,10 +24,10 @@
 .xst-plate > span { margin-top: auto; max-width: 22ch; }
 .xst-plate b { font-size: 12px; font-weight: 500; letter-spacing: .14em; }
 .xst-plate > b, .xst-plate > span { position: relative; }
-.xst-pic-sigil { position: absolute; inset: 0; width: 100%; height: 100%; color: rgba(0, 0, 0, .3); }
+.xst-pic-sigil { position: absolute; inset: 0; width: 100%; height: 100%; color: light-dark(rgba(0, 0, 0, .3), var(--text-tertiary)); }
 
 /* 1. the stage: a black room that enters as a rounded card inside the gutters and opens to full width */
-.xst-hero { position: relative; height: calc(100svh - var(--x-top, 60px) - 56px); min-height: 560px; color: #fafafa; background: #fff; overflow: hidden; }
+.xst-hero { position: relative; height: calc(100svh - var(--x-top, 60px) - 56px); min-height: 560px; color: #fafafa; background: light-dark(#fff, var(--background)); overflow: hidden; }
 .xst-cover { position: absolute; inset: 0; background: #000; animation: xst-open 800ms var(--e-io) 100ms both; }
 @keyframes xst-open { from { clip-path: inset(0px 32px 0px 32px round 24px); } to { clip-path: inset(0px 0px 0px 0px round 0px); } }
 @keyframes xst-open-s { from { clip-path: inset(0px 8px 0px 8px round 20px); } to { clip-path: inset(0px 0px 0px 0px round 0px); } }
@@ -48,7 +48,7 @@
 .xst-h1 { margin: 0; font-size: 84px; font-weight: 497; letter-spacing: -.035em; line-height: .98; text-wrap: balance; color: #fafafa; transform-origin: 0 100%; }
 .xst-meta { display: flex; align-items: center; gap: 14px; margin-top: 27px; color: rgba(255, 255, 255, .78); }
 /* Hanzo's line as it prints it ("2020 · CES launch and preorders"), led in by a short hairline */
-.xst-meta::before { content: ''; flex: none; width: 32px; height: 1px; background: rgba(255, 255, 255, .3); }
+.xst-meta::before { content: ''; flex: none; width: 32px; height: 1px; background: light-dark(rgba(255, 255, 255, .3), color-mix(in srgb, var(--background) 30%, transparent)); }
 .xst-ask { margin-top: 27px; }
 /* the bare room's object (the picture could not load): Hanzo's lead figure on a graphite plate, lower right */
 .xst-ledger { position: absolute; right: 0; bottom: 44px; width: min(360px, 32%); display: flex; flex-direction: column; padding: 27px; border-radius: 20px; background: #262626; color: #fafafa; }
@@ -99,7 +99,7 @@
 .xst-how-head .xst-cap { grid-column: 9 / span 5; justify-self: end; }
 .xst-scenes { --pinned: 1; position: relative; height: calc(var(--n) * 100svh); }
 .xst-stage { position: sticky; top: 0; height: 100svh; overflow: hidden; }
-.xst-scene { position: absolute; inset: 0; display: flex; align-items: center; padding-top: var(--x-top, 60px); background: #fff; }
+.xst-scene { position: absolute; inset: 0; display: flex; align-items: center; padding-top: var(--x-top, 60px); background: light-dark(#fff, var(--background)); }
 .xst-scene[data-tone='b'] { background: var(--quiet-room); }
 .xst-scene[data-tone='b'] .xst-n { color: var(--muted); } /* #737373 fails 4.5:1 on the quiet room */
 .xst-scene + .xst-scene { box-shadow: 0 -1px 0 var(--hair); }

@@ -13,7 +13,7 @@ html:not(.light) .agt .v2a-kick, html:not(.light) .agt .v2a-folio, html:not(.lig
 .agt [data-room='dark'] { --btn-solid-bg: #fafafa; --btn-solid-hover: #d4d4d4; --room-ink: #fafafa; --focus: #fafafa; }
 .agt .x-band { color: #fafafa; }
 .agt .x-band h2 { color: #fafafa; }
-.agt .x-band .x-btn.solid { background-color: #fafafa; border-color: #fafafa; color: #0a0a0a; }
+.agt .x-band .x-btn.solid { background-color: light-dark(#fafafa, var(--background)); border-color: light-dark(#fafafa, var(--border)); color: light-dark(#0a0a0a, var(--foreground)); }
 @media not all and (pointer: coarse) {
   .agt [data-room='dark'] .x-btn.solid:hover, .agt .x-band .x-btn.solid:hover { background-color: #d4d4d4; border-color: #d4d4d4; }
 }
@@ -73,7 +73,7 @@ html:not(.js) .agt .agt-ctl { display: none; }
 .agt-rise { animation: agt-rise .5s var(--em) both; animation-delay: var(--d, .28s); }
 
 /* the run: the five steps as a numbered terminal */
-.agt-run { border-radius: 28px; background: rgba(10, 10, 10, .94); border: 1px solid rgba(255, 255, 255, .1); box-shadow: 0 80px 140px -60px #000, 0 0 0 1px rgba(0, 0, 0, .6); overflow: hidden; }
+.agt-run { border-radius: 28px; background: rgba(10, 10, 10, .94); border: 1px solid rgba(255, 255, 255, .1); box-shadow: 0 80px 140px -60px #000, 0 0 0 1px light-dark(rgba(0, 0, 0, .6), var(--border-control)); overflow: hidden; }
 .agt-run-h { display: flex; align-items: center; gap: 14px; height: 54px; padding: 0 8px 0 20px; border-bottom: 1px solid rgba(255, 255, 255, .08); }
 .agt-run-dots { display: flex; gap: 7px; }
 .agt-run-dots i { width: 12px; height: 12px; border-radius: 50%; background: #404040; }
@@ -88,16 +88,16 @@ html:not(.js) .agt .agt-ctl { display: none; }
 .agt-steps button { display: grid; grid-template-columns: 40px minmax(0, 1fr) 18px; align-items: center; gap: 8px; width: 100%; min-height: 54px; padding: 0; border: 0; background: none; text-align: left; font: 500 17px/1.3 var(--sans); color: #a3a3a3; cursor: pointer; transition: color .3s, transform .12s; }
 .agt-step-t { display: inline-block; transition: transform .3s var(--em); }
 .agt-steps button:active { transform: translateY(1px); }
-.agt-steps button:focus-visible { outline: 2px solid #fafafa; outline-offset: 2px; border-radius: 8px; }
+.agt-steps button:focus-visible { outline: 2px solid light-dark(#fafafa, var(--border)); outline-offset: 2px; border-radius: 8px; }
 @media not all and (pointer: coarse) { .agt-steps button:hover { color: #e5e5e5; } .agt-steps button:hover .agt-step-t { transform: translateX(6px); } }
-.agt-step-n { font-size: 13px; color: #737373; transition: color .3s; }
+.agt-step-n { font-size: 13px; color: light-dark(#737373, var(--muted-foreground)); transition: color .3s; }
 .agt-step-ok { color: #fafafa; opacity: 0; transform: scale(.6); transition: opacity .3s, transform .4s var(--em); }
 .agt-steps li.done button { color: #d4d4d4; }
 .agt-steps li.done .agt-step-ok { opacity: 1; transform: none; }
 .agt-steps li.on button { color: #fff; }
 .agt-steps li.on .agt-step-n { color: #fff; }
 /* one cell holds every step (so it is as tall as the tallest); the old one is gone before the new one shows */
-.agt-detail { display: grid; margin: 0 22px 22px; padding: 18px 20px; border-radius: 16px; background: rgba(255, 255, 255, .05); }
+.agt-detail { display: grid; margin: 0 22px 22px; padding: 18px 20px; border-radius: 16px; background: light-dark(rgba(255, 255, 255, .05), color-mix(in srgb, var(--background) 5%, transparent)); }
 .agt-step-b { grid-area: 1 / 1; opacity: 0; visibility: hidden; transform: translateY(6px); transition: opacity .14s cubic-bezier(0, 0, .2, 1), transform .14s cubic-bezier(0, 0, .2, 1), visibility 0s .14s; }
 .agt-step-b.on { opacity: 1; visibility: visible; transform: none; transition: opacity .3s var(--em) .14s, transform .3s var(--em) .14s, visibility 0s .14s; }
 .agt-step-d { margin: 0; padding-bottom: 10px; font-size: 15px; line-height: 1.5; color: #a3a3a3; }
@@ -165,7 +165,7 @@ html:not(.js) .agt-row { opacity: 1; transform: none; }
 .agt-ix-n { font-size: 13px; }
 .agt-index li.on button { color: var(--ink); }
 .agt-index li.on .agt-ix-ln { opacity: 1; transform: none; }
-.agt-file { border-radius: 28px; background: #0a0a0a; overflow: hidden; box-shadow: 0 80px 140px -70px rgba(0, 0, 0, .45), 0 0 0 1px rgba(0, 0, 0, .92); }
+.agt-file { border-radius: 28px; background: #0a0a0a; overflow: hidden; box-shadow: 0 80px 140px -70px rgba(0, 0, 0, .45), 0 0 0 1px light-dark(rgba(0, 0, 0, .92), var(--border-control)); }
 /* dark: the code window keeps its black and takes Hanzo's hairline, as live's code panels do */
 html:not(.light) .agt-file { box-shadow: 0 80px 140px -70px rgba(0, 0, 0, .45), 0 0 0 1px var(--border); }
 .agt-file-bar { display: flex; align-items: center; gap: 14px; height: 52px; padding: 0 10px 0 20px; border-bottom: 1px solid rgba(255, 255, 255, .08); }
@@ -174,11 +174,11 @@ html:not(.light) .agt-file { box-shadow: 0 80px 140px -70px rgba(0, 0, 0, .45), 
 .agt-file-bar .x-copy { background: #171717; border-color: rgba(255, 255, 255, .14); color: #d4d4d4; }
 .agt-file .agt-ctl { width: 40px; height: 40px; }
 .agt-code { position: relative; height: 440px; overflow: hidden auto; padding: 18px 0 18px; scrollbar-width: thin; scrollbar-color: #262626 transparent; overscroll-behavior: contain; }
-.agt-code:focus-visible { outline: 2px solid #fafafa; outline-offset: -4px; }
+.agt-code:focus-visible { outline: 2px solid light-dark(#fafafa, var(--border)); outline-offset: -4px; }
 .agt-code pre { position: relative; margin: 0; font: 400 14px/1.75 var(--mono); color: #d4d4d4; }
-.agt-band { position: absolute; left: 0; right: 0; top: 18px; background: linear-gradient(90deg, rgba(255, 255, 255, .14), rgba(255, 255, 255, .03)); border-left: 2px solid #fafafa; transition: transform .3s var(--em), height .3s var(--em), opacity .3s; pointer-events: none; }
+.agt-band { position: absolute; left: 0; right: 0; top: 18px; background: linear-gradient(90deg, light-dark(rgba(255, 255, 255, .14), color-mix(in srgb, var(--background) 14%, transparent)), light-dark(rgba(255, 255, 255, .03), color-mix(in srgb, var(--background) 3%, transparent))); border-left: 2px solid light-dark(#fafafa, var(--border)); transition: transform .3s var(--em), height .3s var(--em), opacity .3s; pointer-events: none; }
 .agt-ln { display: grid; grid-template-columns: 52px 1fr; }
-.agt-num { padding-right: 18px; text-align: right; color: #737373; user-select: none; }
+.agt-num { padding-right: 18px; text-align: right; color: light-dark(#737373, var(--muted-foreground)); user-select: none; }
 .agt-src { display: block; padding-right: 26px; white-space: pre-wrap; overflow-wrap: anywhere; opacity: .6; transition: opacity .3s var(--em); }
 /* the chosen step's lines in full ink */
 .agt-ln.cur .agt-src { opacity: 1; }
@@ -240,8 +240,8 @@ html:not(.js) .agt-src { opacity: 1; }
 /* ---------- 7. the Band's five ticks, landing above the ask ---------- */
 .agt .x-band-act .agt-ticks { order: -1; }
 .agt-ticks { display: flex; gap: 10px; }
-.agt-ticks i { position: relative; overflow: hidden; display: grid; place-items: center; width: 24px; height: 24px; border-radius: 50%; box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .3); color: #0a0a0a; }
-.agt-ticks i::after { content: ''; position: absolute; inset: 0; border-radius: 50%; background: #fafafa; transform: scale(0); transition: transform .4s var(--em); }
+.agt-ticks i { position: relative; overflow: hidden; display: grid; place-items: center; width: 24px; height: 24px; border-radius: 50%; box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .3); color: light-dark(#0a0a0a, var(--foreground)); }
+.agt-ticks i::after { content: ''; position: absolute; inset: 0; border-radius: 50%; background: light-dark(#fafafa, var(--background)); transform: scale(0); transition: transform .4s var(--em); }
 .agt-ticks svg { position: relative; z-index: 1; opacity: 0; transform: scale(.5); transition: opacity .3s .1s, transform .4s var(--em) .1s; }
 .agt-ticks i.on::after { transform: none; }
 .agt-ticks i.on svg { opacity: 1; transform: none; }

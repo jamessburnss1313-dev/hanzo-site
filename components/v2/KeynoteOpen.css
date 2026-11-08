@@ -8,7 +8,7 @@
 .kno-art > * { width: 100%; height: 100%; }
 .kno-art > * { transition: transform .8s var(--ease); }
 @media (hover: hover) {
-  .kno-card:hover { border-color: rgba(0, 0, 0, .3); }
+  .kno-card:hover { border-color: light-dark(rgba(0, 0, 0, .3), var(--border-control)); }
   .kno-card:hover .kno-art > * { transform: scale(1.03); }
   }
 .kno-txt { display: flex; flex-direction: column; gap: 10px; padding: 24px 24px 28px; }

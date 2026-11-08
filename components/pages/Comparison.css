@@ -103,30 +103,30 @@ html:not(.light) .xcm-paper .pf-plus.ghost i { background: var(--secondary); }
 .xcm-duties .pf-head { color: #fafafa; }
 .xcm-duties .pf-kick { color: #a3a3a3; }
 .xcm-duties .pf-pin-meter { color: #a3a3a3; }
-.xcm-duties .pf-pin-meter i { background: rgba(255, 255, 255, .16); }
+.xcm-duties .pf-pin-meter i { background: light-dark(rgba(255, 255, 255, .16), color-mix(in srgb, var(--background) 16%, transparent)); }
 .xcm-duties .pf-pin-meter b { color: #fafafa; }
 .xcm-duty { color: #a3a3a3; max-width: 32ch; }
 .xcm-d-p { color: #fafafa; white-space: nowrap; }
 
-.xcm-u { position: relative; width: min(100%, 520px); margin-inline: auto; padding: 27px 32px 44px; background: #f2f2f2; color: #0a0a0a; border-radius: 16px 16px 0 0; transform: rotate(-1.5deg); font-family: var(--mono); font-feature-settings: 'tnum';
+.xcm-u { position: relative; width: min(100%, 520px); margin-inline: auto; padding: 27px 32px 44px; background: light-dark(#f2f2f2, var(--muted)); color: light-dark(#0a0a0a, var(--foreground)); border-radius: 16px 16px 0 0; transform: rotate(-1.5deg); font-family: var(--mono); font-feature-settings: 'tnum';
   -webkit-mask: linear-gradient(#000 0 0) top / 100% calc(100% - 9px) no-repeat, radial-gradient(circle at 8px 0, #000 7.5px, transparent 8px) bottom left / 16px 9px repeat-x;
   mask: linear-gradient(#000 0 0) top / 100% calc(100% - 9px) no-repeat, radial-gradient(circle at 8px 0, #000 7.5px, transparent 8px) bottom left / 16px 9px repeat-x; }
-.xcm-u-h { display: flex; justify-content: space-between; margin: 0 0 10px; padding-bottom: 14px; border-bottom: 1px dashed rgba(0, 0, 0, .2); font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: #525252; }
+.xcm-u-h { display: flex; justify-content: space-between; margin: 0 0 10px; padding-bottom: 14px; border-bottom: 1px dashed light-dark(rgba(0, 0, 0, .2), var(--border-control)); font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: light-dark(#525252, var(--muted-foreground)); }
 .xcm-u ol { list-style: none; margin: 0; padding: 0; }
 .xcm-u li { display: grid; grid-template-columns: 28px auto minmax(12px, 1fr) auto; align-items: baseline; gap: 10px; padding: 10px 0; font-size: 16px; opacity: .14; transform: translate3d(0, -6px, 0); transition: opacity .3s var(--xcm-emph), transform .4s var(--xcm-emph); }
 .xcm-u li.in { opacity: .55; transform: none; }
 .xcm-u li.on { opacity: 1; font-weight: 606; }
-.xcm-u li > span:first-child { font-size: 13px; color: #737373; }
-.xcm-u li i { border-bottom: 1px dotted rgba(0, 0, 0, .3); transform: translateY(-4px); }
+.xcm-u li > span:first-child { font-size: 13px; color: light-dark(#737373, var(--muted-foreground)); }
+.xcm-u li i { border-bottom: 1px dotted light-dark(rgba(0, 0, 0, .3), var(--border-control)); transform: translateY(-4px); }
 .xcm-u li b { font-weight: 500; }
-.xcm-u-t { display: flex; justify-content: space-between; align-items: baseline; margin-top: 17px; padding-top: 17px; border-top: 2px solid #0a0a0a; font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: #525252; }
-.xcm-u-t b { font: 220 64px/1 var(--sans); letter-spacing: -.03em; color: #0a0a0a; text-transform: none; }
+.xcm-u-t { display: flex; justify-content: space-between; align-items: baseline; margin-top: 17px; padding-top: 17px; border-top: 2px solid light-dark(#0a0a0a, var(--foreground)); font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: light-dark(#525252, var(--muted-foreground)); }
+.xcm-u-t b { font: 220 64px/1 var(--sans); letter-spacing: -.03em; color: light-dark(#0a0a0a, var(--foreground)); text-transform: none; }
 
 .xcm-close-w { padding: clamp(72px, 9vw, 116px) 0 clamp(72px, 11vw, 188px); }
 .xcm-close { margin: 0; max-width: 44ch; font-size: 21px; font-weight: 400; line-height: 1.45; letter-spacing: -.01em; color: #fafafa; text-wrap: pretty; }
-.xcm-ask-d { margin-top: 44px; background: #fafafa; border-color: #fafafa; color: #0a0a0a; }
-.xcm .xcm-ask-d:hover { background: #ffffff; border-color: #ffffff; }
-.xcm-ask-d:focus-visible { outline-color: #ffffff; }
+.xcm-ask-d { margin-top: 44px; background: light-dark(#fafafa, var(--background)); border-color: light-dark(#fafafa, var(--border)); color: light-dark(#0a0a0a, var(--foreground)); }
+.xcm .xcm-ask-d:hover { background: light-dark(#ffffff, var(--background)); border-color: light-dark(#ffffff, var(--border)); }
+.xcm-ask-d:focus-visible { outline-color: light-dark(#ffffff, var(--border)); }
 
 @media (max-width: 899px) {
   .xcm-hero { padding: calc(60px + 27px) 0 72px; }

@@ -34,10 +34,10 @@ html.x-arriving .xcs-in, html.x-arriving .xcs-up { animation-play-state: paused;
 .xcs-sigil { position: absolute; inset: 0; width: 100%; height: 100%; color: var(--ink); }
 /* page-local rest sizes (James: h1 near 52px, section headings near 26px; one big thing per screen) */
 .xcs .xcs-copy .vc-display { font-size: clamp(40px, 3.6vw, 52px); line-height: 1.04; }
-.xcs-card { position: relative; background: #fff; border-radius: 24px; box-shadow: none; padding: clamp(27px, 2.6vw, 36px); display: flex; flex-direction: column; scroll-margin: 88px 0 96px; }
+.xcs-card { position: relative; background: light-dark(#fff, var(--background)); border-radius: 24px; box-shadow: none; padding: clamp(27px, 2.6vw, 36px); display: flex; flex-direction: column; scroll-margin: 88px 0 96px; }
 .xcs-form { flex: 1; display: flex; flex-direction: column; }
 .xcs-top { display: flex; align-items: center; }
-.xcs-progress { flex: 1; display: block; height: 3px; border-radius: 3px; background: #ededed; overflow: hidden; }
+.xcs-progress { flex: 1; display: block; height: 3px; border-radius: 3px; background: light-dark(#ededed, var(--muted)); overflow: hidden; }
 .xcs-progress b { display: block; height: 100%; background: var(--ink); transform-origin: 0 50%; }
 /* the stage is the height of the step on screen (JS eases it, 300ms ease-emphasis); the others lie over it, faded */
 .xcs-stage { position: relative; display: block; margin-top: 27px; }
@@ -57,13 +57,13 @@ html.x-arriving .xcs-in, html.x-arriving .xcs-up { animation-play-state: paused;
 .xcs-step.bad input, .xcs-step.bad textarea { box-shadow: inset 0 0 0 2px var(--ink); }
 .xcs-sizes { display: flex; flex-wrap: wrap; gap: 6.5px; margin-top: 17px; }
 .xcs-size { position: relative; display: inline-flex; align-items: center; min-height: 48px; padding: 0 17px; border-radius: 999px; border: 1px solid var(--line); font-size: 16px; color: var(--ink2); cursor: pointer; transition: background var(--d-fast) var(--e-out), color var(--d-fast) var(--e-out), border-color var(--d-fast) var(--e-out), transform var(--d-press) var(--e-out); }
-@media (hover: hover) { .xcs-size:hover { color: var(--ink); border-color: rgba(0, 0, 0, .3); } }
+@media (hover: hover) { .xcs-size:hover { color: var(--ink); border-color: light-dark(rgba(0, 0, 0, .3), var(--border-control)); } }
 .xcs-size input { position: absolute; opacity: 0; width: 1px; height: 1px; margin: 0; padding: 0; }
 .xcs-size:has(input:focus-visible) { outline: 2px solid var(--ink); outline-offset: 2px; }
 .xcs-size.on { background: var(--ink); color: #fff; border-color: var(--ink); }
 /* the five inclusions on the last step: one row of numerals; the one you point at reads out below in Hanzo's words */
 .xcs-picks { display: flex; gap: 6.5px; margin-top: 10.5px; }
-.xcs-pick { display: grid; place-items: center; width: 48px; height: 48px; border-radius: 50%; border: 1px solid rgba(0, 0, 0, .14); background: #fff; color: var(--ink2); font: 500 13px/1 var(--mono); cursor: pointer; transition: background var(--d-fast) var(--e-out), color var(--d-fast) var(--e-out), border-color var(--d-fast) var(--e-out), transform var(--d-press) var(--e-out); }
+.xcs-pick { display: grid; place-items: center; width: 48px; height: 48px; border-radius: 50%; border: 1px solid light-dark(rgba(0, 0, 0, .14), var(--border-control)); background: light-dark(#fff, var(--background)); color: var(--ink2); font: 500 13px/1 var(--mono); cursor: pointer; transition: background var(--d-fast) var(--e-out), color var(--d-fast) var(--e-out), border-color var(--d-fast) var(--e-out), transform var(--d-press) var(--e-out); }
 @media (hover: hover) { .xcs-pick:hover { border-color: var(--ink); color: var(--ink); } }
 .xcs-pick.on { background: var(--ink); border-color: var(--ink); color: #fff; }
 .xcs-peek { margin: 10.5px 0 0; min-height: 2.8em; font-size: 16px; line-height: 1.4; color: var(--ink2); }
@@ -74,15 +74,15 @@ html.x-arriving .xcs-in, html.x-arriving .xcs-up { animation-play-state: paused;
 .xcs-chips { flex: 1; display: flex; flex-wrap: wrap; gap: 6px; margin: 0; padding: 0; list-style: none; min-width: 0; }
 .xcs-chips li { display: inline-block; height: 32px; padding: 0 12px; border-radius: 6px; background: var(--quiet); font: 400 14px/32px var(--sans); color: var(--ink); max-width: 100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .xcs-btns { flex: none; display: flex; gap: 10px; }
-.xcs-round { flex: none; display: grid; place-items: center; width: 48px; height: 48px; border-radius: 50%; border: 1px solid rgba(0, 0, 0, .14); background: #fff; color: var(--ink); cursor: pointer; transition: background var(--d-fast) var(--e-out), border-color var(--d-fast) var(--e-out), color var(--d-fast) var(--e-out), transform var(--d-press) var(--e-out); }
-@media (hover: hover) { .xcs-round:hover { border-color: rgba(0, 0, 0, .4); } .xcs-round.solid:hover { background: #262626; } }
+.xcs-round { flex: none; display: grid; place-items: center; width: 48px; height: 48px; border-radius: 50%; border: 1px solid light-dark(rgba(0, 0, 0, .14), var(--border-control)); background: light-dark(#fff, var(--background)); color: var(--ink); cursor: pointer; transition: background var(--d-fast) var(--e-out), border-color var(--d-fast) var(--e-out), color var(--d-fast) var(--e-out), transform var(--d-press) var(--e-out); }
+@media (hover: hover) { .xcs-round:hover { border-color: light-dark(rgba(0, 0, 0, .4), var(--border-control)); } .xcs-round.solid:hover { background: #262626; } }
 .xcs-round.solid { background: var(--ink); border-color: var(--ink); color: #fff; }
 /* the submit: its own button, solid ink in every state; while sending, the label keeps its width and a white ring turns */
 .xcs-send { position: relative; display: inline-flex; align-items: center; justify-content: center; height: 48px; padding: 0 27px; border-radius: 999px; border: 0; background: var(--ink); color: #fff; font: 606 16px/1 var(--sans); cursor: pointer; transition: background var(--d-fast) var(--e-out), transform var(--d-press) var(--e-out); }
 @media (hover: hover) { .xcs-send:hover { background: #262626; } }
 .xcs-send[aria-busy='true'] { cursor: progress; background: var(--ink); }
 .xcs-hide { visibility: hidden; }
-.xcs-ring { position: absolute; left: 50%; top: 50%; width: 22px; height: 22px; margin: -11px 0 0 -11px; border-radius: 50%; border: 2.4px solid rgba(255, 255, 255, .3); border-top-color: #fff; animation: xcs-spin .75s linear infinite; }
+.xcs-ring { position: absolute; left: 50%; top: 50%; width: 22px; height: 22px; margin: -11px 0 0 -11px; border-radius: 50%; border: 2.4px solid rgba(255, 255, 255, .3); border-top-color: light-dark(#fff, var(--border)); animation: xcs-spin .75s linear infinite; }
 @keyframes xcs-spin { to { transform: rotate(360deg); } }
 .xcs-sent { margin: auto 0; display: flex; flex-direction: column; gap: 24px; outline: none; }
 .xcs-sent-i { display: grid; place-items: center; width: 72px; height: 72px; border-radius: 50%; background: var(--ink); color: #fff; }
@@ -114,7 +114,7 @@ html.x-arriving .xcs-in, html.x-arriving .xcs-up { animation-play-state: paused;
 .xcs-track { display: flex; width: max-content; will-change: transform; }
 .xcs-logo { flex: none; position: relative; display: flex; align-items: center; height: clamp(96px, 9vw, 128px); padding: 0 clamp(28px, 3vw, 44px); color: var(--ink); text-decoration: none; }
 /* a small grey dot between names (drawn, not typed) */
-.xcs-logo::after { content: ''; position: absolute; right: -3px; top: 50%; width: 6px; height: 6px; margin-top: -3px; border-radius: 50%; background: #d4d4d4; }
+.xcs-logo::after { content: ''; position: absolute; right: -3px; top: 50%; width: 6px; height: 6px; margin-top: -3px; border-radius: 50%; background: light-dark(#d4d4d4, var(--secondary)); }
 .xcs-logo img { display: block; height: clamp(28px, 2.6vw, 40px); width: auto; max-width: 180px; object-fit: contain; filter: grayscale(1) brightness(.2); opacity: .55; transition: transform var(--d-base) var(--e-em), opacity var(--d-base) var(--e-out); }
 @media (hover: hover) { .xcs-logo:hover img { opacity: 1; transform: translateY(-4px); } }
 .xcs-logo:focus-visible img { opacity: 1; }

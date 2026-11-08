@@ -25,8 +25,8 @@
 .pf-card { position: relative; background: var(--card); border-radius: 16px; }
 .pf-hair { border: 0; border-top: 1px solid var(--line); margin: 0; }
 
-.pf-btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 48px; padding: 0 24px; border-radius: 999px; border: 1px solid rgba(0, 0, 0, .14); background: var(--x-raised); color: var(--ink); font: 500 16px/1 var(--sans); text-decoration: none; cursor: pointer; transition: transform .3s var(--ease), background-color .3s, border-color .3s; }
-.pf-btn:hover { border-color: rgba(0, 0, 0, .3); transform: translate3d(0, -1px, 0); }
+.pf-btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 48px; padding: 0 24px; border-radius: 999px; border: 1px solid light-dark(rgba(0, 0, 0, .14), var(--border-control)); background: var(--x-raised); color: var(--ink); font: 500 16px/1 var(--sans); text-decoration: none; cursor: pointer; transition: transform .3s var(--ease), background-color .3s, border-color .3s; }
+.pf-btn:hover { border-color: light-dark(rgba(0, 0, 0, .3), var(--border-control)); transform: translate3d(0, -1px, 0); }
 .pf-btn:active { transform: scale(.98); transition-duration: .1s; }
 .pf-btn.solid { background: var(--ink); color: var(--x-on-ink); border-color: var(--ink); }
 .pf-btn.solid:hover { background: #2a2a2c; }
@@ -36,7 +36,7 @@
 .pf-plus { display: inline-flex; align-items: center; gap: 12px; min-height: 44px; padding: 0 6px 0 0; border: 0; background: none; color: var(--ink); font: 500 16px/1.2 var(--sans); cursor: pointer; text-align: left; }
 .pf-plus i { flex: none; display: grid; place-items: center; width: 36px; height: 36px; border-radius: 50%; background: var(--ink); color: var(--x-on-ink); font-style: normal; transition: transform .45s var(--ease); }
 .pf-plus:hover i { transform: rotate(90deg); }
-.pf-plus.ghost i { background: #e8e8ed; color: var(--ink); }
+.pf-plus.ghost i { background: light-dark(#e8e8ed, var(--secondary)); color: var(--ink); }
 [data-room='dark'] .pf-plus { color: #f5f5f7; }
 [data-room='dark'] .pf-plus i { background: #f5f5f7; color: #0a0a0a; }
 

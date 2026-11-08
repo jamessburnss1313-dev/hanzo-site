@@ -28,7 +28,7 @@
 /* one solid at a time from the first paint (the /affiliate pattern): the header's ask is outlined on a post until the
    post's hook says none of its own asks is on screen (html[data-xbg-solid]) */
 html:has(main.xbg):not([data-xbg-solid]) header[data-slot=masthead] a[href="https://hanzo.ai/signup"],
-html:has(main.xbg):not([data-xbg-solid]) header[data-slot=masthead] a[data-x-ask] { background-color: transparent; color: var(--foreground); box-shadow: inset 0 0 0 1px var(--border, rgba(0, 0, 0, .14)); }
+html:has(main.xbg):not([data-xbg-solid]) header[data-slot=masthead] a[data-x-ask] { background-color: transparent; color: var(--foreground); box-shadow: inset 0 0 0 1px var(--border, light-dark(rgba(0, 0, 0, .14), var(--border-control))); }
 .xbg-chip { display: inline-flex; align-items: center; gap: 10.5px; color: var(--ink2); }
 .xbg-chip::before { content: ''; width: 17px; height: 1px; background: currentColor; }
 .xbg-lede { margin: 27px 0 0; max-width: 44ch; font-size: 21px; line-height: 1.4; color: var(--mute); text-wrap: pretty; }

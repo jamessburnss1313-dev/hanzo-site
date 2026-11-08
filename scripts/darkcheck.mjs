@@ -5,7 +5,7 @@ import puppeteer from 'puppeteer-core';
 import fs from 'node:fs';
 const pages = fs.readFileSync(process.env.PAGES || new URL('./copycheck-pages.txt', import.meta.url).pathname, 'utf8').split('\n').map(s => s.trim()).filter(Boolean);
 const OUT = process.env.OUT || 'darkcheck-out';
-const b = await puppeteer.launch({ executablePath: process.env.CHROME || '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome', headless: true });
+const b = await puppeteer.launch({ executablePath: process.env.CHROME || '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome', headless: true, args: ['--no-sandbox'] });
 const res = {};
 async function check(path) {
   const p = await b.newPage(); await p.setViewport({ width: 1470, height: 801 });
@@ -14,7 +14,7 @@ async function check(path) {
   await p.evaluate(async () => { for (let y = 0; y < document.documentElement.scrollHeight; y += 700) { scrollTo(0, y); await new Promise(r => setTimeout(r, 120)); } scrollTo(0, 0); });
   await new Promise(r => setTimeout(r, 800));
   const r = await p.evaluate(() => {
-    const parse = c => { const m = c.match(/[\d.]+/g); return m ? m.map(Number) : null; };
+    const parse = c => { const m = c.match(/[\d.]+/g); if (!m) return null; const v = m.map(Number); if (/^color\(srgb/.test(c)) { v[0] *= 255; v[1] *= 255; v[2] *= 255; } return v; }; // color(srgb r g b / a) is 0..1
     const lum = ([r, g, b]) => { const f = v => { v /= 255; return v <= .03928 ? v / 12.92 : ((v + .055) / 1.055) ** 2.4; }; return .2126 * f(r) + .7152 * f(g) + .0722 * f(b); };
     const bgOf = e => { for (let n = e; n; n = n.parentElement) { const s = getComputedStyle(n); if (s.backgroundImage !== 'none' && n !== document.body && n !== document.documentElement) return null; const c = parse(s.backgroundColor); if (c && (c[3] === undefined || c[3] > .85)) return c; } return [13, 13, 13]; };
     const bad = [];

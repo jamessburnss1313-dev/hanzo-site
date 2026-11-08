@@ -98,12 +98,12 @@
 :root ._col-rgba25525522134268938 { color: rgba(255, 255, 255, 0.52); }
 :root ._fs-8px { font-size: 8px; }
 :root ._fs-14--5px { font-size: 14.5px; }
-:root ._col-09090b35 { color: rgb(10, 10, 10); }
-:root:root ._bg-_platformweb_ffffff35 { background-color: rgb(255, 255, 255); }
+:root ._col-09090b35 { color: light-dark(rgb(10, 10, 10), var(--foreground)); }
+:root:root ._bg-_platformweb_ffffff35 { background-color: light-dark(rgb(255, 255, 255), var(--background)); }
 :root ._pt-3--5px { padding-top: 3.5px; }
 :root ._pb-3--5px { padding-bottom: 3.5px; }
 :root ._col-rgba25525522134271914 { color: rgba(255, 255, 255, 0.85); }
-:root:root ._bg-_platformweb_rgba25525522134264133 { background-color: rgba(255, 255, 255, 0.02); }
+:root:root ._bg-_platformweb_rgba25525522134264133 { background-color: light-dark(rgba(255, 255, 255, 0.02), color-mix(in srgb, var(--background) 2%, transparent)); }
 :root ._btc-rgba25525522134264288._btc-rgba25525522134264288 { border-top-color: rgba(255, 255, 255, 0.07); }
 :root ._brc-rgba25525522134264288._brc-rgba25525522134264288 { border-right-color: rgba(255, 255, 255, 0.07); }
 :root ._borderBottomColor-rgba25525522134264288._borderBottomColor-rgba25525522134264288 { border-bottom-color: rgba(255, 255, 255, 0.07); }
@@ -157,7 +157,7 @@
 :root:root ._tr-_platformweb_translate3d2128643524 { transform: translate3d(156px, 162px, 0px); }
 :root:root ._tr-_platformweb_translate3d1090567595 { transform: translate3d(218px, 162px, 0px); }
 :root ._col-rgba25525522134269031 { color: rgba(255, 255, 255, 0.55); }
-:root:root ._bg-_platformweb_rgba25525522134264226 { background-color: rgba(255, 255, 255, 0.05); }
+:root:root ._bg-_platformweb_rgba25525522134264226 { background-color: light-dark(rgba(255, 255, 255, 0.05), color-mix(in srgb, var(--background) 5%, transparent)); }
 :root ._col-fb923c35 { color: rgb(163, 163, 163); }
 :root:root ._bg-_platformweb_rgba24911521403466709 { background-color: rgba(115, 115, 115, 0.22); }
 :root:root ._bg-_platformweb_rgba24242901923985536 { background-color: rgba(23, 23, 23, 0.98); }
@@ -165,7 +165,7 @@
 :root:root ._t-_platformweb_5px { top: 5px; }
 :root:root ._l-_platformweb_7px { left: 7px; }
 :root:root ._background-_platformweb_radial-grad1683935328 { background: radial-gradient(circle at 50% 45%, rgb(38, 38, 38) 0%, rgb(15, 15, 15) 100%); }
-:root ._col-f9731635 { color: rgb(115, 115, 115); }
+:root ._col-f9731635 { color: light-dark(rgb(115, 115, 115), var(--muted-foreground)); }
 :root:root ._bg-_platformweb_14141a35 { background-color: rgb(23, 23, 23); }
 :root ._width-88px { width: 88px; }
 :root ._btc-fb923c35._btc-fb923c35 { border-top-color: rgb(163, 163, 163); }
