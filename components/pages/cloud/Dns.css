@@ -130,10 +130,10 @@
 .dn-pipe li { position: relative; display: grid; grid-template-columns: 64px minmax(0, 1fr); grid-template-rows: auto auto; column-gap: 16px; row-gap: 4px; align-items: center; padding: 17px 21px 17px 0; border-radius: 16px; background: var(--x-raised); transition: opacity .4s var(--e-out), transform .5s var(--e-in), background-color .3s var(--e-out), color .3s var(--e-out); }
 .js .dn-pipe li:not(.on) { opacity: .45; transform: translate3d(17px, 0, 0); }
 .dn-pipe li:last-child.on { background: var(--ink); color: var(--x-on-ink); }
-.dn-pipe li:last-child.on span { color: #a3a3a3; }
+.dn-pipe li:last-child.on span { color: light-dark(#a3a3a3, color-mix(in srgb, var(--x-on-ink) 65%, transparent)); }
 .dn-pipe i { grid-row: 1 / span 2; justify-self: center; width: 36px; height: 36px; border-radius: 50%; display: grid; place-items: center; background: var(--x-raised); border: 1.5px solid var(--ink); color: var(--ink); font: 497 13px/1 var(--mono); font-style: normal; transition: background-color .3s var(--e-out), color .3s var(--e-out); }
 .dn-pipe li.on i { background: var(--ink); color: var(--x-on-ink); }
-.dn-pipe li:last-child.on i { background: var(--x-sunk); border-color: var(--x-sunk); color: var(--ink); }
+.dn-pipe li:last-child.on i { background: light-dark(var(--x-sunk), var(--x-on-ink)); border-color: light-dark(var(--x-sunk), var(--x-on-ink)); color: var(--ink); } /* on the ink row (Hanzo's light primary in dark) the badge inverts with it */
 .dn-pipe b { font-size: 17px; font-weight: 497; letter-spacing: -.01em; }
 .dn-pipe span { font: 497 14px/1.3 var(--mono); color: var(--soft); }
 

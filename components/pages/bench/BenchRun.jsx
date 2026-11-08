@@ -30,7 +30,7 @@ import { useEffect, useMemo, useRef, useState, useSyncExternalStore } from 'reac
 import { motion, LayoutGroup, AnimatePresence, useInView, useReducedMotion } from 'motion/react';
 import { EASE } from '../../ui';
 import { A, Cta, DataTable, CodeBlock } from '../../kit';
-import { Magnetic } from '../../ui';
+import { Magnetic, useCalm } from '../../ui';
 import { ui } from '../../v2/famUi';
 import { play } from '../../../lib/sound';
 import { Nodes } from '../DocNodes';
@@ -250,7 +250,7 @@ const hoverRow = (k) => dispatchEvent(new CustomEvent('xbr-hover', { detail: k }
    stopped) */
 function Walker({ walk, racing, onStop, onReplay }) {
   const walking = usePlaying(walk);
-  const calm = useReducedMotion();
+  const calm = useCalm(); // hydration-safe: false until mounted
   const playing = racing || walking;
   if (calm) return null;
   return (
@@ -269,7 +269,7 @@ function Walker({ walk, racing, onStop, onReplay }) {
 function Turn({ c, walk, slug }) {
   const box = useRef(null);
   const seen = useInView(box, { amount: 0.3 });
-  const calm = useReducedMotion();
+  const calm = useCalm(); // hydration-safe: false until mounted
   const [chart, setChart] = useState(false);
   const [col, setCol] = useState(0);
   const [armed, setArmed] = useState(false); // lanes held on the start line, then racing
@@ -559,7 +559,7 @@ const Braces = () => <svg viewBox="0 0 20 20" width="18" height="18" aria-hidden
 /* the reply, typed out once it arrives (time, not scroll): the runs' ids appear a character at a time into text nodes */
 function Typed({ text, delay = 0 }) {
   const ref = useRef(null);
-  const calm = useReducedMotion();
+  const calm = useCalm(); // hydration-safe: false until mounted
   useEffect(() => {
     const el = ref.current;
     if (!el || calm) return;
@@ -583,7 +583,7 @@ function snapOf(doc) {
 }
 function Source({ doc }) {
   const src = doc.source;
-  const calm = useReducedMotion();
+  const calm = useCalm(); // hydration-safe: false until mounted
   const room = useRef(null);
   const seen = useInView(room, { amount: 0.35, once: true });
   const snap = useMemo(() => snapOf(doc), [doc]);
@@ -724,7 +724,7 @@ const firstWords = (bs) => { for (const b of bs) { const t = clean(b.s || textOf
 
 export default function BenchRun({ doc, near = [], peek = {} }) {
   const walk = useMemo(makeWalk, []);
-  const calm = useReducedMotion();
+  const calm = useCalm(); // hydration-safe: false until mounted
   const c = doc.chart;
   useEffect(() => (calm || !c ? undefined : walk.start(rowsOf(c))), [walk, calm, c]);
   const seedData = (c && c.kind === 'trend' ? c.points.map((p) => p.v) : c && c.kind === 'versus' ? c.rows.map((r) => r.a.v) : c && c.kind === 'bars' ? c.rows.map((r) => r.cells[0].v) : []).filter((v) => v != null).concat(doc.figures.map((f) => parseFloat(String(f).replace(/,/g, '')))).slice(0, 7);

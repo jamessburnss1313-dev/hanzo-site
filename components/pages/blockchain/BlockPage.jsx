@@ -20,7 +20,7 @@
    V2: 8/10 the ask beside a 52px headline and this product's own capability deck turning in the hero (its contour per card), the key card as a proof room after it, the exchange's console and pinned deck at 25svh a card, chips that drive the chain finder, real controls (hover and press on every one, plain language list, GitHub as a link), no inner scroll on phones, resting sizes, tokens only, no springs or setInterval. */
 import { useEffect, useRef, useState } from 'react';
 import { useScroll, useMotionValueEvent, useReducedMotion, useInView } from 'motion/react';
-import { Copy, Magnetic } from '../../ui';
+import { Copy, Magnetic, useCalm } from '../../ui';
 import Sigil from '../../Sigil';
 import { A } from '../../kit';
 import FamLines from '../../v2/FamLines';
@@ -200,7 +200,7 @@ function Tiles({ b }) {
 /* a product line without a key card (the exchange): its products become the hero object, a console that walks
    through them by itself (pausing when touched); every product's words stay in the page, the others hidden */
 function Console({ b, seed }) {
-  const calm = useReducedMotion();
+  const calm = useCalm(); // hydration-safe: false until mounted
   const box = useRef(null);
   const [at, setAt] = useState(0);
   const [held, setHeld] = useState(false);

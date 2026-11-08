@@ -4,7 +4,7 @@
    its own sections, so no two pages share a layout; these parts are the words they have in common. */
 import { useEffect, useRef, useState } from 'react';
 import { motion, useInView, useReducedMotion } from 'motion/react';
-import { EASE, Rise, Copy } from '../../ui';
+import { EASE, Rise, Copy, useCalm } from '../../ui';
 import { A, Go, More } from '../../kit';
 import './Frame.css';
 
@@ -12,7 +12,7 @@ import './Frame.css';
 export function useLive(amount = 0.2) {
   const ref = useRef(null);
   const seen = useInView(ref, { amount });
-  const calm = useReducedMotion();
+  const calm = useCalm(); // false on the server and the first render, so what hydrates matches the HTML
   return [ref, seen && !calm, calm];
 }
 

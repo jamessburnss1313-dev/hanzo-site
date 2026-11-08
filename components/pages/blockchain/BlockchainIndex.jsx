@@ -21,6 +21,7 @@ V2: 8/10 deck scale (h1 52, headings 26, the chain: reel 64 as the one moment), 
 */
 import { Fragment, useEffect, useMemo, useRef, useState } from 'react';
 import { useInView, useReducedMotion } from 'motion/react';
+import { useCalm } from '../../ui';
 import { A, More, Cta, DataTable, CodeBlock } from '../../kit';
 import BizLines from '../../v2/BizLines';
 import { ui } from '../../v2/famUi';
@@ -41,7 +42,7 @@ const Arrow = () => <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden=
    the visitor points at it or touches it; reduced motion: it never walks */
 function useWalk(ref, n, beat) {
   const seen = useInView(ref, { amount: 0.25 });
-  const calm = useReducedMotion();
+  const calm = useCalm(); // hydration-safe: false until mounted
   const [step, setStep] = useState(-1);
   const [held, setHeld] = useState(false);
   const tm = useRef(0);
@@ -61,7 +62,7 @@ function Reel({ chains, all, onChain, alsoRun }) {
   const box = useRef(null);
   const inView = useInView(box, { amount: 0.3 });
   const seen = inView || alsoRun; // the pieces below follow the same chain, so it keeps turning while they are on screen
-  const calm = useReducedMotion();
+  const calm = useCalm(); // hydration-safe: false until mounted
   const [held, setHeld] = useState(false);
   const [i, setI] = useState(0);
   const [jump, setJump] = useState(false);

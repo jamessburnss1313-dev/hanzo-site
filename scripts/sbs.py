@@ -8,4 +8,4 @@ H = min(max(a.height, b.height), 16000); gap = 24; top = 34
 o = Image.new('RGB', (a.width + b.width + gap, H + top), (128, 128, 128))
 o.paste(a.crop((0, 0, a.width, min(a.height, H))), (0, top)); o.paste(b.crop((0, 0, b.width, min(b.height, H))), (a.width + gap, top))
 d = ImageDraw.Draw(o); d.text((8, 10), 'LIVE hanzo.ai (dark)', fill=(255, 255, 0)); d.text((a.width + gap + 8, 10), 'OURS (dark)', fill=(255, 255, 0))
-o.save(sys.argv[3], quality=72)
+o.save(sys.argv[3], quality=62, optimize=True)

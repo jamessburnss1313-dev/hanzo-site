@@ -34,7 +34,7 @@ async function job([path, w]) {
   if (!process.env.ONLY_OURS) rl = await shot(LIVE + path, w, live);
   report[path + ' ' + w] = { ours: ro, live: rl && { cls: rl.cls } };
   console.log(path, w, 'ours', ro.cls.match(/\b(dark|light)\b/)?.[0], 'live', rl?.cls.match(/\b(dark|light)\b/)?.[0], 'sideways', ro.sw > ro.iw ? ro.sw - ro.iw : 0, 'errs', ro.errs.length, ro.errs.slice(0, 2).join(' | '));
-  if (!process.env.ONLY_OURS) execFileSync('python3', [new URL('./sbs.py', import.meta.url).pathname, live, ours, `${OUT}/${slug}-${w}.jpg`, w < 500 ? '1' : '0.5']);
+  if (!process.env.ONLY_OURS) execFileSync('python3', [new URL('./sbs.py', import.meta.url).pathname, live, ours, `${OUT}/${slug}-${w}.jpg`, w < 500 ? '0.6' : '0.5']);
 }
 await Promise.all(Array.from({ length: +(process.env.CONC || 3) }, async () => { while (jobs.length) { const j = jobs.shift(); try { await job(j); } catch (e) { console.log(j.join(' '), 'FAILED', String(e).slice(0, 120)); } } }));
 fs.writeFileSync(`${TMP}/darkproof-report.json`, JSON.stringify(report, null, 1));
