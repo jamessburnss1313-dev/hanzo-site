@@ -500,3 +500,9 @@ html:not(.light) .xsq.a2 .xsq-hero::after { content: ''; position: absolute; ins
 .xsq-cv-d { display: grid; gap: 14px; margin: 0; padding: 14px 0 0; border-top: 1px solid rgba(0, 0, 0, .08); }
 .xsq-cv-d dt { margin: 0 0 4px; font-size: 11.5px; letter-spacing: .1em; color: #6e6e73; }
 .xsq-cv-d dd { margin: 0; font-size: 14px; line-height: 1.45; color: #3a3a3c; text-wrap: pretty; }
+
+/* dark-g3 (8 Nov, Hanzo's dark by role; light untouched): the always-dark diff panel's line numbers take Hanzo's tertiary text, and the chosen
+   tab is Hanzo's primary pill with its foreground, on the tab itself so its words always sit on a fill */
+html:not(.light) .xsq-diff-t td:nth-child(-n+2) { color: var(--text-tertiary); }
+html:not(.light) .xsq-tabs button[aria-selected='true'] { background: var(--primary); color: var(--primary-foreground); }
+html:not(.light) .xsq-tabs .xsq-tab-bg { background: var(--primary); }

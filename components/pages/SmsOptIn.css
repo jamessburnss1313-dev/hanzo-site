@@ -148,3 +148,8 @@
   .xsm-card { margin-top: 32px; }
   .xsm-form { gap: 20px; }
 }
+
+/* dark-g3 (8 Nov, Hanzo's dark by role; light untouched): the topic pills are Hanzo cards; the chosen one is Hanzo's primary */
+html:not(.light) .xsm-parts button { background: var(--x-raised); }
+html:not(.light) .xsm-parts button[aria-pressed='true'] { color: var(--x-on-ink); background: var(--ink); border-color: var(--ink); }
+@media (hover: hover) { html:not(.light) .xsm-parts button:hover { color: var(--x-on-ink); background: var(--ink); border-color: var(--ink); } }

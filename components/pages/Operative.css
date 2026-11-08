@@ -398,3 +398,6 @@ html:not(.light) .xov-hero { position: relative; background: radial-gradient(60%
   .xov *, .xov *::before, .xov *::after { animation: none !important; transition: none !important; }
   .xov-crate { transform: none; }
 }
+
+/* dark-g3 (8 Nov, Hanzo's dark by role; light untouched): the chosen segment carries the ink pill's fill itself */
+html:not(.light) .xov-seg button[aria-selected='true'] { background: var(--ink); }

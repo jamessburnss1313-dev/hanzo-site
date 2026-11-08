@@ -538,3 +538,7 @@ html:not(.light) .xtg.a2 .xtg-hero::before { content: ''; position: absolute; in
   mask-composite: intersect; }
 html:not(.light) .xtg.a2 .xtg-hero::after { content: ''; position: absolute; inset: 0 0 auto; height: 640px; z-index: -1; pointer-events: none;
   background: radial-gradient(60% 70% at 50% 0%, color-mix(in srgb, var(--foreground) 9%, transparent), transparent 70%); }
+
+/* dark-g3 (8 Nov, Hanzo's dark by role; light untouched): text on the lit (ink) nodes is Hanzo's primary foreground */
+html:not(.light) .xtg-node.step.lit > b { color: var(--x-on-ink); }
+html:not(.light) .xtg-node.core span { color: var(--primary-foreground); opacity: .8; }

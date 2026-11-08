@@ -268,3 +268,7 @@ html:not(.light) .xos .v2f-btn.solid { color: var(--primary-foreground); }
   .xos-wave b, .xos-wave.play b { display: none !important; }
   .xos-row, .xos-src-bg, .xos .x-arrow > span::after, .xos .x-arrow svg { transition: none; }
 }
+
+/* dark-g3 (8 Nov, light untouched): the real repo name under its drawn copy declares the page's ink and keeps its own
+   fill transparent, so nothing changes on screen */
+html:not(.light) .xos-nm-t { color: var(--ink); -webkit-text-fill-color: transparent; }

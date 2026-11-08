@@ -572,3 +572,6 @@ html:not(.light) .rk .w2-dark { --acc: var(--primary); --acc-ink: var(--primary-
 html:not(.light) .rk :is(.w2-cta, .w2-cta.acc, .w2-dark .w2-cta, .w2-dark .w2-cta.acc) { background: var(--primary); color: var(--primary-foreground); box-shadow: none; }
 html:not(.light) .rk .w2-ghost { border-color: var(--border-control); }
 @media (hover: hover) { html:not(.light) .rk :is(.w2-cta, .w2-dark .w2-cta):hover { background: var(--primary-hover); } html:not(.light) .rk .w2-ghost:hover { border-color: var(--border-selected); background: var(--glass); } }
+
+/* dark-g3 (8 Nov, Hanzo's dark by role; light untouched): the lit lane is Hanzo's primary: its note takes the primary foreground, muted */
+html:not(.light) .rk-lane.on:not(.anon) span { color: var(--primary-foreground); opacity: .7; }

@@ -474,3 +474,7 @@ html.js .rg-en-flash:not([data-in]) { opacity: 0; }
 /* shared fills whose dark half reads var(--muted): under the kit's .lx root that name is a text grey, so name the fill */
 .rg .lx-close-art, .rg .lx-rel-card { background: light-dark(#f5f5f5, var(--surface-2)); }
 .rg-rc-cap[hidden] { display: none; }
+
+/* dark-g3 (8 Nov, Hanzo's dark by role; light untouched): the chosen tab is Hanzo's primary: its title and number take the primary foreground */
+html:not(.light) .rg-zm-tabs button[aria-selected='true'] h3 { color: inherit; }
+html:not(.light) .rg-zm-tabs button[aria-selected='true'] .rg-zm-n { color: var(--primary-foreground); opacity: .55; }

@@ -268,3 +268,7 @@
 @media (prefers-reduced-motion: reduce) {
   .xrs-row-t .xrs-row-tt, .xrs-when b, .xrs-row-go { transition-duration: .01s !important; }
 }
+
+/* dark-g3 (8 Nov, Hanzo's dark by role; light untouched): the real sentence under the word-by-word copy is drawn by
+   that copy; it declares the page's ink and keeps its own fill transparent, so nothing changes on screen */
+html:not(.light) .xrs-open-r, html:not(.light) .xrs-open-t .xrs-open-r a { color: #fafafa; -webkit-text-fill-color: transparent; }

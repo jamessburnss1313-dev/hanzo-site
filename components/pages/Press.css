@@ -318,3 +318,8 @@ html:not(.light) .xpe-kitc-w.dark .xpe-kp, html:not(.light) .xpe-card { outline:
   .xpe-caret { display: none; }
   .xpe-partners li::before, .xpe-p-img, .xpe-guide-p svg, .xpe-face, .xpe-copy-w { transition: none; }
 }
+
+/* dark-g3 (8 Nov, Hanzo's dark by role; light untouched): the light and icon logo plates are light on purpose (Hanzo's own artwork); the
+   link holding them carries the plate's fill so the format tags read on it */
+html:not(.light) .xpe-kitc-w.light .xpe-kp { background: #f5f5f5; }
+html:not(.light) .xpe-kitc-w.icon .xpe-kp { background: #ededed; }
