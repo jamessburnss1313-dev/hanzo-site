@@ -73,7 +73,7 @@
 .dn-spokes line.on { stroke: var(--ink); stroke-width: 2.5; }
 .dn-hub { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); display: flex; flex-direction: column; align-items: center; gap: 6px; padding: 21px 24px; border-radius: 24px; background: var(--ink); color: var(--x-on-ink); }
 .dn-hub b { font-size: 21px; font-weight: 497; letter-spacing: -.015em; }
-.dn-hub span { font: 497 13px/1 var(--mono); color: #a3a3a3; }
+.dn-hub span { font: 497 13px/1 var(--mono); color: light-dark(#a3a3a3, color-mix(in srgb, var(--x-on-ink) 65%, transparent)); } /* the hub is an ink fill: in dark it is Hanzo's light primary, so its caption is the on-ink colour, softened */
 /* a provider lights by fill (white to ink), never by colour or a ring */
 .dn-pv { position: absolute; transform: translate(-50%, -50%); padding: 12px 17px; border-radius: 999px; background: var(--x-raised); font: 497 16px/1 var(--sans); letter-spacing: -.01em; white-space: nowrap; transition: transform .4s var(--e-move), background-color .3s var(--e-out), color .3s var(--e-out); }
 .dn-pv.on { transform: translate(-50%, -50%) scale(1.08); background: var(--ink); color: var(--x-on-ink); }

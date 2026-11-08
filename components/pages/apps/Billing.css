@@ -303,6 +303,7 @@ html:not(.light) .bl2-seg, html:not(.light) .bl2-ev li, html:not(.light) .bl2-ch
 @media (hover: hover) { html:not(.light) .bl2-seg button:hover:not([aria-pressed='true']) { background: var(--secondary); color: var(--ink); } }
 html:not(.light) .bl2-seg button[aria-pressed='true'] { background: var(--foreground); color: var(--primary-foreground); }
 html:not(.light) .bl2-chip.issued, html:not(.light) .bl2-pv-plan { color: var(--x-on-ink); }
+html:not(.light) .bl2-chip.issued { background: var(--primary); color: var(--primary-foreground); } /* the issued chip is the ink one: Hanzo's primary in dark, as live's buttons */
 html:not(.light) .bl2-pv-plan span { color: var(--neutral-600); }
 html:not(.light) .bl2-lines li.hot { background: var(--secondary); }
 html:not(.light) .bl2-pv-rows li:not(.new) .bl2-pv-subs i { background: var(--neutral-600); }

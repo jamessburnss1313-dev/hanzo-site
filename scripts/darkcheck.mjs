@@ -29,7 +29,7 @@ async function checkAt(path, w) {
     // the first opaque fill painted under point (x, y), below the text element e; null if it is an image/gradient
     const bgAt = (e, x, y) => {
       const stack = document.elementsFromPoint(x, y);
-      let i = stack.findIndex(n => n === e || e.contains(n) || n.contains(e));
+      let i = stack.findIndex(n => n === e || e.contains(n)); // the text itself must be hit here, or it is clipped away
       if (i < 0) return undefined; // not painted at this point (clipped away by an overflow, or off to the side)
       for (; i < stack.length; i++) {
         const n = stack[i]; if (e.contains(n) && n !== e) continue;
@@ -59,7 +59,7 @@ async function checkAt(path, w) {
           let fixed = false; for (let n = top; n && n !== document.body; n = n.parentElement) { const ps = getComputedStyle(n).position; if (ps === 'fixed' || ps === 'sticky') { fixed = !n.contains(e); break; } }
           if (fixed) { seen.delete(e); continue; }
         }
-        const fg = parse(s.color); const bg = bgAt(e, cx, cy); if (bg === undefined) { seen.delete(e); continue; } if (!fg || !bg) continue;
+        const fg = parse(s.color); const bg = bgAt(e, cx, cy); if (bg === undefined) { seen.delete(e); continue; } if (!fg || !bg || (fg[3] ?? 1) < .1) continue; // fully transparent text is a placeholder, not text to read
         const a = (fg[3] ?? 1); const mix = fg.slice(0, 3).map((v, i) => v * a + bg[i] * (1 - a));
         const L1 = lum(mix), L2 = lum(bg); const ratio = (Math.max(L1, L2) + .05) / (Math.min(L1, L2) + .05);
         if (ratio < 3) bad.push({ t: e.textContent.trim().slice(0, 50), ratio: +ratio.toFixed(2), fg: s.color, bg: 'rgb(' + bg.slice(0, 3).join(',') + ')', cls: (e.className + '').slice(0, 40), par: (e.parentElement.className + '').slice(0, 40), y: Math.round(rc.top + scrollY) });

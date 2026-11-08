@@ -119,6 +119,8 @@ html.x-arriving .xbr-hero .vc-ml-css { animation-play-state: running; }
 .xbr-reads-s { font-size: 44px; font-weight: 497; letter-spacing: -.04em; line-height: 1; }
 .xbr-reads li b { font-size: 16px; font-weight: 497; color: var(--b-ink2); }
 .xbr-reads ul.dk li b { color: var(--b-faint); }
+/* the board shows greys on Hanzo White: on that white tile the label keeps its light-mode grey in dark too */
+.xbr-reads ul.lt li b { color: light-dark(var(--b-ink2), #525252); }
 .xbr-v { display: grid; place-items: center; color: var(--b-ink); }
 .xbr-reads ul.dk .xbr-v { color: var(--b-dk-ink); }
 .xbr-grads { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 4fr) minmax(0, 3fr); gap: 24px; }

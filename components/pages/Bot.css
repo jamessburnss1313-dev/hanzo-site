@@ -334,8 +334,8 @@ html:not(.light) .bt-sw.on i { background: var(--x-on-ink); }
 .bt-any { margin-top: clamp(116px, 12vw, 188px); padding-top: 44px; border-top: 1px solid var(--x-e10); }
 .bt-any-list { list-style: none; margin: 44px 0 32px; padding: 0; display: flex; flex-wrap: wrap; gap: 0 .28em; font-size: 44px; font-weight: 497; line-height: 1.12; letter-spacing: -.03em; }
 .bt-any-list li { color: var(--ink); }
-.bt-any-list li:nth-child(even) { color: light-dark(#a3a3a3, var(--text-disabled)); }
-.bt-any-list li:not(:last-child)::after { content: ','; color: light-dark(#a3a3a3, var(--text-disabled)); }
+.bt-any-list li:nth-child(even) { color: light-dark(#a3a3a3, var(--text-tertiary)); }
+.bt-any-list li:not(:last-child)::after { content: ','; color: light-dark(#a3a3a3, var(--text-tertiary)); }
 .bt-any-f { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 32px; }
 .bt-any-f .x-arrow { font-size: 16px; color: var(--ink); }
 
