@@ -2,9 +2,9 @@
 // Goal: subscribe
 // CTA: Subscribe (kit Cta newsletter.subscribe; the header carries it after the hero)
 // Metric: lead_submit
-// Signature: the issue writes itself on paper, then folds into an envelope addressed to you.
+// Signature: one-question: the form asks one thing at a time and slides to the next (address, check, sent); the paper writes each answer down and folds into an envelope.
 // Beyond: the double opt-in drawn before you commit: subscribe, confirm the link, then the first issue; nothing in between.
-// V2: 8/10 each statement said once: the hero paper sets ink bars, one statement at 44px at a time beside a drifting contour card; the opt-in walked by scroll; the paper tilts and writes your address; no shift
+// V2: 8/10 motion-map: one-question + stretch-scroll, shrink-to-card, noise-dissolve, card-deal, pixel-resolve
 import Newsletter from '../../components/pages/Newsletter';
 import JsonLd from '../../components/JsonLd';
 
