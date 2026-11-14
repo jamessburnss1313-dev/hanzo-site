@@ -269,6 +269,8 @@ html.js .nw-sm[data-st='intro'] .nw-sp:not(.you) > i { animation: nw-found 4.4s 
 .nw-peer.peek .nw-tag.nm { background: #0a0a0a; color: #fafafa; outline: 0; }
 .nw-peer.named:not(.peek):not(.lit):not(.you) > i { box-shadow: inset 0 0 0 2px #0a0a0a; }
 .nw-h1 span { display: block; }
+/* a named neighbour shows its name only, so the names never pile onto the model tags */
+.nw-peer.named:not(.peek):not(.lit) .nw-tag:not(.nm) { display: none; }
 
 /* 1 split-merge (hero): the words slide in from the left, the graph from the right, the title's two words from
    opposite sides, and they meet. Transform only, so the h1 is never invisible. */
@@ -278,7 +280,10 @@ html.js .nw-sm[data-st='intro'] .nw-sp:not(.you) > i { animation: nw-found 4.4s 
   html.js .nw-en-split:not([data-enter='in']) .nw-fab { transform: translateX(22vw); }
   html.js .nw-en-split:not([data-enter='in']) .nw-h1-a { transform: translateX(-30vw); }
   html.js .nw-en-split:not([data-enter='in']) .nw-h1-b { transform: translateX(30vw); }
+  /* failsafe: if the page's script never runs, the halves still meet after 3 s */
+  html.js .nw-en-split:not([data-enter='in']) :is(.nw-hero-copy, .nw-fab, .nw-h1 span) { animation: nw-meet 1s var(--lx-ease) 3s forwards; }
 }
+@keyframes nw-meet { to { transform: none; } }
 
 /* 2 grow-from-point (the black room): a circle opens from where the pointer last was and the room grows out of it */
 /* the clip sits on a backdrop layer (a clipped section would never report itself in view) */
