@@ -377,7 +377,10 @@
 /* 1 tilt-3d-hover: the hero window arrives tipped back, levels, then leans toward a fine pointer */
 .rg-tilt { perspective: 1600px; }
 .rg-tilt > .rg-push { transform: rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg)); transition: transform .9s cubic-bezier(.16, 1, .3, 1); }
-html.js .rg-tilt:not([data-in]) > .rg-push { transform: rotateX(24deg) rotateY(-18deg) scale(.92); }
+/* start states live under .rg[data-armed] (set once the page runs), so with JS off nothing is ever hidden */
+.rg[data-armed] .rg-tilt:not([data-in]) > .rg-push { transform: rotateX(24deg) rotateY(-18deg) scale(.92); }
+.rg-tilt[data-in] > .rg-push { animation: rg-tiltin 1.2s cubic-bezier(.16, 1, .3, 1) backwards; }
+@keyframes rg-tiltin { from { transform: rotateX(24deg) rotateY(-18deg) scale(.92); } to { transform: none; } }
 
 /* the signature: the whole system, then one part of it filling the screen */
 .rg-zm { position: relative; height: 240svh; }
@@ -387,7 +390,7 @@ html.js .rg-tilt:not([data-in]) > .rg-push { transform: rotateX(24deg) rotateY(-
 .rg-zm-h { margin: 0; font: 497 32px/1.12 var(--sans); letter-spacing: -.02em; color: #0a0a0a; }
 .rg-zm-l { margin: 0; font-size: 16px; line-height: 1.55; color: #525252; }
 .rg-zm-stage { position: relative; min-height: 0; }
-.rg-zm-map { position: absolute; inset: 0; transform-origin: 50% 50%; }
+.rg-zm-map { position: absolute; inset: 0; transform-origin: 50% 50%; pointer-events: none; }
 .rg-zm-wires { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
 .rg-zm-wires line { stroke: #a3a3a3; stroke-width: 1; stroke-dasharray: 4 5; vector-effect: non-scaling-stroke; animation: rg-flow 1.6s linear infinite; }
 @keyframes rg-flow { to { stroke-dashoffset: -18; } }
@@ -396,16 +399,17 @@ html.js .rg-tilt:not([data-in]) > .rg-push { transform: rotateX(24deg) rotateY(-
 .rg-zm-node em { font: 500 13px/1.2 var(--mono); font-style: normal; color: #525252; }
 .rg-zm-stack { position: absolute; inset: 0; display: grid; place-items: center; transform-origin: 50% 50%; }
 .rg-zm-stack .rg-rv { width: 100%; }
-.rg-zm .rg-iso { height: min(400px, calc(100svh - 64px - 300px)); min-height: 230px; }
+.rg-zm .rg-iso { height: min(360px, calc(100svh - 64px - 340px)); min-height: 220px; }
 .rg-zm .rg-rv-panes { min-height: 0; }
-.rg-zm .rg-rv-panes:has(.rg-v2[data-on]) { min-height: 80px; }
+.rg-zm .rg-v2 { grid-auto-flow: column; align-items: baseline; gap: 14px; }
+.rg-zm .rg-v2 .lx-num { font-size: 32px; }
 /* before the zoom lands, the stack is one node of the map: its labels and caption wait */
 .rg-zm:not(.open) .rg-t, .rg-zm:not(.open) .rg-ppl, .rg-zm:not(.open) .rg-rv-panes { opacity: 0 !important; transition: opacity .2s; }
 .rg-zm-facts { display: grid; justify-items: center; gap: 12px; }
-.rg-zm-tabs { display: flex; gap: 6px; max-width: 100%; overflow-x: auto; scroll-snap-type: x proximity; scrollbar-width: none; padding: 2px; }
+.rg-zm-tabs { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px; max-width: 100%; padding: 2px; }
 .rg-zm-tabs button { flex: none; scroll-snap-align: center; display: inline-flex; align-items: center; gap: 8px; min-height: 48px; padding: 0 16px; border: 0; border-radius: 999px; background: #f5f5f5; color: #0a0a0a; cursor: pointer; transition: background-color .2s, color .2s, transform 90ms; }
 .rg-zm-tabs button:active { transform: scale(.97); }
-.rg-zm-tabs button h3 { margin: 0; font: 497 15px/1 var(--sans); }
+.rg-zm-tabs button h3 { margin: 0; font: 497 15px/1 var(--sans); color: inherit; }
 .rg-zm-n { font: 500 13px/1 var(--mono); color: #737373; transition: color .2s; }
 .rg-zm-tabs button[aria-selected='true'] { background: #0a0a0a; color: #fafafa; }
 .rg-zm-tabs button[aria-selected='true'] .rg-zm-n { color: #a3a3a3; }
@@ -421,7 +425,7 @@ html:not(.js) .rg-zm-p[hidden] { display: block; }
 
 /* 2 pendulum: the system swings in from its top edge and settles */
 .rg-zm-in { transform-origin: 50% 0; }
-html.js .rg-zm-in:not([data-in]) { opacity: 0; transform: rotate(-12deg); }
+.rg[data-armed] .rg-zm-in:not([data-in]) { opacity: 0; transform: rotate(-12deg); }
 .rg-zm-in[data-in] { animation: rg-pend 1.9s cubic-bezier(.4, 0, .2, 1) both; }
 @keyframes rg-pend { 0% { opacity: 0; transform: rotate(-12deg); } 20% { opacity: 1; transform: rotate(8deg); } 40% { transform: rotate(-5deg); } 60% { transform: rotate(2.6deg); } 78% { transform: rotate(-1deg); } 100% { opacity: 1; transform: none; } }
 
@@ -431,17 +435,19 @@ html.js .rg-zm-in:not([data-in]) { opacity: 0; transform: rotate(-12deg); }
 .rg-drift .rg-code { translate: var(--dr, 0px) 0; }
 
 /* 4 fold-out: the console unfolds down from a hinge along its top edge, like paper */
-.rg-en-fold { transform-origin: 50% 0; transition: transform 1.1s cubic-bezier(.16, 1, .3, 1), opacity .5s; }
-html.js .rg-en-fold:not([data-in]) { opacity: 0; transform: perspective(1400px) rotateX(-82deg); }
+.rg-en-fold { transform-origin: 50% 0; }
+.rg[data-armed] .rg-en-fold:not([data-in]) { opacity: 0; transform: perspective(1400px) rotateX(-82deg); }
+.rg-en-fold[data-in] { animation: rg-fold 1.3s cubic-bezier(.4, 0, .2, 1) both; }
+@keyframes rg-fold { from { opacity: 0; transform: perspective(1400px) rotateX(-82deg); } 30% { opacity: 1; } to { opacity: 1; transform: perspective(1400px) rotateX(0deg); } }
 
 /* 5 invert-flash: the related cards arrive inverted, black for white, then flash back to normal */
-html.js .rg-en-flash:not([data-in]) { opacity: 0; }
+.rg[data-armed] .rg-en-flash:not([data-in]) { opacity: 0; }
 .rg-en-flash[data-in] { animation: rg-inv .9s cubic-bezier(0, 0, .2, 1) both; }
 @keyframes rg-inv { 0% { opacity: 1; filter: invert(1); } 38% { filter: invert(1); } 46% { filter: invert(0); } 54% { filter: invert(1); } 100% { opacity: 1; filter: invert(0); } }
 
 @media (prefers-reduced-motion: reduce) {
-  .rg-zm-in[data-in], .rg-en-flash[data-in], .rg-zm-wires line { animation: none; }
-  .rg-tilt > .rg-push, .rg-en-fold { transition: none; }
+  .rg-zm-in[data-in], .rg-en-flash[data-in], .rg-en-fold[data-in], .rg-tilt[data-in] > .rg-push, .rg-zm-wires line { animation: none; }
+  .rg-tilt > .rg-push { transition: none; }
   .rg-zm { height: auto; }
   .rg-zm-stick { position: static; height: auto; }
   .rg-zm-map { display: none; }
@@ -459,7 +465,7 @@ html.js .rg-en-flash:not([data-in]) { opacity: 0; }
   .rg-zm-node { max-width: 128px; padding: 8px 10px; }
   .rg-zm-node b, .rg-zm-node em { font-size: 14px; }
   .rg-zm .rg-iso { height: 210px; min-height: 0; }
-  .rg-zm-tabs { justify-content: flex-start; width: 100%; }
+  .rg-zm-tabs { flex-wrap: nowrap; justify-content: flex-start; width: 100%; overflow-x: auto; scroll-snap-type: x proximity; scrollbar-width: none; }
   .rg-zm-tabs button { min-height: 44px; padding: 0 14px; }
   .rg-zm-p { font-size: 14px; min-height: 6.4em; }
 }

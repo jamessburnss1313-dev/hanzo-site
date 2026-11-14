@@ -33,7 +33,7 @@ Done here: `python3 scripts/parity.py /registry`: links 12/12. Order (breaks the
 - [x] Ends in close (`LaunchClose`), footer
 - [x] Related card titles carry `data-morph` (the site's Morph opens them into their page)
 
-Done here: The push starts at first paint (docker push → 401 naming IAM → token → signature → layers → v1.2.3 + cosign signature) inside one outlined window, then rests on the signed image with a blinking prompt; on phone the registry is a strip above the terminal so the image lands on screen while it is pushed.
+Done here: The push starts at first paint (docker push → 401 naming IAM → token → signature → layers → v1.2.3 + cosign signature) inside one outlined window that tilts in (tilt-3d-hover), then rests on the signed image with a blinking prompt. Motion map (14 Nov): no pinned chapter stage; the second screen is the zoom map (the whole system around one registry, zooming into its layer stack). Order: hero → zoom map → dark room → registry console → related → one close.
 
 ## 4. Conversion system
 - [x] Kit `lx-cta` asks; no raw `.x-btn`
@@ -84,7 +84,7 @@ Done here: Quickstart fills white on hover and presses .97; About IAM, the conso
 - [x] Reduced motion shows the final state; no `setInterval`
 - [x] n/a sound: shared kit
 
-Done here: The push runs once (~9 s) and rests; the caret blinks at rest; the layer stack floats ±6px over 6 s and each chapter acts on it: intro, an IAM token hovers with its time bar draining and strikes itself; 01, a struck "password" falls away while the token seats (a new facet, not the push again); 02, the top plate inks for acme; 03, signature and attestation dock; 04, the stack squares for /v2/; 05, a layer slides out and the storage bar shrinks; 06, four people fold into one row, one revoked. `variety.py` OK.
+Done here: Signature `zoom-map`: a 240svh section whose sticky stage shows Hanzo IAM, acme, Builds, the OCI clients and Hanzo Cloud wired (flowing dashes) to one registry; scroll scales the map 1→3.4 and fades it while the layer stack grows 0.42→1, then the six facts arrive as tabs (hover, tap, ←/→; they walk on every 4.2 s until picked) and each acts on the stack (token seats as a password falls, org inks the top, signature and attestation dock, /v2/, a layer slides out, people fold). Entrances in order: 1 tilt-3d-hover (hero window tips back 24°/−18° and levels, then leans to a fine pointer), 2 pendulum (the system swings in from its top edge: −12°, 8°, −5°, 2.6°, −1°, 0), 3 opposite-drift (dark room words and terminal drift in from ∓140px with the scroll), 4 fold-out (console unfolds from a top hinge, rotateX −82°→0), 5 invert-flash (related cards arrive inverted, flash, then normal). Kept: the push once + Replay, carets, stack float, swap wipe, console build. Reduced motion: every entrance at rest, the zoom shown at its end. Verified frame by frame with Playwright at 1470×801 and 375×812.
 
 ## 10. Media
 - [x] n/a Film/Pic: Hanzo has no Registry images or film; every object is product UI or drawn

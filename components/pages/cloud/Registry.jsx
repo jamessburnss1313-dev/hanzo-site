@@ -1,12 +1,10 @@
 'use client';
 /* Registry, v2 launch page (Cloud 3).
-   V2: 8/10 one outlined window where a docker push asks IAM first, runs once (~9 s) and rests on the signed image with a
-   blinking prompt and Replay; the dark room follows the hero straight off its last words (the secret); then a short
-   pin (about 3 screens) whose object is the image itself, a big inked stack of layers each fact visibly acts on and
-   labels (a password struck off as the token seats, the org inks the top, signature and attestation dock, a layer
-   slides out as storage shrinks, people fold into one directory), one caption under it, no lists; then the page's own
-   tail: a registry console listing acme's repositories, each opening into its layers and tags (one still pushing);
-   related capabilities drawn as what each does to an image; one close that carries "Get started" and the agent prompt.
+   V2: 8/10 motion-map: zoom-map + tilt-3d-hover (hero window), pendulum (system map), opposite-drift (dark room),
+   fold-out (registry console), invert-flash (related capabilities). Second screen: the whole system (Hanzo IAM, acme,
+   Builds, the OCI clients, Hanzo Cloud) wired to one registry; scroll zooms into the image's layer stack until it
+   fills the screen and its six facts act on it (hover, tap, arrows; walks on by itself). No pinned chapter stage.
+   Order: hero → zoom map → dark room → registry console → related → one close with "Get started" and the prompt.
    Signature: a push that asks IAM first. docker push meets a 401 that names Hanzo IAM, a short-lived token travels from
    IAM to the client, the registry checks its signature, the layers go up, and the image lands in the org's repository
    with its cosign signature beside it as an ordinary artifact.
@@ -205,11 +203,13 @@ function ZoomMap() {
   const [eref, inn] = useEnter(0.08);
   const calm = useReducedMotion();
   const { scrollYProgress: p } = useScroll({ target: ref, offset: ['start start', 'end end'] });
-  const mapS = useTransform(p, [0.06, 0.55], [1, 3.4]);
-  const mapO = useTransform(p, [0.2, 0.5], [1, 0]);
-  const stkS = useTransform(p, [0.06, 0.55], [0.42, 1]);
-  const facO = useTransform(p, [0.46, 0.62], [0, 1]);
-  const facY = useTransform(p, [0.46, 0.62], [40, 0]);
+  // plain functions of the scroll (not range maps), so the zoom follows the scroll exactly, frame for frame
+  const k = (v, a, b) => Math.min(1, Math.max(0, (v - a) / (b - a)));
+  const mapS = useTransform(p, (v) => 1 + 2.4 * k(v, 0.06, 0.55));
+  const mapO = useTransform(p, (v) => 1 - k(v, 0.2, 0.5));
+  const stkS = useTransform(p, (v) => 0.42 + 0.58 * k(v, 0.06, 0.55));
+  const facO = useTransform(p, (v) => k(v, 0.46, 0.62));
+  const facY = useTransform(p, (v) => 40 * (1 - k(v, 0.46, 0.62)));
   const [open, setOpen] = useState(false);
   useEffect(() => { if (calm) setOpen(true); }, [calm]);
   useMotionValueEvent(p, 'change', (v) => setOpen(!!calm || v > 0.5));
@@ -438,8 +438,11 @@ function Related() {
 }
 
 export default function Registry() {
+  // the entrances' start states apply only once the page runs (JS off: everything shows at rest)
+  const [armed, setArmed] = useState(false);
+  useEffect(() => setArmed(true), []);
   return (
-    <main className="lx rg">
+    <main className="lx rg" data-armed={armed || undefined}>
       <section className="rg-hero" data-morph-target data-ask-name="Hanzo Registry">
         <div className="lx-wrap rg-hero-grid">
           <SettleStage from={1.06} className="rg-stage"><TiltHero><Push /></TiltHero></SettleStage>
