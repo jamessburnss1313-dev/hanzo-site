@@ -559,3 +559,13 @@ span.rk-dc { display: inline-block; }
   .rk-ch-b > p { font-size: 16px; }
 }
 .rk-en-orbit, .rk-en-squash, .rk-en-depth { position: relative; }
+/* phone widths: the stage pill and the rule tabs never push their pause off screen */
+@media (max-width: 899px) {
+  .rk-stage-row { gap: 6px; }
+  .rk-stage button { padding: 0 6px !important; letter-spacing: -.03em; }
+  .rk-rule-tabs { gap: 2px; }
+  .rk-rule-tabs button { min-width: 0; padding: 0 6px; }
+}
+@media (max-width: 380px) {
+  .rk-stage button, .rk-rule-tabs button h3 { white-space: normal !important; line-height: 1.1; text-align: center; }
+}

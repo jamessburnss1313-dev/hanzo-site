@@ -1,13 +1,14 @@
 'use client';
 /* Persona: enterprise buyer (fraud, AML and trust-and-safety leads). Goal: start a sales conversation. CTA: "Talk to us" → /contact-sales. Metric: contact_sales_submit.
-   Risk. V2: 8/10 a first screen of h1 + dial side by side (next section peeking); an unframed gauge decides beside the h1 (needle, reasons, action; no invented digits); one engine with two faces; then one object per screen (rule card, declare stack, request flow, tier ladder) with the words folded in; no voids; deck greys and radii
+   Risk. V2: 8/10 motion-map: decode + orbit-in, ink-spread, squash-land, velocity-skew, depth-parallax (pinned chapters removed; sections reordered)
    Signature: the dial that decides, and shows its work. Pick a stage (signup, payment, post-purchase; the stage is a
    field) and signals light; the needle swings to a score and the plane returns an action and its reasons. It never
    declines on its own: past the line it summons a person, the ceiling Hanzo's engine refuses to start above.
    Beyond: "Attribution, by hand". Set any signal back to neutral and score again; the drop is that signal's
    contribution, exactly how Hanzo says its scores explain themselves. The dial is labelled an illustration, because no
    figure on this page is a customer result.
-   Motion budget: signature = the live dial; supporting = Settle, Chapters (PinChapters), Open (sheets). No springs.
+   Motion map: signature = decode (headlines, the decision word and POST /v1/event resolve from scrambled characters;
+   hover re-scrambles); entrances orbit-in, ink-spread, squash-land, velocity-skew, depth-parallax (../risk/Enter.jsx).
    Colour: none (JAMES.md, 0 UI hues); the hot side of the dial is ink, status reads by shape and word. Every self-running
    demo has a pause control. One dark room: "Your data, your model". Every word and link is Hanzo's. */
 import { useEffect, useState } from 'react';

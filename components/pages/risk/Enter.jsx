@@ -33,7 +33,7 @@ export function OrbitIn({ children, className = '' }) {
     items(el).forEach((it, i) => {
       const s = i % 2 ? 1 : -1;
       // a quarter orbit: rotate the radius from 40° to 0° while it shrinks to 0, counter-rotating the item upright
-      animate(0, 1, { duration: 1.1, delay: i * 0.12, ease: EMPH, onUpdate: (p) => {
+      animate(0, 1, { duration: 1.3, delay: i * 0.14, ease: [0.45, 0, 0.25, 1], onUpdate: (p) => {
         const a = 40 * (1 - p) * s, r = 260 * (1 - p) * s;
         it.style.transform = `rotate(${a}deg) translate(${r}px, ${-80 * Math.sin(Math.PI * p) * (1 - p)}px) rotate(${-a}deg)`;
         it.style.opacity = String(Math.min(1, p * 2.2));
@@ -49,10 +49,12 @@ const blot = (s) => 'polygon(' + Array.from({ length: 32 }, (_, i) => {
   return `${(32 + r * Math.cos(t)).toFixed(2)}% ${(46 + r * Math.sin(t) * 1.35).toFixed(2)}%`;
 }).join(', ') + ')';
 export function InkSpread({ children, className = '' }) {
-  const ref = useArrive(0.25, (el) => { el.style.clipPath = blot(0.5); }, (el) => {
-    animate(0, 1, { duration: 1.25, ease: [0.45, 0, 0.2, 1], onUpdate: (p) => { el.style.clipPath = blot(0.5 + p * 150); }, onComplete: () => { el.style.clipPath = ''; } });
+  // the observed box is the unclipped wrapper (an observer measures a clipped target as almost nothing)
+  const ref = useArrive(0.25, (el) => { el.firstElementChild.style.clipPath = blot(0.5); }, (el) => {
+    const ink = el.firstElementChild;
+    animate(0, 1, { duration: 1.6, ease: [0.55, 0, 0.35, 1], onUpdate: (p) => { ink.style.clipPath = blot(0.5 + p * p * 140); }, onComplete: () => { ink.style.clipPath = ''; } });
   });
-  return <div ref={ref} className={'rk-en-ink ' + className}>{children}</div>;
+  return <div ref={ref} className={'rk-en-ink ' + className}><div className="rk-en-ink-in">{children}</div></div>;
 }
 
 /* 3. squash-land: each [data-enter] item drops in, squashes wide on landing, stretches back and settles */

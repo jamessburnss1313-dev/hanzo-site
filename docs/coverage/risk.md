@@ -31,7 +31,7 @@ Done here: parity links 7/7.
 - [x] Ends on a band ("Talk to us"), then footer
 - [x] n/a Morph
 
-Done here: one thing per screen: the gauge in the hero (decision word 32px, its label a caption under it), then "Where this is today" peeks under the hero (no void) as one engine with two faces, then one object per section in the second half: the rule card (its three descriptions swap under it), the declare stack, the request flow, the tier ladder (the active tier's words swap under it), the named gaps.
+Done here: motion map (7 Nov): the page no longer reads hero → pinned chapters → proof → band. Order is now hero (the decoding h1 beside the dial), Where this is today, What it decides on, the three chapters as plain alternating rows (the pinned stage is gone), the dark room, Rules, Platforms, How it connects + Plans, What this is not, band. Every word is in the server HTML; JS off shows the final state.
 
 ## 4. Conversion system
 - [x] Kit `A` + `.w2-cta`
@@ -82,7 +82,7 @@ Done here: fact switches get an ink border on hover.
 - [x] Reduced motion rests; no springs
 - [x] n/a sound (shared kit)
 
-Done here: the action word holds a two-line box at both widths, so nothing under the dial moves when it flips.
+Done here: signature `decode` (components/pages/risk/Decode.jsx): the h1 lines, every section h2, the dial's decision word (on each change) and `POST /v1/event` resolve out of scrambled characters as they arrive; hovering any of them re-scrambles it. Entrances (components/pages/risk/Enter.jsx), in page order: 1 orbit-in (Where this is today: the two faces and the engine travel a curved arc into place), 2 ink-spread (What it decides on: an organic blot spreads to reveal the four cards), 3 squash-land (the three chapters' objects drop, squash and settle), 4 velocity-skew (the dark room arrives skewed, then leans with scroll speed), 5 depth-parallax (Rules: heading, card and stage close up at different speeds). Each runs once on entering view; reduced motion and JS off show the final state. Verified with Playwright frame strips and films at 1470x801 and 375x812 (docs/gallery/risk/).
 
 ## 10. Media
 - [x] n/a images; Sigil drawing in Next
