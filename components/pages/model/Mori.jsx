@@ -10,7 +10,7 @@
    landing beside a turning solid, a camera scanning a cube). Order: chapters, fits, studio map, the dark viewport,
    then the model cards, so the two card grids never sit back to back.
    No chapter pane is ever empty: each object rests on its settled frame until its chapter arrives, then draws in.
-   V2: 8/10 Request access is the one solid at both widths; every chapter its own drawn object, never a blank pane; words through the settle; labels fit at 375. */
+   V2: 8/10 motion-map: particles + shrink-to-card, side-carousel, pixel-resolve, card-deal, scramble */
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { Specs } from './Studio';
 import { MoriFits } from './MoriArt';
