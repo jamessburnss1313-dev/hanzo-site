@@ -1,26 +1,20 @@
 'use client';
-/* /press. V2: 8/10 Story on the Hanzo deck (third review's fixes: scale rhythm, a beat per lower section, phone news card, kit signature). The headline and its one ask sit beside a stack of the
-   three press-kit plates; scroll and the stack itself fans out into the kit (one object, one pinned stage, never shown
-   twice). Hanzo's boilerplate is read word by word, the four facts settle once, the news reads as an editorial index with
-   a card beside the row you point at, press contact is the one black room where the email cuts in with its copy button
-   beside it, then brand assets with the partners as one still row, the channels as a hairline list, and the leadership.
+/* /press. V2: 8/10 motion-map: magnet-grid + conveyor, pull-back, velocity-skew, orbit-in, stack-drop.
    Persona: a journalist or analyst writing about Hanzo (MASTER: investors and press).
    Goal: leave with the kit, the facts and the right person to email.
-   CTA: "Contact Press Team" (mailto:press@hanzo.ai) in the hero and the shared sticky ask bar (data-thumb), data-cta
-   press.hero; "Request Executive Bios" (press.bios) closes the page; metric: one contact click.
-   Signature: the kit deals out. The three press-kit plates sit as one stack beside the headline; pinned, the stack fans
-   out into the kit spread as you scroll (stack to spread), a move no other page makes. A sheen crosses the dark plate.
-   Demoted to support: the boilerplate read word by word (scroll), the facts settling once.
-   Supporting (3): masked headline cut-in, once (with the team names and section heads); the boilerplate word fill
-   (scroll); the email typed into the black room, one beat per section below it (time: the partner hairlines drawing
-   one by one, the channel index walking 01 to 09 once, the guidelines mark drawing in), each running once, then at rest.
-   The news index beside a still dark column that holds the story in focus (01 / 06, a progress
-   hairline, its summary and date rising in at 300ms); focus follows pointer, keyboard, or the row crossing mid-screen. State: copy and download draw a tick. Arrival: the lede and asks rise once (1 fade-up).
+   CTA: "Contact Press Team" (mailto:press@hanzo.ai) in the hero and the shared sticky ask (data-thumb), data-cta
+   press.hero; "Request Executive Bios" (press.bios, an outline) closes the page; metric: one contact click.
+   Signature (motion map `magnet-grid`): beside the headline, a field of dots draws Hanzo's mark; it bends toward the
+   cursor or finger and a click or tap ripples out from that point (press/MagnetGrid.jsx). No pinned scene.
+   Entrances, one per main section in page order (press/Enter.jsx): hero conveyor, kit pull-back, about velocity-skew,
+   news orbit-in, black room stack-drop.
+   Kept beats: the dark plate's sheen, the email typing into its reserved box (copy after the last letter), partner
+   hairlines drawing, the channel index walking 01 to 09 with the handle set large, team plates opening, the news card
+   walking the six stories (pause control), hover answers everywhere.
    Beyond: the boilerplate copies in one press, and the press email copies beside itself in the black room, so a writer
    leaves with both without retyping. Every word and link is Hanzo's.
-   Deletes: the second copy of the kit plates (the stack becomes the spread), the 3×3 channel tiles and their icon
-   circles, the six partner boxes, the page tokens that overrode deck.css's greys, the hidden-only "Press & Media" and
-   "Leadership" (now captions under their headings), springs, filters on photos. */
+   Deletes: the pinned hero-kit stage, the boilerplate word fill, the 3x3 channel tiles, the six partner boxes, the
+   page tokens that overrode deck.css's greys, springs on hover, filters on photos. */
 import { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import LivePause, { usePause } from '../v2/LivePause';
 import { motion, AnimatePresence, useInView, useReducedMotion } from 'motion/react';
@@ -40,7 +34,7 @@ const MAIL = 'mailto:press@hanzo.ai';
 const PLATES = [['Logo - Dark Background', 'White logo for use on dark backgrounds', 'SVG, PNG', 'dark'], ['Logo - Light Background', 'Black logo for use on light backgrounds', 'SVG, PNG', 'light'], ['Icon Only', 'Standalone icon without wordmark', 'SVG, PNG, ICO', 'icon']];
 const ARROW = <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="M3 8h9M8.5 4.5 12 8l-3.5 3.5" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" /></svg>;
 const DOWN = <svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><path d="M8 2.5v8M4.5 7.5 8 11l3.5-3.5M3 13.5h10" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" /></svg>;
-// JS off: every word visible and in place, the pinned stage laid out flat, no empty pointer card
+// JS off: every entrance at rest, the grid's mark on its tile, all summaries showing, no empty card
 const NOJS = { __html: '<style>.xen{transform:none!important;opacity:1!important}.xen-belt{display:none!important}.xpe-fig span,.xpe-mail-i{transform:none!important}.xpe-card{display:none!important}.xpe-ts2{display:block!important}.xpe-copy-w{opacity:1!important;transform:none!important;pointer-events:auto!important}.xpe-face{clip-path:none!important}.xpe-partners li::before,.xpe-p-img{transform:none!important}.xpe-guide-p svg{clip-path:none!important}.xpe-caret{display:none!important}.xmg-cv{display:none}</style>' };
 
 /* A Hanzo picture that steps aside for its fallback when it cannot load (MASTER part 17). */

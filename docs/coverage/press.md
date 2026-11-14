@@ -42,19 +42,14 @@ Done here: at 1470×801 the h1, its caption, the lede and both actions sit above
 Done here: links 20/20.
 
 ## 3. First impression and page narrative
-- [x] Sells in 5 s; something moves within 1 s. The h1 cuts in at about 0.5 s, then the lede and asks rise (0.95 s).
-- [x] `PageHero` equivalent; nothing above the h1. "Press & Media" is a visible caption under it.
-- [x] JS off: legible, checked with JS disabled.
-  - 0 faint or offset text.
-  - The pointer card is hidden.
-  - All six summaries show.
-  - The pinned stage lies flat.
-  - The boilerplate sits beside its heading, because the `<noscript>` moved out of the grid.
-- [x] One idea per 100svh, and the rhythm varies: the pinned hero-kit stage, the statement, the facts, the news, the black room, the assets row, the hairline list, the quiet team room.
-- [x] Ends on the page's own closing link ("Request Executive Bios"), then the footer.
-- [ ] n/a: Morph. No card opens into a page; the news rows link to /blog, as on hanzo.ai.
+- [x] Sells in 5 s; something moves within 1 s: the hero rides in on the conveyor and the magnet grid sends one ripple out from the Hanzo mark on arrival.
+- [x] Nothing above the h1. "Press & Media" is a caption under it. The pinned hero-kit stage is gone (motion map: no pinned scene on /press).
+- [x] JS off: legible. `.xen` parts show at rest, the grid's `<noscript>` shows the Hanzo mark on its tile, all summaries show.
+- [x] Order is hero (with the signature) → kit → about → news → black room → brand → channels → team; no chapters, no shared hero → chapters → proof → band sequence.
+- [x] Ends on the page's own closing link ("Request Executive Bios", an outline beside the header's solid), then the footer.
+- [ ] n/a: Morph. No card opens into a page; news rows link to /blog, as on hanzo.ai.
 
-Done here: the hero and the kit are one object. As the stage scrolls, the headline fades and the stack fans out into the three kit plates. The three plates are never shown twice.
+Done here: Playwright at 1470×801 and 375×812 records each of the five entrances playing from its start state to rest (frames every 80 ms in `docs/gallery/press/entrances-desktop.mp4` and `entrances-phone.mp4`).
 
 ## 4. Conversion system
 - [x] No raw `.x-btn`. The ask is a page-local pill until kit `Cta` merges.
@@ -104,20 +99,18 @@ Done here:
 Done here: the copy buttons are 48px icons with an aria-label, and they sit beside what they copy (the email copy is in the email's row). The email link is at least 44px tall.
 
 ## 9. Motion and interaction
-- [x] One signature, 3 supporting, 1 fade-up (the lede and asks, in CSS)
-- [x] At least 3 kinds, scroll under half: arrival (line masks), scroll (the stage fan-out, the belief line), time (the email types itself, the partner hairlines draw one by one, the channel index walks 01 to 09 once, the team plates open, the phone news card walks the six stories once; each runs once in view, then rests), idle (the plate sheen), pointer (row focus steps the others back; plates, partners and channels answer hover), state (the news column swaps its story with a 300 ms rise and a progress hairline, copy and download ticks, the email mask)
-- [x] Something moves without input; every control answers
-- [x] Reduced motion shows the final state (plain words, settled facts, the full email with its copy button, drawn hairlines, open plates, the stage flat). The one `setInterval` (`useBeat`) runs only in view, never under reduced motion, and clears itself at its last step.
-- [ ] n/a: sound (kit not merged)
+- [x] Signature (motion map `magnet-grid`): the hero's field of dots draws Hanzo's mark (ink dots inside it, grey around). It bends toward the cursor or finger, and a click or tap sends a ripple out from that point. One arrival ripple, then it rests; it only animates while something moves and only on screen (`components/pages/press/MagnetGrid.jsx`).
+- [x] Five entrances, in page order (`components/pages/press/Enter.jsx`, page-local):
+  1. Hero: `conveyor`. Headline block and field ride in from the right edge on one belt, a dashed belt line running under them.
+  2. Kit: `pull-back`. Starts zoomed 2.6× on the dark plate inside its clip and pulls back to the three plates.
+  3. About: `velocity-skew`. The boilerplate and facts lean up to 9° with scroll speed and level out when still.
+  4. News: `orbit-in`. Rows and the story card swing into place along an arc around a far-off centre, one after another.
+  5. Black room: `stack-drop`. Heading, email and address drop from above one by one and land with a short spring settle.
+- [x] Kept: hover answers on plates, copy icons, email, downloads, news rows and channels; the plate sheen; the email typing into its reserved box; the partner hairlines; the channel walk; the team plates; the news card walk with its pause control.
+- [x] Reduced motion: the grid is still; entrances jump to rest (MotionConfig "user"); skew off.
+- [ ] n/a: sound (shared kit).
 
-Done here:
-- Signature: the kit deals out. The three press-kit plates sit as one stack beside the h1 and fan out into the kit spread as the pinned stage scrolls (230svh, ease-in-out); a sheen crosses the dark plate three times, then rests. No other page makes this move (the word fill is shared with Philosophy and Research, so it is demoted).
-- Supporting:
-  - line masks (the h1, every section head, the team names);
-  - the belief line, demoted: 60 words go from opacity .16 to 1 with the scroll, then the facts settle;
-  - one time beat per section below the news (the email typed with a caret, copy appearing after the last letter; partner hairlines drawn 160 ms apart; the channel index walking 01 to 09 once until pointed at; the team plates opening by clip; the guidelines mark drawing in);
-  - the news index: a still dark column beside it holds the story in focus (`01 / 06` at 64px Air, a progress hairline, the summary and date rising in at 300 ms). Focus follows the pointer, the keyboard, or, untouched, the row crossing the middle of the screen. Nothing follows the cursor.
-- No springs.
+Done here: transforms logged per frame show conveyor x 1617→0 (desktop) and 412→0 (phone), pull-back scale 2.6→1, skew to about -3° while scrolling then 0, orbit rotate 16°→0, stack-drop y -160→0. Pointer and tap on the grid bend and ripple it (`signature-bend.jpg`, `signature-tap-phone.jpg`).
 
 ## 10. Media
 - [x] `Pic` (kit `Img`, with a fallback) only; sizes set
