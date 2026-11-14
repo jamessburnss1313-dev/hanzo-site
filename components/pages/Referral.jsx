@@ -338,7 +338,7 @@ function Deal() {
   const box = useRef(null);
   const row = useRef(null);
   const calm = useReducedMotion();
-  useEnter(box, () => {
+  useEnter(row, () => {
     const el = row.current; if (!el || calm) return;
     const tiles = [...el.children], R = el.getBoundingClientRect();
     const deckX = R.left + R.width / 2, deckY = R.bottom + 40;
@@ -352,7 +352,7 @@ function Deal() {
         { transform: 'none' },
       ], { duration: 900, delay: 200 + i * 220, easing: 'cubic-bezier(.4,0,.2,1)', fill: 'backwards' });
     });
-  }, 0.4);
+  }, 0.85);
   return (
     <section className="xp-sec xrf-deal" ref={box} aria-label="Referred, Pending, Qualified">
       <div className="xp-wrap">

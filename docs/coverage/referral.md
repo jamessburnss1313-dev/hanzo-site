@@ -25,13 +25,13 @@ Done here: `parity.py /referral` → links 3/3 (/signup, /login, /affiliate).
 
 ## 3. First impression and page narrative
 - [x] Sells in 5 s; something moves within 1 s without input
-- [x] Line-masked h1; nothing above the h1
-- [x] JS off: legible; no `opacity:0` on the LCP element
-- [x] One idea per section, each shown once: the card, one referral's journey (one word big at a time, the link pill once), the steps strip, the one difference (two tracks), the close
-- [x] Ends on a closing band: the sign-in line, the ask ("Get your link", Sign in) and the card at rest, then the footer
+- [x] Slot-roll h1 (motion map); nothing above the h1
+- [x] JS off: legible; no `opacity:0` on the LCP element (the slot reels are CSS and end in place; the questions list as one column)
+- [x] Order (motion map, no pinned scene): hero (card) → How it works as one question at a time with a building summary → the one difference (dark room, lens) → the three counts dealt → the close stacking over the card
+- [x] Ends on a close: the sign-in line and the ask stacking over the card at rest, then the footer
 - [x] n/a Morph: no card opens a page
 
-Done here: the journey pins for 260svh on wide screens (stacks and plays once by itself under 900px); the dark room opens from a 32px inset (8px on phones, inside the text's 24px margin, so no letter is cut); the close shows the card with the rider on Qualified.
+Done here: motion map for /referral: signature `one-question` + entrances 1 hero `slot-roll`, 2 How it works `word-shuffle`, 3 dark room `cursor-lens`, 4 counts `card-deal`, 5 close `sticky-stack`; the pinned journey and the steps strip (and the hairline through the gauge) are gone. Frames every 80 ms at 1470×801 and 375×812 in `docs/gallery/referral/entrances-*.mp4`.
 
 ## 4. Conversion system
 - [x] `<Cta>` only; no raw `.x-btn`
@@ -76,13 +76,13 @@ Done here: `taste.py components/pages/Referral.jsx components/pages/Referral.css
 Done here: Copy fills ink; steps lift 2px and ink; the "Affiliates" link brightens and moves its underline; press .97 or 1px.
 
 ## 9. Motion and interaction
-- [x] One signature (the journey) plus 3 (line-mask h1, the card's landing builder, the dark room opening); 0 fade-ups; `variety.py` OK (3 techniques)
-- [x] Kinds: idle (flow dots, pay tracks, the rider's breath), time (builder lands once, strip draws once, phone journey plays once), pointer (hovers), state (step replays, word cut-ins), arrival (h1, room opening); scroll-linked is the journey and the room only
-- [x] `motion.mjs`: 0 still screens at both widths, layout shift 0.002–0.003
-- [x] Reduced motion: final states (card on Qualified, journey on Qualified, all four drawings, affiliate track full); no `setInterval`
-- [x] Sound: `data-sound="tick"` on steps and Copy
+- [x] Signature `one-question` (motion map): How it works asks one step per screen, Next/Previous (or a swipe) slides to the next, the summary beside it builds as each is done, the last hands over to "Get your link" (a link; nothing is submitted), Replay starts over
+- [x] Entrances, in page order: `slot-roll` (h1 words roll down through reels of the page's own count words and settle), `word-shuffle` (the heading and first question arrive out of order and swap into place), `cursor-lens` (a round 1.5× lens sweeps the dark room's sentences, then follows a fine pointer), `card-deal` (the three counts dealt from one deck, turned, onto their places), `sticky-stack` (the card sticks, the sign-in line and ask stack over it)
+- [x] Kinds: idle (flow dots, pay tracks), time (builder lands once, drawings draw), pointer (lens, hovers, swipe), state (question slides, summary), arrival (slot-roll), scroll (sticky-stack)
+- [x] Reduced motion: final states (no reels, no shuffle, no lens, no deal, slides cut, all summary rows shown); JS off lists the questions as one column
+- [x] Sound: `data-sound="tick"` on Next, Previous, Replay and Copy
 
-Done here: `motion.mjs /referral` desktop 0 still (its Copy/Affiliates "dead hover" lines come from headless Chrome not matching `(hover: hover)`; Playwright with a fine pointer measures Copy going from white to `rgb(10,10,10)`), phone 0 still and 0 dead controls.
+Done here: Playwright (`/tmp/claude-0/rf/enter.cjs`): frames every 80 ms show each entrance at 1470×801 and 375×812; Next ×4 → summary 1, 2, 3, 4 done, slides −100…−300%, the flow's "Get your link" appears, Replay resets to 0; swipe works on touch; 0 horizontal overflow at 375 and 320; one solid fill on screen at every stop on phones. The only console error seen is a shared footer hydration mismatch when the page is scrolled before hydrating (not this page's code).
 
 ## 10. Media
 - [x] n/a `Film`/`Pic`: no Hanzo photo or film on this page
