@@ -1,20 +1,21 @@
 'use client';
-/* Search (v2, Cloud 4 chat). Archetype A, Launch: Stage hero → four chapters → a dark "how it works" room driven by its
-   three steps → frameworks → pricing with a fit-finder → Get Search → one closing band. Ink, greys and white only.
+/* Search (v2, Cloud 4 chat). Stage hero with a flip board → four ways as a sticky stack → a dark "how it works" room →
+   pricing with a fit-finder → frameworks → Get Search (centred close). No pinned scene. Ink, greys and white only.
    Persona: a developer adding search to their docs or product. Goal: read the docs and create an index.
    CTA: "Read the docs" (hero solid, data-thumb; data-cta primary / close). Desktop: the shared header outlines its
    "Try Hanzo" while a "Read the docs" is on screen and carries "Read the docs" solid once the hero ask scrolls away.
    Phone (≤700px): the header keeps a solid "Try Hanzo", so the hero's "Read the docs" sits quiet (outlined) and the
    shared slim bar carries it after the hero; one solid per viewport at both widths.
    Metric: api_key_created (developers, MASTER §1).
-   V2: 8/10 a Spotlight-size search types on arrival and settles; one query answered four ways in pinned chapters (phone pictures run when seen); the dark room runs its three steps by itself (pausable, hover holds); the close replays the hero query centred under one merged rank; page-scoped deck tokens, 44px phone targets
-   Signature: one query, four answers. "Kubernets" types itself into a search bar the size of the screen, and as you scroll
-   the same index answers it four ways: the typo fixed, the neighbours by meaning, the two lists fused by rank (the rows
-   re-flow into one), then a streamed answer with its sources.
+   V2: 8/10 motion-map: flip-board + blinds, sticky-stack, zoom-through, pull-back, grow-from-point
+   Signature: flip-board. "Kubernets" types itself into a search bar the size of the screen; under it the results are a
+   departure board (rank, document, where it matched), and every time the mode changes (Text, Vector, RRF, by itself or
+   pressed) the tiles that differ flip through letters and land on the new ranking.
    Beyond: "Which plan fits?" Set your projects and docs per project and the plan whose limits cover them lights up, read
    straight from Hanzo's own plan limits.
-   Motion: scroll-pinned chapters (signature) + typing and streaming (time) + tab pill and step re-flow (state) + the
-   stage settle (scroll). Idle below the chapters: the dark room steps through index, query and ask on its own while in
+   Entrances, in page order: hero object blinds; four ways sticky-stack; dark room zoom-through; pricing pull-back;
+   frameworks grow-from-point (from the last place pressed or pointed). Each runs once on entering view; JS off and
+   reduced motion show the final state. Also: typing and streaming (time), tab pill (state). Idle lower down: the dark room steps through index, query and ask on its own while in
    view (pause first in the room), and the closing bar retypes the query and fuses its two lists once at 60% in view. The hero object runs on arrival and carries a pause control. Every word, price and link is
    Hanzo's; the query, the results and the RAG question are examples, and the streamed answer is Hanzo's own sentence. */
 import { useEffect, useRef, useState } from 'react';
