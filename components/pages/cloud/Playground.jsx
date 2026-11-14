@@ -1,20 +1,19 @@
 'use client';
 /* Playground, v2 launch page (Cloud 3).
-   V2: 8/10 the Playground runs eight kinds of run in a hero window that arrives once (no snap) inside a drawn hairline;
-   each kind shows its own model (Iro, Koma, Oto, Kai); the first-request sentence runs itself once (a key, a model
-   name, a message, 1.2 s apart) in a 240svh scene with a live caret; no springs, deck greys and radii, header ask solid.
-   Signature: the playground, running. Eight kinds of run (chat to vision) take turns in one window, each drawing its own
-   kind of answer on Hanzo's own model media (Iro develops, Koma's film plays, Kai's subject is found), with the run's
-   tokens and cost filling beside it; hover a kind to preview it, tap it to hold it.
-   Beyond: the anatomy of a first request. Scroll and the sentence lights one part at a time (a key, a model name, a
-   message) while the same part lights inside the real curl request, then the Python client, so the first call reads
-   as three things you already have.
+   V2: 8/10 motion-map: drag-canvas + glitch-in (hero), tile-flip (canvas), cover-slide (related), scramble (dark room),
+   swing-door (close); the pinned first-request scene is gone.
+   Signature (motion map): drag to explore. The Playground's parts (the first-request sentence, the curl and Python
+   cards, the eight kinds, the nine models) lie on one endless board you pan with a pointer (both ways) or a finger
+   (sideways), throw with inertia, or steer with the arrow keys; it drifts by itself until touched. The hero window
+   still runs the eight kinds by itself.
+   Beyond: the anatomy of a first request. Tap a phrase (a key, a model name, a message) and the board glides to the
+   curl card with that token marked; "is the whole first request." glides to the Python client. On arrival the sentence
+   reads itself once.
    Persona: Developer. Goal: open the Playground and run a first request.
    CTA: "Open the Playground" → https://platform.hanzo.ai/playground (data-cta playground.hero, playground.close; the
    site's sticky ask bar carries the same words from data-thumb). Metric: api_key_created.
-   Motion: idle = the running window (and Koma's film inside it); pointer = hovering a kind previews its run, hovering a
-   phrase marks its token, the magnetic ask; state = kind tabs, curl/python, pause; arrival = the cut-in title, the
-   timed wipe into the dark room; scroll = the Stage settle and the scrubbed sentence.
+   Motion: idle = the running window, the drifting board, the caret; pointer = drag and throw the board, hovering a kind
+   previews its run, hovering a phrase marks its token; state = kind tabs, pause; arrival = the five entrances.
    Every word and link is Hanzo's; the meter shows proportions, not measured figures. */
 import { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { motion, AnimatePresence, useScroll, useReducedMotion, useTransform } from 'motion/react';
@@ -79,7 +78,7 @@ function Embeddings() {
     <svg className="pg-emb" viewBox="0 0 300 200" aria-hidden="true">
       {Array.from({ length: 42 }).map((_, i) => {
         const h = hubs[i % 3];
-        return <motion.circle key={i} r="4" className={'c' + (i % 3)} initial={{ cx: rnd(i + 9) * 300, cy: rnd(i + 99) * 200, opacity: 0 }} animate={{ cx: h[0] + (rnd(i) - 0.5) * 60, cy: h[1] + (rnd(i + 50) - 0.5) * 44, opacity: 1 }} transition={{ duration: 1.4, ease: EASE, delay: 0.2 + (i % 14) * 0.03 }} />;
+        return <motion.circle key={i} r="4" className={'c' + (i % 3)} initial={{ cx: Math.round(rnd(i + 9) * 300), cy: Math.round(rnd(i + 99) * 200), opacity: 0 }} animate={{ cx: Math.round(h[0] + (rnd(i) - 0.5) * 60), cy: Math.round(h[1] + (rnd(i + 50) - 0.5) * 44), opacity: 1 }} transition={{ duration: 1.4, ease: EASE, delay: 0.2 + (i % 14) * 0.03 }} />;
       })}
     </svg>
   );

@@ -28,15 +28,15 @@ Done here: parity.py `links 7/7`; the nine wall tiles and three related cards ar
 - n/a: `PageHero` (not in the kit yet); the hero is LineMask h1 + lede + one ask + the running window, nothing above the h1
 - [x] JS off: legible; no `opacity:0` on the LCP element
 - [x] One idea per 100svh
-- [x] Ends in the room of model films, related, `LaunchClose`, footer
+- [x] Section order breaks the shared sequence: hero → drag canvas → related → dark room (paste + model films) → `LaunchClose`, footer
 - [x] Card-to-page links use Morph (`data-morph` on the wall art, `data-morph-target` on the hero)
 
-Done here: the window arrives once by CSS from first paint (translateY 24px, scale 1.04 → rest, 900 ms ease-emphasis), so the server frame equals the first client frame and nothing snaps. The first-request scene is 240svh (was 380) and reads itself once on arrival (a key, a model name, a message, 1.2 s apart), then hands over to scroll.
+Done here (motion map, 14 Nov): the pinned first-request scene is gone; its sentence, curl and Python now live on the drag canvas, the page's second screen. The five sections enter, in order, by glitch-in (hero, CSS from first paint: sliced, inverted, offset, then still), tile-flip (60 brand-tone tiles, 36 on phones, flip edge-on corner to corner over the board), cover-slide (related rides up 220px over the board's foot), scramble (the dark room's words and model names decode from scrambled characters) and swing-door (the close swings in on its left hinge). All run once on entering view (`components/pages/playground/enter.js`); JS off and reduced motion show the final state. Proof: `docs/gallery/playground/d-glitch-in.mp4`, `d-tile-flip.mp4`, `d-glitch-sheet.jpg`, `p-entrances-sheet.jpg`.
 
 ## 4. Conversion system
 - [x] Kit asks (`lx-cta`, `lx-ghost`); no raw `.x-btn`
 - [x] Sticky ask: the header's solid ask after the hero; phone bar "Open the Playground" (shared `Ask.jsx`)
-- [x] Copy copies exactly the displayed curl or Python text (`Copy text={tab ? PY : CURL}`); the caret is an `aria-hidden` element, not text
+- [x] Copy copies exactly the displayed curl or Python text (each card's `Copy` takes the same `CURL` or `PY` string its `pre` renders); the caret is an `aria-hidden` element, not text
 - [x] `data-cta` (playground.hero, playground.close) and `data-thumb` on both primaries
 
 Done here: the page no longer outlines the header's "Try Hanzo"; the solid fill sits on the hero ask, then the header. "Deploy to Cloud" now leans 3px with a 2px underline on hover and presses 1px (page-local, request filed).
@@ -75,13 +75,13 @@ Done here: `taste: OK (2 checked)`. Off-deck greys mapped (`#f5f5f7`→`#f5f5f5`
 Done here: the kinds are an APG tablist (roving tabindex, ← → Home End, `aria-controls` to a `tabpanel`); the off code pane is `inert`. New hovers: the hero ask's arrow leans 4px, Copy fills, the selected code tab fills, the repo link's mark turns, a resting phrase greys and starts its underline.
 
 ## 9. Motion and interaction
-- [x] One signature (the Playground running) + 3 supporting (line-mask title, the self-reading request, the clip wipe into the dark room)
-- [x] Kinds: idle (window, caret, wall films, drifting related art), pointer (kind preview, phrase marks), time (the request reads itself once), state (kind pill, code tabs, pause), arrival (title, window)
-- [x] Something moves without input on every screen above the footer (own walk 7 Nov 16:36: desktop s0–s6 move, phone s0–s8 move)
-- [x] Reduced motion: the arrival, caret, rolling code, drift and meters are off; no `setInterval`
+- [x] One signature (motion map: `drag-canvas`) + the five assigned entrances; no pinned or sticky scene
+- [x] Kinds: idle (the running window, the drifting board, caret, wall films), pointer (drag and throw the board, kind preview, phrase marks), time (the sentence reads itself once), state (kind pill, pause), arrival (the five entrances)
+- [x] Something moves without input; every control answers
+- [x] Reduced motion: no entrances, no drift; the board still pans by drag and arrow keys (a cut, no glide); no `setInterval`
 - [x] Sound only through the shared kit
 
-Done here: no springs or overshoot (kind pill and tree nodes on ease-emphasis 300 ms, drop 1.25). The phrase no longer animates weight (no 480→700 reflow): it lights by colour and underline only. A picked kind holds two turns (with its timer showing) and then the window carries on.
+Done here: the drag canvas is an endless dotted board (2400×1200 desktop, a 2000px strip on phones) whose parts wrap around it; a pointer pans both ways, a finger pans sideways (`touch-action: pan-y`, so the page still scrolls), a release throws with inertia (0.94 friction), arrow keys glide 120px, and a drag never fires a click. Tapping a phrase glides the board to the curl card with that token marked. Verified with Playwright 14 Nov at 1470×801 (mouse drag moved the board from x −284 to −1179) and 375×812 (CDP touch drag from x −432 to −663); every section went armed → in; no horizontal scroll at 375 or 320.
 
 ## 10. Media
 - [x] `Film` and `Img` only; sizes and posters set
