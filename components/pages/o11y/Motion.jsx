@@ -31,7 +31,7 @@ export function useEnter(amount = 0.25) {
 export function InkSpread({ children, className = '' }) {
   const [ref, inn] = useEnter(0.05);
   const [done, setDone] = useState(false);
-  useEffect(() => { if (!inn) return; const t = setTimeout(() => setDone(true), 1900); return () => clearTimeout(t); }, [inn]);
+  useEffect(() => { if (!inn) return; const t = setTimeout(() => setDone(true), 2200); return () => clearTimeout(t); }, [inn]);
   return <div ref={ref} className={`ob-ink ${inn ? 'in' : ''} ${done ? 'done' : ''} ${className}`}>{children}</div>;
 }
 
@@ -44,9 +44,10 @@ export function PixelResolve({ children, className = '' }) {
   useEffect(() => {
     if (!inn) return;
     if (calmNow()) { setDone(true); return; }
-    let i = 0;
-    const id = setInterval(() => { i += 1; if (i >= STEPS.length) { clearInterval(id); setDone(true); } else setS(STEPS[i]); }, 110);
-    return () => clearInterval(id);
+    let i = 0, id;
+    const step = () => { i += 1; if (i >= STEPS.length) setDone(true); else { setS(STEPS[i]); id = setTimeout(step, 110); } };
+    id = setTimeout(step, 110);
+    return () => clearTimeout(id);
   }, [inn]);
   return (
     <div ref={ref} className={`ob-px ${inn ? 'in' : ''} ${done ? 'done' : ''} ${className}`}>
@@ -164,7 +165,9 @@ export function FlipBoard({ tabs, label, clock }) {
   const tick = useRef(0);
   useEffect(() => {
     if (!run) return;
-    const id = setInterval(() => {
+    let id;
+    const step = () => {
+      id = setTimeout(step, 1300);
       tick.current += 1;
       setNums((all) => all.map((col, p) => {
         if (!col) return col;
@@ -173,8 +176,9 @@ export function FlipBoard({ tabs, label, clock }) {
         next[r] = Math.max(1, Math.round(base * (0.94 + rnd(tick.current * 3 + r) * 0.12)));
         return next;
       }));
-    }, 1300);
-    return () => clearInterval(id);
+    };
+    id = setTimeout(step, 1300);
+    return () => clearTimeout(id);
   }, [run]);
   const b = BOARD[part];
   const vals = b.n ? nums[part].map(fmt) : b.v;
