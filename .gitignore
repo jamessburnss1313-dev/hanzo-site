@@ -6,3 +6,13 @@ out/
 .next-dev/
 shots/
 __pycache__/
+
+# Front door (15 Nov 2026): keep keys, logs and screenshots out of git
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+.dev.vars
+screenshots/
+Screenshot*.png
