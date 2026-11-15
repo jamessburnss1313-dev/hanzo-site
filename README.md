@@ -1,5 +1,17 @@
 # hanzo.ai — the redesign
 
+## At a glance
+
+| | |
+|---|---|
+| What it is | Hanzo: hanzo.ai redesigned on Hanzo's own stack (Next.js 16, React 19, Motion). |
+| Live address | Not deployed from here yet; the hand-over is the v1.0 release: https://github.com/jamessburnss1313-dev/hanzo-site/releases |
+| How to run it | See the `scripts` in `package.json`. |
+| How it ships | Not shipped from this repository; Hanzo receives the v1.0 release. |
+| How to undo a release | Nothing is live from here, so nothing to undo; to undo a change, revert the merge commit. |
+
+
+
 Every page of hanzo.ai, redesigned on Hanzo's own stack: **Next.js 16 (static export) · React 19 · Motion 12**, with
 light and dark mode from Hanzo's own **`@hanzo/appearance`** and **`@hanzo/design`**.
 
